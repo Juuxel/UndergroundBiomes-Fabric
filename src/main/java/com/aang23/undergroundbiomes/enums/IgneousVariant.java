@@ -1,6 +1,5 @@
 package com.aang23.undergroundbiomes.enums;
 
-import net.minecraft.state.EnumProperty;
 import net.minecraft.util.IStringSerializable;
 
 /**
@@ -11,7 +10,6 @@ public enum IgneousVariant implements IStringSerializable, Variant<IgneousVarian
 
   public static final IgneousVariant[] IGNEOUS_VARIANTS = values();
   public static final int NB_VARIANTS = values().length;
-  public static final EnumProperty<IgneousVariant> IGNEOUS_VARIANT_PROPERTY = EnumProperty.create("type", IgneousVariant.class);
 
   private final float hardness;
   private final float resistance;

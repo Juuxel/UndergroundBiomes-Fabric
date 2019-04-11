@@ -82,6 +82,15 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BASALT);
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_KOMATIITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_DACITE);
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GNEISS);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_ECLOGITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MARBLE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_QUARTZITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_BLUESCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GREENSCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_SOAPSTONE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MIGMATITE);
         }
 
         @SubscribeEvent
@@ -94,6 +103,15 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BASALT.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_KOMATIITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_DACITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GNEISS.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_ECLOGITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MARBLE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_QUARTZITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_BLUESCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GREENSCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_SOAPSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MIGMATITE.getItemBlock());
         }
     }
 }
