@@ -1,16 +1,11 @@
 package com.aang23.undergroundbiomes;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.model.ModelBlock;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,13 +15,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
-
-import com.aang23.undergroundbiomes.blocks.IgneousStone;
-import com.aang23.undergroundbiomes.blocks.MetamorphicStone;
-import com.aang23.undergroundbiomes.blocks.SedimentaryStone;
-import com.aang23.undergroundbiomes.enums.IgneousVariant;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
 
 // The value here should match an entry in the META-INF/mods.toml file

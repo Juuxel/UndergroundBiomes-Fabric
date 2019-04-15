@@ -1,6 +1,3 @@
-/*
- */
-
 package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.state.IBlockState;

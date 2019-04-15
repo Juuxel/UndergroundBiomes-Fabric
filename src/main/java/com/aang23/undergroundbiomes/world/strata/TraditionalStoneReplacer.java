@@ -9,13 +9,11 @@ import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerSmooth;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerVoronoiZoom;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerZoom;
 import com.aang23.undergroundbiomes.world.strata.noise.SimplexNoiseGenerator;
+import net.minecraft.world.chunk.IChunk;
 
 /**
  * @author curtisadams
  */
-
-import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.IChunk;
 
 public class TraditionalStoneReplacer extends UBStoneReplacer {
 

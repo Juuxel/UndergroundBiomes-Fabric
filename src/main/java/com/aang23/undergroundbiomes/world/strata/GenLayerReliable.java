@@ -1,11 +1,6 @@
-/*
- */
-
 package com.aang23.undergroundbiomes.world.strata;
 
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayer;
-
-import net.minecraft.world.biome.Biome;
 
 /**
  * This class copies the prior layer into a new array that won't get zapped by

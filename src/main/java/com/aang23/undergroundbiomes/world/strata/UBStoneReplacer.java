@@ -1,23 +1,11 @@
-/*
- */
-
 package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import com.aang23.undergroundbiomes.world.strata.noise.NoiseGenerator;
 
 public abstract class UBStoneReplacer implements UBStrataColumnProvider {

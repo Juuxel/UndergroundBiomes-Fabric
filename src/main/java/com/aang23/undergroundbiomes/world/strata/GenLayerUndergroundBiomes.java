@@ -5,9 +5,6 @@ package com.aang23.undergroundbiomes.world.strata;
 
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayer;
 
-import net.minecraft.world.gen.area.IAreaFactory;
-import net.minecraft.world.gen.area.LazyArea;
-
 public class GenLayerUndergroundBiomes extends GenLayer {
   /**
    * this sets all the biomes that are allowed to appear in the overworld
