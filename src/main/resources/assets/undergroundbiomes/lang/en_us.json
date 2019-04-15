@@ -1,0 +1,30 @@
+{
+    "block.undergroundbiomes.igneous_stone_red_granite": "Red Granite",
+    "block.undergroundbiomes.igneous_stone_black_granite": "Black Granite",
+    "block.undergroundbiomes.igneous_stone_rhyolite": "Rhyolite",
+    "block.undergroundbiomes.igneous_stone_andesite": "Andesite",
+    "block.undergroundbiomes.igneous_stone_gabbro": "Gabbro",
+    "block.undergroundbiomes.igneous_stone_basalt": "Basalt",
+    "block.undergroundbiomes.igneous_stone_komatiite": "Komatiite",
+    "block.undergroundbiomes.igneous_stone_dacite": "Dacite",
+
+    "block.undergroundbiomes.metamorphic_stone_gneiss": "Gneiss",
+    "block.undergroundbiomes.metamorphic_stone_eclogite": "Eclogite",
+    "block.undergroundbiomes.metamorphic_stone_marble": "Marble",
+    "block.undergroundbiomes.metamorphic_stone_quartzite": "Quartzite",
+    "block.undergroundbiomes.metamorphic_stone_blueschist": "Blueschist",
+    "block.undergroundbiomes.metamorphic_stone_greenschist": "Greenschist",
+    "block.undergroundbiomes.metamorphic_stone_soapstone": "Soapstone",
+    "block.undergroundbiomes.metamorphic_stone_migmatite": "Migmatite",
+
+    "block.undergroundbiomes.sedimentary_stone_limestone": "Limestone",
+    "block.undergroundbiomes.sedimentary_stone_chalk": "Chalk",
+    "block.undergroundbiomes.sedimentary_stone_shale": "Shale",
+    "block.undergroundbiomes.sedimentary_stone_siltstone": "Siltstone",
+    "block.undergroundbiomes.sedimentary_stone_lignite": "Lignite",
+    "block.undergroundbiomes.sedimentary_stone_dolomite": "Dolomite",
+    "block.undergroundbiomes.sedimentary_stone_greywacke": "Greywacke",
+    "block.undergroundbiomes.sedimentary_stone_chert": "Chert",
+  
+    "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
+  }

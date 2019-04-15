@@ -91,6 +91,15 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GREENSCHIST);
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_SOAPSTONE);
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MIGMATITE);
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_LIMESTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHALK);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_SHALE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_SILTSTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_LIGNITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_DOLOMITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT);
         }
 
         @SubscribeEvent
@@ -112,6 +121,15 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_GREENSCHIST.getItemBlock());
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_SOAPSTONE.getItemBlock());
             e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_MIGMATITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_LIMESTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHALK.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_SHALE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_SILTSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_LIGNITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_DOLOMITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT.getItemBlock());
         }
     }
 }
