@@ -27,6 +27,7 @@ import com.aang23.undergroundbiomes.blocks.IgneousStone;
 import com.aang23.undergroundbiomes.blocks.MetamorphicStone;
 import com.aang23.undergroundbiomes.blocks.SedimentaryStone;
 import com.aang23.undergroundbiomes.enums.IgneousVariant;
+import com.aang23.undergroundbiomes.world.WorldGenManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("undergroundbiomes")
@@ -47,6 +48,7 @@ public class UndergroundBiomes {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
