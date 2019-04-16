@@ -52,6 +52,7 @@ public class WorldGenManager {
 
   @SubscribeEvent(priority = EventPriority.HIGHEST)
   public void onPopulateChunk(ChunkEvent.Load event) {  // TODO : Change that really bad use of that event... But at least allows me to test worldgen.
+
     biomesSet = new UBBiomesSet(0);
 
     world = event.getWorld();

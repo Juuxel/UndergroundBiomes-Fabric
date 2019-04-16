@@ -1,11 +1,11 @@
 package com.aang23.undergroundbiomes;
 
-import com.aang23.undergroundbiomes.blocks.IgneousStone;
-import com.aang23.undergroundbiomes.blocks.MetamorphicStone;
-import com.aang23.undergroundbiomes.blocks.SedimentaryStone;
-import com.aang23.undergroundbiomes.blocks.igneous_stone.*;
-import com.aang23.undergroundbiomes.blocks.metamorphic_stone.*;
-import com.aang23.undergroundbiomes.blocks.sedimentary_stone.*;
+import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
+import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
+import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
+import com.aang23.undergroundbiomes.blocks.stone.igneous.*;
+import com.aang23.undergroundbiomes.blocks.stone.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.stone.sedimentary.*;
 
 public class UBBlocks {
     // Igneous Stones

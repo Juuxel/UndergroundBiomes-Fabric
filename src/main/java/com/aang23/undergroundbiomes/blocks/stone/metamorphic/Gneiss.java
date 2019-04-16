@@ -1,8 +1,8 @@
-package com.aang23.undergroundbiomes.blocks.metamorphic_stone;
-
-import com.aang23.undergroundbiomes.blocks.MetamorphicStone;
+package com.aang23.undergroundbiomes.blocks.stone.metamorphic;
 
 import static com.aang23.undergroundbiomes.enums.MetamorphicVariant.GNEISS;
+
+import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;;
 
 public class Gneiss extends MetamorphicStone {
 

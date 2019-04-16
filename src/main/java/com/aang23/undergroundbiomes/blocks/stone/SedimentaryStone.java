@@ -1,4 +1,4 @@
-package com.aang23.undergroundbiomes.blocks;
+package com.aang23.undergroundbiomes.blocks.stone;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.enums.SedimentaryVariant;

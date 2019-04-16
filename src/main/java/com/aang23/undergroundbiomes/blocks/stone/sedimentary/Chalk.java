@@ -1,8 +1,8 @@
-package com.aang23.undergroundbiomes.blocks.sedimentary_stone;
-
-import com.aang23.undergroundbiomes.blocks.SedimentaryStone;
+package com.aang23.undergroundbiomes.blocks.stone.sedimentary;
 
 import static com.aang23.undergroundbiomes.enums.SedimentaryVariant.CHALK;
+
+import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 
 public class Chalk extends SedimentaryStone {
 
