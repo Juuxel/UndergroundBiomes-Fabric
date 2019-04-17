@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
 public class MetamorphicStone extends UBStone {
-    MetamorphicVariant metamorphic_variant;
+    public MetamorphicVariant metamorphic_variant;
 
     public MetamorphicStone(MetamorphicVariant metamorphic_variant) {
         super();

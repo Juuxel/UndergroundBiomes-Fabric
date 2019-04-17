@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
 public class IgneousStone extends UBStone {
-    IgneousVariant igneous_variant;
+    public IgneousVariant igneous_variant;
 
     public IgneousStone(IgneousVariant igneous_variant) {
         super();

@@ -25,6 +25,33 @@
     "block.undergroundbiomes.sedimentary_stone_dolomite": "Dolomite",
     "block.undergroundbiomes.sedimentary_stone_greywacke": "Greywacke",
     "block.undergroundbiomes.sedimentary_stone_chert": "Chert",
+
+    "block.undergroundbiomes.igneous_gravel_red_granite": "Red Granite Gravel",
+    "block.undergroundbiomes.igneous_gravel_black_granite": "Black Granite Gravel",
+    "block.undergroundbiomes.igneous_gravel_rhyolite": "Rhyolite Gravel",
+    "block.undergroundbiomes.igneous_gravel_andesite": "Andesite Gravel",
+    "block.undergroundbiomes.igneous_gravel_gabbro": "Gabbro Gravel",
+    "block.undergroundbiomes.igneous_gravel_basalt": "Basalt Gravel",
+    "block.undergroundbiomes.igneous_gravel_komatiite": "Komatiite Gravel",
+    "block.undergroundbiomes.igneous_gravel_dacite": "Dacite Gravel",
+
+    "block.undergroundbiomes.metamorphic_gravel_gneiss": "Gneiss Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_eclogite": "Eclogite Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_marble": "Marble Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_quartzite": "Quartzite Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_blueschist": "Blueschist Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_greenschist": "Greenschist Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_soapstone": "Soapstone Gravel",
+    "block.undergroundbiomes.metamorphic_gravel_migmatite": "Migmatite Gravel",
+
+    "block.undergroundbiomes.sedimentary_gravel_limestone": "Limestone Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_chalk": "Chalk Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_shale": "Shale Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_siltstone": "Siltstone Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_lignite": "Lignite Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_dolomite": "Dolomite Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_greywacke": "Greywacke Gravel",
+    "block.undergroundbiomes.sedimentary_gravel_chert": "Chert Gravel",
   
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
   }

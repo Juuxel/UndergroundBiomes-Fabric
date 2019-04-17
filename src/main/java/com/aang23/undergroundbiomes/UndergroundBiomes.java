@@ -90,6 +90,33 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT);
+
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RED_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BLACK_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RHYOLITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_ANDESITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_GABBRO);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BASALT);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_KOMATIITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_DACITE);
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_GNEISS);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_ECLOGITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_MARBLE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_QUARTZITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_BLUESCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_GREENSCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_SOAPSTONE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_MIGMATITE);
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_LIMESTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHALK);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_SHALE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_SILTSTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_LIGNITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_DOLOMITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_GREYWACKE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHERT);
         }
 
         @SubscribeEvent
@@ -120,6 +147,33 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_DOLOMITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RED_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BLACK_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RHYOLITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_ANDESITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_GABBRO.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BASALT.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_KOMATIITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_DACITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_GNEISS.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_ECLOGITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_MARBLE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_QUARTZITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_BLUESCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_GREENSCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_SOAPSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_GRAVEL_MIGMATITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_LIMESTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHALK.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_SHALE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_SILTSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_LIGNITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_DOLOMITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_GREYWACKE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHERT.getItemBlock());
         }
     }
 }

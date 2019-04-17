@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
 public class SedimentaryStone extends UBStone {
- SedimentaryVariant sedimentary_variant;
+    public SedimentaryVariant sedimentary_variant;
 
     public SedimentaryStone(SedimentaryVariant sedimentary_variant) {
         super();

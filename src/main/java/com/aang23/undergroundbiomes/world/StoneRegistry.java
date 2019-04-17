@@ -1,62 +1,100 @@
 package com.aang23.undergroundbiomes.world;
 
 import com.aang23.undergroundbiomes.UBBlocks;
+import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
+import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
+import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
+import com.aang23.undergroundbiomes.blocks.stone.UBStone;
+import com.aang23.undergroundbiomes.enums.UBStoneStyle;
+import com.aang23.undergroundbiomes.enums.UBStoneType;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 
 public class StoneRegistry {
-    public static Block getStoneForId(int id) {
-        switch (id) {
-        case 0:
-            return UBBlocks.IGNEOUS_STONE_RED_GRANITE;
-        case 1:
-            return UBBlocks.IGNEOUS_STONE_BLACK_GRANITE;
-        case 2:
-            return UBBlocks.IGNEOUS_STONE_RHYOLITE;
-        case 3:
-            return UBBlocks.IGNEOUS_STONE_ANDESITE;
-        case 4:
-            return UBBlocks.IGNEOUS_STONE_GABBRO;
-        case 5:
-            return UBBlocks.IGNEOUS_STONE_BASALT;
-        case 6:
-            return UBBlocks.IGNEOUS_STONE_KOMATIITE;
-        case 7:
-            return UBBlocks.IGNEOUS_STONE_DACITE;
-        case 8:
-            return UBBlocks.METAMORPHIC_STONE_GNEISS;
-        case 9:
-            return UBBlocks.METAMORPHIC_STONE_ECLOGITE;
-        case 10:
-            return UBBlocks.METAMORPHIC_STONE_MARBLE;
-        case 11:
-            return UBBlocks.METAMORPHIC_STONE_QUARTZITE;
-        case 12:
-            return UBBlocks.METAMORPHIC_STONE_BLUESCHIST;
-        case 13:
-            return UBBlocks.METAMORPHIC_STONE_GREENSCHIST;
-        case 14:
-            return UBBlocks.METAMORPHIC_STONE_SOAPSTONE;
-        case 15:
-            return UBBlocks.METAMORPHIC_STONE_MIGMATITE;
-        case 16:
-            return UBBlocks.SEDIMENTARY_STONE_LIMESTONE;
-        case 17:
-            return UBBlocks.SEDIMENTARY_STONE_CHALK;
-        case 18:
-            return UBBlocks.SEDIMENTARY_STONE_SHALE;
-        case 19:
-            return UBBlocks.SEDIMENTARY_STONE_SILTSTONE;
-        case 20:
-            return UBBlocks.SEDIMENTARY_STONE_LIGNITE;
-        case 21:
-            return UBBlocks.SEDIMENTARY_STONE_DOLOMITE;
-        case 22:
-            return UBBlocks.SEDIMENTARY_STONE_GREYWACKE;
-        case 23:
-            return UBBlocks.SEDIMENTARY_STONE_CHERT;
-        default:
-            return null;
-        }
+    public static Block getVariantForStone(IBlockState initialState, UBStoneStyle style) {
+        Block initialBlock = initialState.getBlock();
+        if (initialBlock instanceof UBStone) {
+            UBStone stone = (UBStone) initialBlock;
+            switch (style) {
+            case GRAVEL:
+                return getGravelForStone(stone);
+            default:
+                return null;
+            }
+        } else
+            return initialBlock;
+    }
+
+    public static Block getGravelForStone(UBStone stone) {
+        if (stone.getStoneType() == UBStoneType.IGNEOUS) {
+            IgneousStone currentStone = (IgneousStone) stone;
+            switch (currentStone.igneous_variant) {
+            case RED_GRANITE:
+                return UBBlocks.IGNEOUS_GRAVEL_RED_GRANITE;
+            case BLACK_GRANITE:
+                return UBBlocks.IGNEOUS_GRAVEL_BLACK_GRANITE;
+            case RHYOLITE:
+                return UBBlocks.IGNEOUS_GRAVEL_RHYOLITE;
+            case ANDESITE:
+                return UBBlocks.IGNEOUS_GRAVEL_ANDESITE;
+            case GABBRO:
+                return UBBlocks.IGNEOUS_GRAVEL_GABBRO;
+            case BASALT:
+                return UBBlocks.IGNEOUS_GRAVEL_BASALT;
+            case KOMATIITE:
+                return UBBlocks.IGNEOUS_GRAVEL_KOMATIITE;
+            case DACITE:
+                return UBBlocks.IGNEOUS_GRAVEL_DACITE;
+            default:
+                return Blocks.GRAVEL;
+            }
+        } else if (stone.getStoneType() == UBStoneType.METAMORPHIC) {
+            MetamorphicStone currentStone = (MetamorphicStone) stone;
+            switch (currentStone.metamorphic_variant) {
+            case GNEISS:
+                return UBBlocks.METAMORPHIC_GRAVEL_GNEISS;
+            case ECLOGITE:
+                return UBBlocks.METAMORPHIC_GRAVEL_ECLOGITE;
+            case MARBLE:
+                return UBBlocks.METAMORPHIC_GRAVEL_MARBLE;
+            case QUARTZITE:
+                return UBBlocks.METAMORPHIC_GRAVEL_QUARTZITE;
+            case BLUESCHIST:
+                return UBBlocks.METAMORPHIC_GRAVEL_BLUESCHIST;
+            case GREENSCHIST:
+                return UBBlocks.METAMORPHIC_GRAVEL_GREENSCHIST;
+            case SOAPSTONE:
+                return UBBlocks.METAMORPHIC_GRAVEL_SOAPSTONE;
+            case MIGMATITE:
+                return UBBlocks.METAMORPHIC_GRAVEL_MIGMATITE;
+            default:
+                return Blocks.GRAVEL;
+            }
+        } else if (stone.getStoneType() == UBStoneType.SEDIMENTARY) {
+            SedimentaryStone currentStone = (SedimentaryStone) stone;
+            switch (currentStone.sedimentary_variant) {
+            case LIMESTONE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_LIMESTONE;
+            case CHALK:
+                return UBBlocks.SEDIMENTARY_GRAVEL_CHALK;
+            case SHALE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_SHALE;
+            case SILTSTONE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_SILTSTONE;
+            case LIGNITE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_LIGNITE;
+            case DOLOMITE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_DOLOMITE;
+            case GREYWACKE:
+                return UBBlocks.SEDIMENTARY_GRAVEL_GREYWACKE;
+            case CHERT:
+                return UBBlocks.SEDIMENTARY_GRAVEL_CHERT;
+            default:
+                return Blocks.GRAVEL;
+            }
+        } else
+            return Blocks.GRAVEL;
     }
 }
