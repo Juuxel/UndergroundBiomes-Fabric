@@ -16,13 +16,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
+import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("undergroundbiomes")
 public class UndergroundBiomes {
-    public static final ItemGroup CREATIVE_TAB = new UndergroundBiomesItemGroup();
-    private static final Logger LOGGER = LogManager.getLogger();
     public static String modid = "undergroundbiomes";
+    public static final ItemGroup CREATIVE_TAB = new UndergroundBiomesItemGroup();
+    private static final Logger LOGGER = LogManager.getLogger(modid);
 
     public UndergroundBiomes() {
         // Register the setup method for modloading
@@ -37,6 +38,9 @@ public class UndergroundBiomes {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
+
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(WorldChunkChecker::preInit);
+        MinecraftForge.EVENT_BUS.register(new WorldChunkChecker());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
