@@ -1,6 +1,8 @@
 package com.aang23.undergroundbiomes.world.utils;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
+import com.aang23.undergroundbiomes.config.UBConfig;
+
 import net.minecraft.nbt.INBTBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -29,14 +31,15 @@ public class WorldChunkChecker {
     public static boolean hasAlreadyBeenUBfied(IChunk chunk) {
         UBChunkCapability cap = ((ICapabilityProvider) chunk).getCapability(UB_FIED).orElseThrow(null);
 
-        return cap != null && cap.getUBMarker() != null && cap.getUBMarker().toString().equals("ubc");
+        return cap != null && cap.getUBMarker() != null
+                && cap.getUBMarker().toString().equals(UBConfig.GENERAL.ubChunkKey.get());
     }
 
     public static void setDone(IChunk chunk) {
         UBChunkCapability cap = ((ICapabilityProvider) chunk).getCapability(UB_FIED).orElseThrow(null);
 
         if (cap != null)
-            cap.setUBMarker("ubc");
+            cap.setUBMarker(UBConfig.GENERAL.ubChunkKey.get());
     }
 
     @SubscribeEvent

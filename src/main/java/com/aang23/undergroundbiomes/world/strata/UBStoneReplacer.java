@@ -8,6 +8,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 
 import com.aang23.undergroundbiomes.blocks.stone.UBStone;
+import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 import com.aang23.undergroundbiomes.world.strata.noise.NoiseGenerator;
@@ -58,12 +59,13 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                 continue;
               else if (currentBlock == Blocks.LAVA)
                 continue;
-              else if (currentBlock == Blocks.STONE || currentBlock == Blocks.ANDESITE || currentBlock == Blocks.DIORITE
-                  || currentBlock == Blocks.GRANITE) {
+              else if ((currentBlock == Blocks.STONE || currentBlock == Blocks.ANDESITE
+                  || currentBlock == Blocks.DIORITE || currentBlock == Blocks.GRANITE)
+                  && UBConfig.WORLDGEN.replaceStone.get()) {
                 // Replace with UBified version
                 storage.set(x, y, z, currentBiome.getStrataBlockAtLayer(yPos + y + variation));
                 continue;
-              } else if (currentBlock == Blocks.GRAVEL) {
+              } else if (currentBlock == Blocks.GRAVEL && UBConfig.WORLDGEN.replaceGravel.get()) {
                 // Replace with UBified version
                 storage.set(x, y, z, StoneRegistry
                     .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.GRAVEL)
