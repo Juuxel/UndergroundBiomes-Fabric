@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import java.util.ArrayList;
 
 import com.aang23.undergroundbiomes.UBBlocks;
+import com.aang23.undergroundbiomes.config.UBConfig;
 
 /**
  * @author CurtisA, LouisDB
@@ -15,9 +16,9 @@ final class StrataLayers {
 
   public StrataLayers(Object config) {
     layers = new StrataLayer[30][];
-    /*if (config.harmoniousStrata())
+    if (UBConfig.WORLDGEN.harmoniousStrata.get()) //TODO per-world !
       createHarmoniousLayers();
-    else*/
+    else
     createLayers();
     cleanup();
   }

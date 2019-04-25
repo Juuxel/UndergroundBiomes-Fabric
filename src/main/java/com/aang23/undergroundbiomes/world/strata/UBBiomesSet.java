@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aang23.undergroundbiomes.UBBlocks;
+import com.aang23.undergroundbiomes.config.UBConfig;
 
 /**
  * All underground biomes
@@ -60,7 +61,7 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
     add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_SOAPSTONE), strataLayers[0]);
     add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MIGMATITE), strataLayers[1]);
 
-    if (false /*settings.regularStoneBiomes() && UBConfig.SPECIFIC.generationAllowed(Blocks.STONE.getDefaultState())*/) {
+    if (UBConfig.WORLDGEN.spawnVanillaStone.get() /*settings.regularStoneBiomes() && UBConfig.SPECIFIC.generationAllowed(Blocks.STONE.getDefaultState())*/) {
       add(new UBBiome(ID, Blocks.STONE), strataLayers[0]);
       add(new UBBiome(ID, Blocks.STONE), strataLayers[1]);
       add(new UBBiome(ID, Blocks.STONE), strataLayers[2]);

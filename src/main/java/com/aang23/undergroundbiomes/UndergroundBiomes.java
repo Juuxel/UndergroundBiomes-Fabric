@@ -12,6 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -41,14 +42,19 @@ public class UndergroundBiomes {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(WorldChunkChecker::preInit);
         MinecraftForge.EVENT_BUS.register(new WorldChunkChecker());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        // Register a WorldGenManager for each enabled dimension
+        String dimsIds[] = UBConfig.GENERAL.dimensionList.get().split(",");
+        for (String dimId : dimsIds) {
+            MinecraftForge.EVENT_BUS.register(new WorldGenManager(Integer.parseInt(dimId)));
+            LOGGER.info("Enabled UndergroundBiomes for dim " + dimId);
+        }
+        // MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

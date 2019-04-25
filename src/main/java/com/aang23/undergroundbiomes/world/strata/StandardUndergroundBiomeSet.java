@@ -6,6 +6,7 @@ import net.minecraft.init.Blocks;
 import java.util.ArrayList;
 
 import com.aang23.undergroundbiomes.UBBlocks;
+import com.aang23.undergroundbiomes.config.UBConfig;
 
 /**
  * @author Zeno410
@@ -103,7 +104,7 @@ public class StandardUndergroundBiomeSet extends UndergroundBiomeSet {
     .addStrataLayers(strataLayers[3]);
 
   private void choseBiomes() {
-    if (false/*settings.regularStoneBiomes()*/) {
+    if (UBConfig.WORLDGEN.spawnVanillaStone.get()/*settings.regularStoneBiomes()*/) {
       allowedBiomes = new UBBiome[]{igneous1, igneous2,
         igneous3, igneous4,
         igneous5, igneous6, igneous7,
