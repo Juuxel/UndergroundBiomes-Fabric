@@ -1,6 +1,8 @@
 package com.aang23.undergroundbiomes.items;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
+import com.aang23.undergroundbiomes.config.UBConfig;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -12,6 +14,6 @@ public class ItemLignite extends Item {
 
     @Override
     public int getBurnTime(ItemStack itemStack) {
-        return 200;
+        return UBConfig.ITEMS.ligniteSmeltTime.get();
     }
 }

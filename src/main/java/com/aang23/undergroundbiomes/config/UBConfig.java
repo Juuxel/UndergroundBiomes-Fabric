@@ -6,6 +6,7 @@ public class UBConfig {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final General GENERAL = new General(BUILDER);
     public static final WorldGen WORLDGEN = new WorldGen(BUILDER);
+    public static final Items ITEMS = new Items(BUILDER);
     public static final Advanced ADVANCED = new Advanced(BUILDER);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -39,6 +40,18 @@ public class UBConfig {
             spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", true);
             harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
             biomeSize = builder.comment("Sets the biome size. Exponential !").define("biomeSize", 4);
+
+            builder.pop();
+        }
+    }
+
+    public static class Items {
+        public final ForgeConfigSpec.ConfigValue<Integer> ligniteSmeltTime;
+
+        Items(ForgeConfigSpec.Builder builder) {
+            builder.push("Advanced");
+
+            ligniteSmeltTime = builder.comment("Smelt time for the lignite item. In ticks.").define("ligniteSmeltTime", 200);
 
             builder.pop();
         }
