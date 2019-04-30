@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "undergroundbiomes:igneous_stone_red_granite",
+        "undergroundbiomes:igneous_stone_black_granite",
+        "undergroundbiomes:igneous_stone_rhyolite",
+        "undergroundbiomes:igneous_stone_andesite",
+        "undergroundbiomes:igneous_stone_gabbro",
+        "undergroundbiomes:igneous_stone_basalt",
+        "undergroundbiomes:igneous_stone_komatiite",
+        "undergroundbiomes:igneous_stone_dacite",
+        "undergroundbiomes:metamorphic_stone_gneiss",
+        "undergroundbiomes:metamorphic_stone_eclogite",
+        "undergroundbiomes:metamorphic_stone_marble",
+        "undergroundbiomes:metamorphic_stone_quartzite",
+        "undergroundbiomes:metamorphic_stone_blueschist",
+        "undergroundbiomes:metamorphic_stone_greenschist",
+        "undergroundbiomes:metamorphic_stone_soapstone",
+        "undergroundbiomes:metamorphic_stone_migmatite",
+        "undergroundbiomes:sedimentary_stone_limestone",
+        "undergroundbiomes:sedimentary_stone_chalk",
+        "undergroundbiomes:sedimentary_stone_shale",
+        "undergroundbiomes:sedimentary_stone_siltstone",
+        "undergroundbiomes:sedimentary_stone_lignite",
+        "undergroundbiomes:sedimentary_stone_dolomite",
+        "undergroundbiomes:sedimentary_stone_greywacke",
+        "undergroundbiomes:sedimentary_stone_chert"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "conditions": {
+        "cobble_recipe_enabled": "com.aang23.undergroundbiomes.config.utils.CobbleRecipeHandler",
+        "stone_recipe_enabled": "com.aang23.undergroundbiomes.config.utils.StoneRecipeHandler",
+        "gravel_recipe_enabled": "com.aang23.undergroundbiomes.config.utils.GravelRecipeHandler"
+    }
+}

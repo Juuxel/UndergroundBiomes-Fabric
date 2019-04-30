@@ -1,9 +1,13 @@
 package com.aang23.undergroundbiomes;
 
 import net.minecraft.block.Block;
+import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -18,6 +22,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.config.ModConfig;
 import com.aang23.undergroundbiomes.config.UBConfig;
+import com.aang23.undergroundbiomes.config.utils.CobbleRecipeHandler;
+import com.aang23.undergroundbiomes.config.utils.GravelRecipeHandler;
+import com.aang23.undergroundbiomes.config.utils.StoneRecipeHandler;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
 import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
 
@@ -44,6 +51,10 @@ public class UndergroundBiomes {
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(WorldChunkChecker::preInit);
         MinecraftForge.EVENT_BUS.register(new WorldChunkChecker());
+
+        CraftingHelper.register(new ResourceLocation(modid, "cobble_recipe_enabled"), new CobbleRecipeHandler());
+        CraftingHelper.register(new ResourceLocation(modid, "stone_recipe_enabled"), new StoneRecipeHandler());
+        CraftingHelper.register(new ResourceLocation(modid, "gravel_recipe_enabled"), new GravelRecipeHandler());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -54,6 +65,8 @@ public class UndergroundBiomes {
             LOGGER.info("Enabled UndergroundBiomes for dim " + dimId);
         }
         // MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
+
+        
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -156,7 +169,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHALK);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SHALE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SILTSTONE);
-            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE);
+            // e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT);
@@ -243,7 +256,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHALK.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SHALE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SILTSTONE.getItemBlock());
-            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE.getItemBlock());
+            // e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT.getItemBlock());

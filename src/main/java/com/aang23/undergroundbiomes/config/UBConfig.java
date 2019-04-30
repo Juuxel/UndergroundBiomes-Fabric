@@ -7,6 +7,7 @@ public class UBConfig {
     public static final General GENERAL = new General(BUILDER);
     public static final WorldGen WORLDGEN = new WorldGen(BUILDER);
     public static final Items ITEMS = new Items(BUILDER);
+    public static final Recipes RECIPES = new Recipes(BUILDER);
     public static final Advanced ADVANCED = new Advanced(BUILDER);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -51,9 +52,25 @@ public class UBConfig {
         public final ForgeConfigSpec.ConfigValue<Integer> ligniteSmeltTime;
 
         Items(ForgeConfigSpec.Builder builder) {
-            builder.push("Advanced");
+            builder.push("Items");
 
             ligniteSmeltTime = builder.comment("Smelt time for the lignite item. In ticks.").define("ligniteSmeltTime", 200);
+
+            builder.pop();
+        }
+    }
+
+    public static class Recipes {
+        public final ForgeConfigSpec.BooleanValue stoneToVanillaRecipe;
+        public final ForgeConfigSpec.BooleanValue cobbleToVanillaRecipe;
+        public final ForgeConfigSpec.BooleanValue gravelToVanillaRecipe;
+
+        Recipes(ForgeConfigSpec.Builder builder) {
+            builder.push("Recipes");
+
+            stoneToVanillaRecipe = builder.comment("Should a recipe to vanilla stone be available ?").define("stoneToVanillaRecipe", true);
+            cobbleToVanillaRecipe = builder.comment("Should a recipe to vanilla cobblestone be available ?").define("cobbleToVanillaRecipe", true);
+            gravelToVanillaRecipe = builder.comment("Should a recipe to vanilla gravel be available ?").define("gravelToVanillaRecipe", true);
 
             builder.pop();
         }
