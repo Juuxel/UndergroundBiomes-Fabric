@@ -1,5 +1,11 @@
 package com.aang23.undergroundbiomes;
 
+import com.aang23.undergroundbiomes.blocks.cobble.IgneousCobble;
+import com.aang23.undergroundbiomes.blocks.cobble.MetamorphicCobble;
+import com.aang23.undergroundbiomes.blocks.cobble.SedimentaryCobble;
+import com.aang23.undergroundbiomes.blocks.cobble.igneous.*;
+import com.aang23.undergroundbiomes.blocks.cobble.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.cobble.sedimentary.*;
 import com.aang23.undergroundbiomes.blocks.gravel.IgneousGravel;
 import com.aang23.undergroundbiomes.blocks.gravel.MetamorphicGravel;
 import com.aang23.undergroundbiomes.blocks.gravel.SedimentaryGravel;
@@ -44,7 +50,6 @@ public class UBBlocks {
     public static SedimentaryStone SEDIMENTARY_STONE_GREYWACKE = new GreywackeStone();
     public static SedimentaryStone SEDIMENTARY_STONE_CHERT = new ChertStone();
 
-    
     // Igneous Gravels
     public static IgneousGravel IGNEOUS_GRAVEL_RED_GRANITE = new RedGraniteGravel();
     public static IgneousGravel IGNEOUS_GRAVEL_BLACK_GRANITE = new BlackGraniteGravel();
@@ -74,4 +79,34 @@ public class UBBlocks {
     public static SedimentaryGravel SEDIMENTARY_GRAVEL_DOLOMITE = new DolomiteGravel();
     public static SedimentaryGravel SEDIMENTARY_GRAVEL_GREYWACKE = new GreywackeGravel();
     public static SedimentaryGravel SEDIMENTARY_GRAVEL_CHERT = new ChertGravel();
+
+    // Igneous Cobbles
+    public static IgneousCobble IGNEOUS_COBBLE_RED_GRANITE = new RedGraniteCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_BLACK_GRANITE = new BlackGraniteCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_RHYOLITE = new RhyoliteCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_ANDESITE = new AndesiteCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_GABBRO = new GabbroCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_BASALT = new BasaltCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_KOMATIITE = new KomatiiteCobble();
+    public static IgneousCobble IGNEOUS_COBBLE_DACITE = new DaciteCobble();
+
+    // Metamorphic Cobbles
+    public static MetamorphicCobble METAMORPHIC_COBBLE_GNEISS = new GneissCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_ECLOGITE = new EclogiteCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_MARBLE = new MarbleCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_QUARTZITE = new QuartziteCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_BLUESCHIST = new BlueschistCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_GREENSCHIST = new GreenschistCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_SOAPSTONE = new SoapstoneCobble();
+    public static MetamorphicCobble METAMORPHIC_COBBLE_MIGMATITE = new MigmatiteCobble();
+
+    // Sedimentary Cobbles
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_LIMESTONE = new LimestoneCobble();
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_CHALK = new ChalkCobble();
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_SHALE = new ShaleCobble();
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_SILTSTONE = new SiltstoneCobble();
+    //public static SedimentaryCobble SEDIMENTARY_COBBLE_LIGNITE = new LigniteCobble(); //Kept for a posible future implementation
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_DOLOMITE = new DolomiteCobble();
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_GREYWACKE = new GreywackeCobble();
+    public static SedimentaryCobble SEDIMENTARY_COBBLE_CHERT = new ChertCobble();
 }

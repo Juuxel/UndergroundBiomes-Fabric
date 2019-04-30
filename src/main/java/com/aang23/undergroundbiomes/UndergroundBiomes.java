@@ -77,6 +77,7 @@ public class UndergroundBiomes {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void registerBlocks(final RegistryEvent.Register<Block> e) {
+            // Stone
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RED_GRANITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BLACK_GRANITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RHYOLITE);
@@ -104,6 +105,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT);
 
+            // Gravel
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RED_GRANITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BLACK_GRANITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RHYOLITE);
@@ -130,10 +132,39 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHERT);
+
+            // Cobble
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_RED_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_BLACK_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_RHYOLITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_ANDESITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_GABBRO);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_BASALT);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_KOMATIITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_DACITE);
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_GNEISS);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_ECLOGITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_MARBLE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_QUARTZITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_BLUESCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_GREENSCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_SOAPSTONE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_MIGMATITE);
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIMESTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHALK);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SHALE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SILTSTONE);
+            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT);
         }
 
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> e) {
+            // Stone
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RED_GRANITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BLACK_GRANITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RHYOLITE.getItemBlock());
@@ -161,6 +192,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_CHERT.getItemBlock());
 
+            // Gravel
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RED_GRANITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_BLACK_GRANITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_GRAVEL_RHYOLITE.getItemBlock());
@@ -188,6 +220,35 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_GRAVEL_CHERT.getItemBlock());
 
+            // Cobble
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_RED_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_BLACK_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_RHYOLITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_ANDESITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_GABBRO.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_BASALT.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_KOMATIITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_COBBLE_DACITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_GNEISS.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_ECLOGITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_MARBLE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_QUARTZITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_BLUESCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_GREENSCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_SOAPSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_COBBLE_MIGMATITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIMESTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHALK.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SHALE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_SILTSTONE.getItemBlock());
+            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_LIGNITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT.getItemBlock());
+
+            // Fossils
             e.getRegistry().register(UBItems.FOSSIL_PIECE_AMMONITE.getItem());
             e.getRegistry().register(UBItems.FOSSIL_PIECE_SHELL.getItem());
             e.getRegistry().register(UBItems.FOSSIL_PIECE_RIB.getItem());
@@ -197,6 +258,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBItems.FOSSIL_PIECE_SHELL2.getItem());
             e.getRegistry().register(UBItems.FOSSIL_PIECE_BONESHARD.getItem());
 
+            // Others
             e.getRegistry().register(UBItems.LIGNITE_COAL.getItem());
         }
     }

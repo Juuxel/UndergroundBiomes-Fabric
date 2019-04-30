@@ -53,5 +53,32 @@
     "block.undergroundbiomes.sedimentary_gravel_greywacke": "Greywacke Gravel",
     "block.undergroundbiomes.sedimentary_gravel_chert": "Chert Gravel",
   
+    "block.undergroundbiomes.igneous_cobble_red_granite": "Red Granite Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_black_granite": "Black Granite Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_rhyolite": "Rhyolite Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_andesite": "Andesite Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_gabbro": "Gabbro Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_basalt": "Basalt Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_komatiite": "Komatiite Cobblestone",
+    "block.undergroundbiomes.igneous_cobble_dacite": "Dacite Cobblestone",
+
+    "block.undergroundbiomes.metamorphic_cobble_gneiss": "Gneiss Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_eclogite": "Eclogite Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_marble": "Marble Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_quartzite": "Quartzite Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_blueschist": "Blueschist Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_greenschist": "Greenschist Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_soapstone": "Soapstone Cobblestone",
+    "block.undergroundbiomes.metamorphic_cobble_migmatite": "Migmatite Cobblestone",
+
+    "block.undergroundbiomes.sedimentary_cobble_limestone": "Limestone Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_chalk": "Chalk Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_shale": "Shale Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_siltstone": "Siltstone Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_lignite": "Lignite Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_dolomite": "Dolomite Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_greywacke": "Greywacke Cobblestone",
+    "block.undergroundbiomes.sedimentary_cobble_chert": "Chert Cobblestone",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
   }

@@ -27,6 +27,7 @@ public class UBConfig {
     public static class WorldGen {
         public final ForgeConfigSpec.BooleanValue replaceStone;
         public final ForgeConfigSpec.BooleanValue replaceGravel;
+        public final ForgeConfigSpec.BooleanValue replaceCobble;
 
         public final ForgeConfigSpec.BooleanValue spawnVanillaStone;
         public final ForgeConfigSpec.BooleanValue harmoniousStrata;
@@ -36,6 +37,7 @@ public class UBConfig {
             builder.push("WorldGen");
 
             replaceStone = builder.comment("Do you want UBC to replace vanilla stone ?").define("replaceStone", true);
+            replaceCobble = builder.comment("Do you want UBC to replace vanilla cobblestone ?").define("replaceCobble", true);
             replaceGravel = builder.comment("Do you want UBC to replace vanilla gravel ?").define("replaceGravel", true);
             spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", true);
             harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
@@ -59,11 +61,13 @@ public class UBConfig {
 
     public static class Advanced {
         public final ForgeConfigSpec.BooleanValue differentSeedPerWorld;
+        public final ForgeConfigSpec.BooleanValue sedimentaryCobble;
 
         Advanced(ForgeConfigSpec.Builder builder) {
             builder.push("Advanced");
 
             differentSeedPerWorld = builder.comment("Should UB's seed be different in each dimension ?").define("differentSeedPerWorld", false);
+            sedimentaryCobble = builder.comment("Should UB drop cobblestone variants for sedimentary stones ?").define("sedimentaryCobble", false);
 
             builder.pop();
         }

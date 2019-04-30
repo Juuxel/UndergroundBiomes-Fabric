@@ -2,8 +2,11 @@ package com.aang23.undergroundbiomes.blocks.stone;
 
 import com.aang23.undergroundbiomes.UBItems;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
+import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
+import com.aang23.undergroundbiomes.world.StoneRegistry;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -71,7 +74,11 @@ public class SedimentaryStone extends UBStone {
     public IItemProvider getItemDropped(IBlockState state, World worldIn, BlockPos pos, int fortune) {
         if (sedimentary_variant == SedimentaryVariant.LIGNITE) {
             return UBItems.LIGNITE_COAL;
-        } else
-            return super.getItemDropped(state, worldIn, pos, fortune);
+        } else {
+            if (UBConfig.ADVANCED.sedimentaryCobble.get())
+                return StoneRegistry.getCobbleForStone(this);
+            else
+                return super.getItemDropped(state, worldIn, pos, fortune);
+        }
     }
 }
