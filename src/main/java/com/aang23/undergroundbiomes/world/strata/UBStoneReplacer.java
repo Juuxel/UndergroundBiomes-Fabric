@@ -1,12 +1,14 @@
 package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 
+import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.blocks.stone.UBStone;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
@@ -70,6 +72,14 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                 storage.set(x, y, z, StoneRegistry
                     .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.GRAVEL)
                     .getDefaultState());
+                continue;
+              } else if (currentBlock == Blocks.COBBLESTONE && UBConfig.WORLDGEN.replaceCobble.get()) {
+                // Replace with UBified version
+                IBlockState strataBlock = currentBiome.getStrataBlockAtLayer(yPos + y + variation);
+
+                if (!(strataBlock.getBlock() instanceof SedimentaryStone) || UBConfig.ADVANCED.sedimentaryCobble.get())
+                  storage.set(x, y, z,
+                      StoneRegistry.getVariantForStone(strataBlock, UBStoneStyle.COBBLE).getDefaultState());
                 continue;
               }
             }
