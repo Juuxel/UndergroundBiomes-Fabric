@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "undergroundbiomes:block/stone/limestone",
+        "side": "undergroundbiomes:block/stone/limestone",
+        "top": "undergroundbiomes:block/stone/limestone"
+    }
+}

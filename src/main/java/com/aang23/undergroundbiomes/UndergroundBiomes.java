@@ -66,7 +66,6 @@ public class UndergroundBiomes {
         }
         // MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
 
-        
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -173,6 +172,34 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT);
+
+            // Stairs
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_RED_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_BLACK_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_RHYOLITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_ANDESITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_GABBRO);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_BASALT);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_KOMATIITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_DACITE);
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_GNEISS);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_ECLOGITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_MARBLE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_QUARTZITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_BLUESCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_GREENSCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_SOAPSTONE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_MIGMATITE);
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_LIMESTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_CHALK);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_SHALE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_SILTSTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_LIGNITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_DOLOMITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_GREYWACKE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_CHERT);
         }
 
         @SubscribeEvent
@@ -260,6 +287,34 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_DOLOMITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_CHERT.getItemBlock());
+
+            // Stairs
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_RED_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_BLACK_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_RHYOLITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_ANDESITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_GABBRO.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_BASALT.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_KOMATIITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_STONE_STAIRS_DACITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_GNEISS.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_ECLOGITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_MARBLE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_QUARTZITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_BLUESCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_GREENSCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_SOAPSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_STONE_STAIRS_MIGMATITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_LIMESTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_CHALK.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_SHALE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_SILTSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_LIGNITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_DOLOMITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_GREYWACKE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_STONE_STAIRS_CHERT.getItemBlock());
 
             // Fossils
             e.getRegistry().register(UBItems.FOSSIL_PIECE_AMMONITE.getItem());

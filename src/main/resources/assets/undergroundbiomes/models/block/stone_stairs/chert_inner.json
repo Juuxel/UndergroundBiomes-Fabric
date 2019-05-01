@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "undergroundbiomes:block/stone/chert",
+        "side": "undergroundbiomes:block/stone/chert",
+        "top": "undergroundbiomes:block/stone/chert"
+    }
+}

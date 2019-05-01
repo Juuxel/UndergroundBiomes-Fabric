@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "undergroundbiomes:block/stone/gneiss",
+        "side": "undergroundbiomes:block/stone/gneiss",
+        "top": "undergroundbiomes:block/stone/gneiss"
+    }
+}

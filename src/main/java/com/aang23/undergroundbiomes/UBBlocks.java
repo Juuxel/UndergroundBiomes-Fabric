@@ -12,6 +12,12 @@ import com.aang23.undergroundbiomes.blocks.gravel.SedimentaryGravel;
 import com.aang23.undergroundbiomes.blocks.gravel.igneous.*;
 import com.aang23.undergroundbiomes.blocks.gravel.metamorphic.*;
 import com.aang23.undergroundbiomes.blocks.gravel.sedimentary.*;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.IgneousStoneStairs;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.MetamorphicStoneStairs;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.SedimentaryStoneStairs;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.igneous.*;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.stone_stairs.sedimentary.*;
 import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
 import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
 import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
@@ -105,8 +111,38 @@ public class UBBlocks {
     public static SedimentaryCobble SEDIMENTARY_COBBLE_CHALK = new ChalkCobble();
     public static SedimentaryCobble SEDIMENTARY_COBBLE_SHALE = new ShaleCobble();
     public static SedimentaryCobble SEDIMENTARY_COBBLE_SILTSTONE = new SiltstoneCobble();
-    //public static SedimentaryCobble SEDIMENTARY_COBBLE_LIGNITE = new LigniteCobble(); //Kept for a posible future implementation
+    // public static SedimentaryCobble SEDIMENTARY_COBBLE_LIGNITE = new LigniteCobble(); //Kept for a posible future implementation
     public static SedimentaryCobble SEDIMENTARY_COBBLE_DOLOMITE = new DolomiteCobble();
     public static SedimentaryCobble SEDIMENTARY_COBBLE_GREYWACKE = new GreywackeCobble();
     public static SedimentaryCobble SEDIMENTARY_COBBLE_CHERT = new ChertCobble();
+
+    // Igneous Stairs
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_RED_GRANITE = new RedGraniteStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_BLACK_GRANITE = new BlackGraniteStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_RHYOLITE = new RhyoliteStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_ANDESITE = new AndesiteStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_GABBRO = new GabbroStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_BASALT = new BasaltStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_KOMATIITE = new KomatiiteStoneStairs();
+    public static IgneousStoneStairs IGNEOUS_STONE_STAIRS_DACITE = new DaciteStoneStairs();
+
+    // Metamorphic Stairs
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_GNEISS = new GneissStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_ECLOGITE = new EclogiteStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_MARBLE = new MarbleStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_QUARTZITE = new QuartziteStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_BLUESCHIST = new BlueschistStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_GREENSCHIST = new GreenschistStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_SOAPSTONE = new SoapstoneStoneStairs();
+    public static MetamorphicStoneStairs METAMORPHIC_STONE_STAIRS_MIGMATITE = new MigmatiteStoneStairs();
+
+    // Sedimentary Stairs
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_LIMESTONE = new LimestoneStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_CHALK = new ChalkStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_SHALE = new ShaleStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_SILTSTONE = new SiltstoneStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_LIGNITE = new LigniteStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_DOLOMITE = new DolomiteStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_GREYWACKE = new GreywackeStoneStairs();
+    public static SedimentaryStoneStairs SEDIMENTARY_STONE_STAIRS_CHERT = new ChertStoneStairs();
 }

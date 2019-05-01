@@ -80,5 +80,32 @@
     "block.undergroundbiomes.sedimentary_cobble_greywacke": "Greywacke Cobblestone",
     "block.undergroundbiomes.sedimentary_cobble_chert": "Chert Cobblestone",
 
+    "block.undergroundbiomes.igneous_stone_stairs_red_granite": "Red Granite Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_black_granite": "Black Granite Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_rhyolite": "Rhyolite Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_andesite": "Andesite Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_gabbro": "Gabbro Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_basalt": "Basalt Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_komatiite": "Komatiite Stairs",
+    "block.undergroundbiomes.igneous_stone_stairs_dacite": "Dacite Stairs",
+
+    "block.undergroundbiomes.metamorphic_stone_stairs_gneiss": "Gneiss Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_eclogite": "Eclogite Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_marble": "Marble Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_quartzite": "Quartzite Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_blueschist": "Blueschist Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_greenschist": "Greenschist Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_soapstone": "Soapstone Stairs",
+    "block.undergroundbiomes.metamorphic_stone_stairs_migmatite": "Migmatite Stairs",
+
+    "block.undergroundbiomes.sedimentary_stone_stairs_limestone": "Limestone Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_chalk": "Chalk Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_shale": "Shale Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_siltstone": "Siltstone Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_lignite": "Lignite Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_dolomite": "Dolomite Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_greywacke": "Greywacke Stairs",
+    "block.undergroundbiomes.sedimentary_stone_stairs_chert": "Chert Stairs",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
   }
