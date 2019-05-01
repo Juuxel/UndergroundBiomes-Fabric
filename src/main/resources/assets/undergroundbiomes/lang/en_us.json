@@ -107,5 +107,32 @@
     "block.undergroundbiomes.sedimentary_stone_stairs_greywacke": "Greywacke Stairs",
     "block.undergroundbiomes.sedimentary_stone_stairs_chert": "Chert Stairs",
 
+    "block.undergroundbiomes.igneous_cobble_stairs_red_granite": "Red Granite Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_black_granite": "Black Granite Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_rhyolite": "Rhyolite Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_andesite": "Andesite Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_gabbro": "Gabbro Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_basalt": "Basalt Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_komatiite": "Komatiite Cobblestone Stairs",
+    "block.undergroundbiomes.igneous_cobble_stairs_dacite": "Dacite Cobblestone Stairs",
+
+    "block.undergroundbiomes.metamorphic_cobble_stairs_gneiss": "Gneiss Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_eclogite": "Eclogite Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_marble": "Marble Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_quartzite": "Quartzite Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_blueschist": "Blueschist Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_greenschist": "Greenschist Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_soapstone": "Soapstone Cobblestone Stairs",
+    "block.undergroundbiomes.metamorphic_cobble_stairs_migmatite": "Migmatite Cobblestone Stairs",
+
+    "block.undergroundbiomes.sedimentary_cobble_stairs_limestone": "Limestone Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_chalk": "Chalk Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_shale": "Shale Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_siltstone": "Siltstone Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_lignite": "Lignite Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_dolomite": "Dolomite Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_greywacke": "Greywacke Cobblestone Stairs",
+    "block.undergroundbiomes.sedimentary_cobble_stairs_chert": "Chert Cobblestone Stairs",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
   }

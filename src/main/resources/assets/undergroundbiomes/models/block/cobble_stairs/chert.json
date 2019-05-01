@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "undergroundbiomes:block/cobble/chert",
+        "side": "undergroundbiomes:block/cobble/chert",
+        "top": "undergroundbiomes:block/cobble/chert"
+    }
+}

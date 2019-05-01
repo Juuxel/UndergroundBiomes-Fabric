@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "undergroundbiomes:block/cobble/soapstone",
+        "side": "undergroundbiomes:block/cobble/soapstone",
+        "top": "undergroundbiomes:block/cobble/soapstone"
+    }
+}
