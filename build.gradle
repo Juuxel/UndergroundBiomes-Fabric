@@ -80,7 +80,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.13.2-25.0.175'
+    minecraft 'net.minecraftforge:forge:1.13.2-25.0.191'
 
     shade group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
     shade group: 'com.cedarsoftware', name: 'json-io', version: '4.5.0'

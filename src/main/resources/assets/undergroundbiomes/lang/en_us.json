@@ -134,5 +134,6 @@
     "block.undergroundbiomes.sedimentary_cobble_stairs_greywacke": "Greywacke Cobblestone Stairs",
     "block.undergroundbiomes.sedimentary_cobble_stairs_chert": "Chert Cobblestone Stairs",
 
-    "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes"
+    "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
+    "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores"
   }

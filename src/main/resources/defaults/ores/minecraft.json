@@ -1,0 +1,37 @@
+{
+    "minecraft:iron_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/iron",
+        "variant": "stone",
+        "name": "Iron Ore"
+    },
+    "minecraft:gold_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/gold",
+        "variant": "stone",
+        "name": "Gold Ore"
+    },
+    "minecraft:coal_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/coal",
+        "variant": "stone",
+        "name": "Coal Ore"
+    },
+    "minecraft:diamond_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/diamond",
+        "variant": "stone",
+        "name": "Diamond Ore"
+    },
+    "minecraft:emerald_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/emerald",
+        "variant": "stone",
+        "name": "Emerald Ore"
+    },
+    "minecraft:lapis_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/lapis",
+        "variant": "stone",
+        "name": "Lapis Ore"
+    },
+    "minecraft:redstone_ore": {
+        "overlay": "undergroundbiomes:block/overlays/minecraft/redstone",
+        "variant": "stone",
+        "name": "Redstone Ore"
+    }
+}

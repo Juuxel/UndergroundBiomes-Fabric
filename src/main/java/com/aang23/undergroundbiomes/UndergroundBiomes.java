@@ -1,13 +1,40 @@
 package com.aang23.undergroundbiomes;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockStateMatcher;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockModelShapes;
+import net.minecraft.client.renderer.model.IBakedModel;
+import net.minecraft.client.renderer.model.IUnbakedModel;
+import net.minecraft.client.renderer.model.Variant;
+import net.minecraft.client.renderer.model.VariantList;
+import net.minecraft.command.arguments.BlockStateArgument;
 import net.minecraft.data.BlockTagsProvider;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.state.IProperty;
+import net.minecraft.state.IStateHolder;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.stats.IStatFormater;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.chunk.BlockStateContainer;
+import net.minecraft.world.chunk.IBlockStatePalette;
+import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.BlockStateLoader;
+import net.minecraftforge.client.model.ICustomModelLoader;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.common.extensions.IForgeBlockState;
+import net.minecraftforge.common.model.IModelPart;
+import net.minecraftforge.common.model.IModelState;
+import net.minecraftforge.common.model.TRSRTransformation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -21,18 +48,27 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.config.ModConfig;
+
+import java.util.Collection;
+import java.util.Optional;
+
+import com.aang23.undergroundbiomes.blocks.ore.UBOre;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.config.utils.CobbleRecipeHandler;
 import com.aang23.undergroundbiomes.config.utils.GravelRecipeHandler;
 import com.aang23.undergroundbiomes.config.utils.StoneRecipeHandler;
+import com.aang23.undergroundbiomes.registrar.UBOreConfigManager;
+import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
 import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
+import com.google.common.collect.ImmutableMap;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("undergroundbiomes")
 public class UndergroundBiomes {
     public static String modid = "undergroundbiomes";
     public static final ItemGroup CREATIVE_TAB = new UndergroundBiomesItemGroup();
+    public static final ItemGroup ORES_CREATIVE_TAB = new UndergroundBiomesItemGroupOres();
     private static final Logger LOGGER = LogManager.getLogger(modid);
 
     public UndergroundBiomes() {
@@ -55,6 +91,8 @@ public class UndergroundBiomes {
         CraftingHelper.register(new ResourceLocation(modid, "cobble_recipe_enabled"), new CobbleRecipeHandler());
         CraftingHelper.register(new ResourceLocation(modid, "stone_recipe_enabled"), new StoneRecipeHandler());
         CraftingHelper.register(new ResourceLocation(modid, "gravel_recipe_enabled"), new GravelRecipeHandler());
+
+        UBOreRegistrar.initialSetup();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -65,11 +103,10 @@ public class UndergroundBiomes {
             LOGGER.info("Enabled UndergroundBiomes for dim " + dimId);
         }
         // MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
-
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-
+        UBOreRegistrar.registerPack(event);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -89,6 +126,10 @@ public class UndergroundBiomes {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void registerBlocks(final RegistryEvent.Register<Block> e) {
+
+            // Ores
+            UBOreRegistrar.registerOres(e);
+
             // Stone
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RED_GRANITE);
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BLACK_GRANITE);
@@ -224,7 +265,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_CHALK);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_SHALE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_SILTSTONE);
-            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_LIGNITE);
+            // e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_LIGNITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_CHERT);
@@ -232,6 +273,10 @@ public class UndergroundBiomes {
 
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> e) {
+
+            // Ores
+            UBOreRegistrar.registerOresItems(e);
+
             // Stone
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_RED_GRANITE.getItemBlock());
             e.getRegistry().register(UBBlocks.IGNEOUS_STONE_BLACK_GRANITE.getItemBlock());
@@ -367,7 +412,7 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_CHALK.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_SHALE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_SILTSTONE.getItemBlock());
-            //e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_LIGNITE.getItemBlock());
+            // e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_LIGNITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_DOLOMITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_COBBLE_STAIRS_CHERT.getItemBlock());
