@@ -7,17 +7,23 @@ import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.StateContainer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -113,5 +119,51 @@ public class UBOre extends Block implements UBBlock {
     @Override
     public int quantityDropped(IBlockState state, Random random) {
         return baseOre.quantityDropped(state, random);
+    }
+
+    @Override
+    public IBlockState getStateAtViewpoint(IBlockState state, IBlockReader world, BlockPos pos, Vec3d viewpoint) {
+        return baseOre.getStateAtViewpoint(state, world, pos, viewpoint);
+    }
+
+    @Override
+    public IBlockState getStateForPlacement(BlockItemUseContext context) {
+        return baseOre.getStateForPlacement(context);
+    }
+
+    @Override
+    public IBlockState getStateForPlacement(IBlockState state, EnumFacing facing, IBlockState state2, IWorld world,
+            BlockPos pos1, BlockPos pos2, EnumHand hand) {
+        return baseOre.getStateForPlacement(state, facing, state2, world, pos1, pos2, hand);
+    }
+
+    @Override
+    public IBlockState getExtendedState(IBlockState state, IBlockReader world, BlockPos pos) {
+        return baseOre.getExtendedState(state, world, pos);
+    }
+
+    @Override
+    public StateContainer<Block, IBlockState> getStateContainer() {
+        return baseOre.getStateContainer();
+    }
+
+    @Override
+    public int getExpDrop(IBlockState state, IWorldReader world, BlockPos pos, int fortune) {
+        return baseOre.getExpDrop(state, world, pos, fortune);
+    }
+
+    @Override
+    public boolean getTickRandomly(IBlockState p_149653_1_) {
+        return baseOre.getTickRandomly(p_149653_1_);
+    }
+
+    @Override
+    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+        baseOre.onEntityWalk(worldIn, pos, entityIn);
+    }
+
+    @Override
+    public void onPlayerDestroy(IWorld worldIn, BlockPos pos, IBlockState state) {
+        baseOre.onPlayerDestroy(worldIn, pos, state);
     }
 }

@@ -22,6 +22,7 @@ public class UBOreConfigManager {
     public static File jsonsFolder = new File(mainFolder, "ores");
     public static File overlayFolder = new File(mainFolder, "overlays");
 
+    // Caches so that the PackGenerator can use those datas
     public static Map<String, String> overlayCache = new HashMap<String, String>();
     public static Map<String, String> stoneVariantCache = new HashMap<String, String>();
     public static Map<String, String> nameCache = new HashMap<String, String>(); // TODO improve
@@ -31,10 +32,8 @@ public class UBOreConfigManager {
             mainFolder.mkdirs();
             jsonsFolder.mkdirs();
             overlayFolder.mkdirs();
-            // TODO extract defaults
             extractDefaults();
         }
-
         readJsons();
     }
 
