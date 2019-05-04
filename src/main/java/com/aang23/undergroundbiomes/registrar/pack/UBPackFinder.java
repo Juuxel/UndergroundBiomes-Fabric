@@ -1,11 +1,8 @@
 package com.aang23.undergroundbiomes.registrar.pack;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.IPackFinder;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackInfo.IFactory;
-
-import java.io.File;
 import java.util.Map;
 
 import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;

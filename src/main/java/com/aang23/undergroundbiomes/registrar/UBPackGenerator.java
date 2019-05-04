@@ -7,12 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.cedarsoftware.util.io.JsonWriter;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;

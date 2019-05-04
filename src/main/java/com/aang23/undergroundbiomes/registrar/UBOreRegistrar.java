@@ -1,28 +1,17 @@
 package com.aang23.undergroundbiomes.registrar;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-
-import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.blocks.cobble.SedimentaryCobble;
 import com.aang23.undergroundbiomes.blocks.ore.UBOre;
-import com.aang23.undergroundbiomes.blocks.stone.UBStone;
 import com.aang23.undergroundbiomes.enums.IgneousVariant;
 import com.aang23.undergroundbiomes.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 import com.aang23.undergroundbiomes.registrar.pack.UBPackFinder;
-import com.mojang.datafixers.types.templates.List;
-import com.aang23.undergroundbiomes.blocks.stone.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 

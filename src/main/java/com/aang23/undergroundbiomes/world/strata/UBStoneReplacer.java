@@ -1,19 +1,14 @@
 package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
-
-import com.aang23.undergroundbiomes.blocks.ore.UBOre;
 import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
-import com.aang23.undergroundbiomes.blocks.stone.UBStone;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
-import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 import com.aang23.undergroundbiomes.world.strata.noise.NoiseGenerator;
 

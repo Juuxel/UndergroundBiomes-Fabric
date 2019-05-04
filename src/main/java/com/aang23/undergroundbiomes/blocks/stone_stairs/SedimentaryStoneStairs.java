@@ -1,20 +1,11 @@
 package com.aang23.undergroundbiomes.blocks.stone_stairs;
 
-import com.aang23.undergroundbiomes.UBItems;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
-import com.aang23.undergroundbiomes.world.StoneRegistry;
-
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
 
 public class SedimentaryStoneStairs extends UBStoneStairs {
     public SedimentaryVariant sedimentary_variant;

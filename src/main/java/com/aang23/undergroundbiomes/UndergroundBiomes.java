@@ -1,40 +1,11 @@
 package com.aang23.undergroundbiomes;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockStateMatcher;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BlockModelShapes;
-import net.minecraft.client.renderer.model.IBakedModel;
-import net.minecraft.client.renderer.model.IUnbakedModel;
-import net.minecraft.client.renderer.model.Variant;
-import net.minecraft.client.renderer.model.VariantList;
-import net.minecraft.command.arguments.BlockStateArgument;
-import net.minecraft.data.BlockTagsProvider;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.resources.IResourceManager;
-import net.minecraft.state.IProperty;
-import net.minecraft.state.IStateHolder;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.stats.IStatFormater;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.chunk.BlockStateContainer;
-import net.minecraft.world.chunk.IBlockStatePalette;
-import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.BlockStateLoader;
-import net.minecraftforge.client.model.ICustomModelLoader;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.extensions.IForgeBlockState;
-import net.minecraftforge.common.model.IModelPart;
-import net.minecraftforge.common.model.IModelState;
-import net.minecraftforge.common.model.TRSRTransformation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -48,20 +19,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.config.ModConfig;
-
-import java.util.Collection;
-import java.util.Optional;
-
-import com.aang23.undergroundbiomes.blocks.ore.UBOre;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.config.utils.CobbleRecipeHandler;
 import com.aang23.undergroundbiomes.config.utils.GravelRecipeHandler;
 import com.aang23.undergroundbiomes.config.utils.StoneRecipeHandler;
-import com.aang23.undergroundbiomes.registrar.UBOreConfigManager;
 import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
 import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
-import com.google.common.collect.ImmutableMap;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("undergroundbiomes")
