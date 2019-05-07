@@ -18,7 +18,7 @@ public class UBCobbleStairs extends BlockStairs implements UBBlock {
 
     @Override
     public UBStoneStyle getStoneStyle() {
-        return UBStoneStyle.STAIRS;
+        return UBStoneStyle.COBBLE_STAIRS;
     }
 
     @Override

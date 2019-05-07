@@ -1,5 +1,11 @@
 package com.aang23.undergroundbiomes;
 
+import com.aang23.undergroundbiomes.blocks.brick.IgneousBrick;
+import com.aang23.undergroundbiomes.blocks.brick.MetamorphicBrick;
+import com.aang23.undergroundbiomes.blocks.brick.SedimentaryBrick;
+import com.aang23.undergroundbiomes.blocks.brick.igneous.*;
+import com.aang23.undergroundbiomes.blocks.brick.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.brick.sedimentary.*;
 import com.aang23.undergroundbiomes.blocks.cobble.IgneousCobble;
 import com.aang23.undergroundbiomes.blocks.cobble.MetamorphicCobble;
 import com.aang23.undergroundbiomes.blocks.cobble.SedimentaryCobble;
@@ -178,8 +184,39 @@ public class UBBlocks {
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_CHALK = new ChalkCobbleStairs();
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_SHALE = new ShaleCobbleStairs();
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_SILTSTONE = new SiltstoneCobbleStairs();
-    //public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_LIGNITE = new LigniteCobbleStairs();
+    // public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_LIGNITE = new
+    // LigniteCobbleStairs();
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_DOLOMITE = new DolomiteCobbleStairs();
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_GREYWACKE = new GreywackeCobbleStairs();
     public static SedimentaryCobbleStairs SEDIMENTARY_COBBLE_STAIRS_CHERT = new ChertCobbleStairs();
+
+    // Igneous Bricks
+    public static IgneousBrick IGNEOUS_BRICK_RED_GRANITE = new RedGraniteBrick();
+    public static IgneousBrick IGNEOUS_BRICK_BLACK_GRANITE = new BlackGraniteBrick();
+    public static IgneousBrick IGNEOUS_BRICK_RHYOLITE = new RhyoliteBrick();
+    public static IgneousBrick IGNEOUS_BRICK_ANDESITE = new AndesiteBrick();
+    public static IgneousBrick IGNEOUS_BRICK_GABBRO = new GabbroBrick();
+    public static IgneousBrick IGNEOUS_BRICK_BASALT = new BasaltBrick();
+    public static IgneousBrick IGNEOUS_BRICK_KOMATIITE = new KomatiiteBrick();
+    public static IgneousBrick IGNEOUS_BRICK_DACITE = new DaciteBrick();
+
+    // Metamorphic Bricks
+    public static MetamorphicBrick METAMORPHIC_BRICK_GNEISS = new GneissBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_ECLOGITE = new EclogiteBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_MARBLE = new MarbleBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_QUARTZITE = new QuartziteBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_BLUESCHIST = new BlueschistBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_GREENSCHIST = new GreenschistBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_SOAPSTONE = new SoapstoneBrick();
+    public static MetamorphicBrick METAMORPHIC_BRICK_MIGMATITE = new MigmatiteBrick();
+
+    // Sedimentary Bricks
+    public static SedimentaryBrick SEDIMENTARY_BRICK_LIMESTONE = new LimestoneBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_CHALK = new ChalkBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_SHALE = new ShaleBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_SILTSTONE = new SiltstoneBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_LIGNITE = new LigniteBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_DOLOMITE = new DolomiteBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_GREYWACKE = new GreywackeBrick();
+    public static SedimentaryBrick SEDIMENTARY_BRICK_CHERT = new ChertBrick();
 }

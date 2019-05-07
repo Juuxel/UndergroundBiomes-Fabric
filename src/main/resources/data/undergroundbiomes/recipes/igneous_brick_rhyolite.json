@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "## ",
+        "## "
+        
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:igneous_stone_rhyolite"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:igneous_brick_rhyolite",
+        "count": 4
+    }
+}

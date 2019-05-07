@@ -1,30 +1,33 @@
-package com.aang23.undergroundbiomes.blocks.stone_stairs;
+package com.aang23.undergroundbiomes.blocks.brick;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.blocks.stone.UBStone;
 import com.aang23.undergroundbiomes.enums.UBBlock;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
-import net.minecraft.block.BlockStairs;
+
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.common.ToolType;
 
-public class UBStoneStairs extends BlockStairs implements UBBlock {
+public class UBBrick extends Block implements UBBlock {
 
-    public UBStoneStairs() {
-        super(new UBStone().getDefaultState(), Properties.create(Material.ROCK));
+    public UBBrick() {
+        super(Properties.create(Material.SAND));
     }
 
     @Override
     public UBStoneStyle getStoneStyle() {
-        return UBStoneStyle.STONE_STAIRS;
+        return UBStoneStyle.BRICK;
     }
 
     @Override
     public ItemBlock getItemBlock() {
         ItemBlock itemBlock = new ItemBlock(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
-        itemBlock.setRegistryName(this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
+        itemBlock.setRegistryName(
+                this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
         return itemBlock;
     }
 

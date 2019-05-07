@@ -4,7 +4,7 @@ package com.aang23.undergroundbiomes.enums;
  * @author LouisDB
  */
 public enum UBStoneStyle {
-    STONE, GRAVEL, COBBLE, STAIRS;
+    STONE, GRAVEL, COBBLE, STONE_STAIRS, COBBLE_STAIRS, BRICK;
 
     @Override
     public String toString() {

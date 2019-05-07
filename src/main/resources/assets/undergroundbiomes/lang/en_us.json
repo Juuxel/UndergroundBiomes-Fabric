@@ -134,6 +134,33 @@
     "block.undergroundbiomes.sedimentary_cobble_stairs_greywacke": "Greywacke Cobblestone Stairs",
     "block.undergroundbiomes.sedimentary_cobble_stairs_chert": "Chert Cobblestone Stairs",
 
+    "block.undergroundbiomes.igneous_brick_red_granite": "Red Granite Bricks",
+    "block.undergroundbiomes.igneous_brick_black_granite": "Black Granite Bricks",
+    "block.undergroundbiomes.igneous_brick_rhyolite": "Rhyolite Bricks",
+    "block.undergroundbiomes.igneous_brick_andesite": "Andesite Bricks",
+    "block.undergroundbiomes.igneous_brick_gabbro": "Gabbro Bricks",
+    "block.undergroundbiomes.igneous_brick_basalt": "Basalt Bricks",
+    "block.undergroundbiomes.igneous_brick_komatiite": "Komatiite Bricks",
+    "block.undergroundbiomes.igneous_brick_dacite": "Dacite Bricks",
+
+    "block.undergroundbiomes.metamorphic_brick_gneiss": "Gneiss Bricks",
+    "block.undergroundbiomes.metamorphic_brick_eclogite": "Eclogite Bricks",
+    "block.undergroundbiomes.metamorphic_brick_marble": "Marble Bricks",
+    "block.undergroundbiomes.metamorphic_brick_quartzite": "Quartzite Bricks",
+    "block.undergroundbiomes.metamorphic_brick_blueschist": "Blueschist Bricks",
+    "block.undergroundbiomes.metamorphic_brick_greenschist": "Greenschist Bricks",
+    "block.undergroundbiomes.metamorphic_brick_soapstone": "Soapstone Bricks",
+    "block.undergroundbiomes.metamorphic_brick_migmatite": "Migmatite Bricks",
+
+    "block.undergroundbiomes.sedimentary_brick_limestone": "Limestone Bricks",
+    "block.undergroundbiomes.sedimentary_brick_chalk": "Chalk Bricks",
+    "block.undergroundbiomes.sedimentary_brick_shale": "Shale Bricks",
+    "block.undergroundbiomes.sedimentary_brick_siltstone": "Siltstone Bricks",
+    "block.undergroundbiomes.sedimentary_brick_lignite": "Lignite Bricks",
+    "block.undergroundbiomes.sedimentary_brick_dolomite": "Dolomite Bricks",
+    "block.undergroundbiomes.sedimentary_brick_greywacke": "Greywacke Bricks",
+    "block.undergroundbiomes.sedimentary_brick_chert": "Chert Bricks",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
     "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores",
 
