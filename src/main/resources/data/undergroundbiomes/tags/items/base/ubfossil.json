@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "undergroundbiomes:fossil_piece_ammonite",
+        "undergroundbiomes:fossil_piece_shell",
+        "undergroundbiomes:fossil_piece_rib",
+        "undergroundbiomes:fossil_piece_bone",
+        "undergroundbiomes:fossil_piece_skull",
+        "undergroundbiomes:fossil_piece_bone2",
+        "undergroundbiomes:fossil_piece_shell2",
+        "undergroundbiomes:fossil_piece_boneshard"
+    ]
+}

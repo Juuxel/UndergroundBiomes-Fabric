@@ -135,5 +135,16 @@
     "block.undergroundbiomes.sedimentary_cobble_stairs_chert": "Chert Cobblestone Stairs",
 
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
-    "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores"
+    "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores",
+
+    "item.undergroundbiomes.lignite_coal": "Lignite",
+
+    "item.undergroundbiomes.fossil_piece_ammonite": "Ammonite fossil",
+    "item.undergroundbiomes.fossil_piece_shell": "Shell fossil",
+    "item.undergroundbiomes.fossil_piece_rib": "Rib fossil",
+    "item.undergroundbiomes.fossil_piece_bone": "Bone fossil",
+    "item.undergroundbiomes.fossil_piece_skull": "Skull fossil",
+    "item.undergroundbiomes.fossil_piece_bone2": "Bone fossil",
+    "item.undergroundbiomes.fossil_piece_shell2": "Shell fossil",
+    "item.undergroundbiomes.fossil_piece_boneshard": "Boneshard fossil"
   }
