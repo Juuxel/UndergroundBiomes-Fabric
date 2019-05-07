@@ -9,6 +9,7 @@ import net.minecraft.world.chunk.IChunk;
 import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
+import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 import com.aang23.undergroundbiomes.world.strata.noise.NoiseGenerator;
 
@@ -78,7 +79,14 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                   storage.set(x, y, z,
                       StoneRegistry.getVariantForStone(strataBlock, UBStoneStyle.COBBLE).getDefaultState());
                 continue;
-              } 
+              } else {
+                // Replace with UBified version
+                IBlockState strataBlock = currentBiome.getStrataBlockAtLayer(yPos + y + variation);
+
+                storage.set(x, y, z, UBOreRegistrar.getOreForStoneIfExists(strataBlock.getBlock(), currentBlockState));
+
+                continue;
+              }
             }
           }
         }

@@ -40,7 +40,7 @@ public class UBConfig {
             replaceStone = builder.comment("Do you want UBC to replace vanilla stone ?").define("replaceStone", true);
             replaceCobble = builder.comment("Do you want UBC to replace vanilla cobblestone ?").define("replaceCobble", true);
             replaceGravel = builder.comment("Do you want UBC to replace vanilla gravel ?").define("replaceGravel", true);
-            spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", true);
+            spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", false);
             harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
             biomeSize = builder.comment("Sets the biome size. Exponential !").define("biomeSize", 4);
 

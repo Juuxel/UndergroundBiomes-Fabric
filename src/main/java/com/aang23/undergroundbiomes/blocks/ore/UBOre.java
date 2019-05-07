@@ -97,7 +97,7 @@ public class UBOre extends Block implements UBBlock {
 
     @Override
     public int getLightValue(IBlockState state) {
-        return baseOre.getLightValue(state);
+        return 0; //TODO fix
     }
 
     @Override
@@ -122,32 +122,6 @@ public class UBOre extends Block implements UBBlock {
     }
 
     @Override
-    public IBlockState getStateAtViewpoint(IBlockState state, IBlockReader world, BlockPos pos, Vec3d viewpoint) {
-        return baseOre.getStateAtViewpoint(state, world, pos, viewpoint);
-    }
-
-    @Override
-    public IBlockState getStateForPlacement(BlockItemUseContext context) {
-        return baseOre.getStateForPlacement(context);
-    }
-
-    @Override
-    public IBlockState getStateForPlacement(IBlockState state, EnumFacing facing, IBlockState state2, IWorld world,
-            BlockPos pos1, BlockPos pos2, EnumHand hand) {
-        return baseOre.getStateForPlacement(state, facing, state2, world, pos1, pos2, hand);
-    }
-
-    @Override
-    public IBlockState getExtendedState(IBlockState state, IBlockReader world, BlockPos pos) {
-        return baseOre.getExtendedState(state, world, pos);
-    }
-
-    @Override
-    public StateContainer<Block, IBlockState> getStateContainer() {
-        return baseOre.getStateContainer();
-    }
-
-    @Override
     public int getExpDrop(IBlockState state, IWorldReader world, BlockPos pos, int fortune) {
         return baseOre.getExpDrop(state, world, pos, fortune);
     }
@@ -159,7 +133,7 @@ public class UBOre extends Block implements UBBlock {
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        baseOre.onEntityWalk(worldIn, pos, entityIn);
+        //baseOre.onEntityWalk(worldIn, pos, entityIn); //TODO fix
     }
 
     @Override

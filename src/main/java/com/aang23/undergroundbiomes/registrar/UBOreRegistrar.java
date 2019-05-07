@@ -1,15 +1,19 @@
 package com.aang23.undergroundbiomes.registrar;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 import com.aang23.undergroundbiomes.blocks.ore.UBOre;
+import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
+import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
+import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.enums.IgneousVariant;
 import com.aang23.undergroundbiomes.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 import com.aang23.undergroundbiomes.registrar.pack.UBPackFinder;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -23,35 +27,35 @@ public class UBOreRegistrar {
 
     public static File packDir = new File(mcdir, "ubpack");
 
-    private static Set<UBOre> oresToRegister = new HashSet<UBOre>();
+    private static Map<String, UBOre> REGISTERED_ORES = new HashMap<String, UBOre>();
 
     public static void registerOre(Block toRegisterAsOre) {
         for (IgneousVariant currentVariant : IgneousVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.IGNEOUS,
                     currentVariant.getName());
-            oresToRegister.add(ore);
+            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
         }
 
         for (MetamorphicVariant currentVariant : MetamorphicVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.METAMORPHIC,
                     currentVariant.getName());
-            oresToRegister.add(ore);
+            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
         }
 
         for (SedimentaryVariant currentVariant : SedimentaryVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.SEDIMENTARY,
                     currentVariant.getName());
-            oresToRegister.add(ore);
+            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
         }
     }
 
     public static void registerOres(final RegistryEvent.Register<Block> e) {
-        for (UBOre toRegister : oresToRegister)
+        for (UBOre toRegister : REGISTERED_ORES.values())
             e.getRegistry().register(toRegister);
     }
 
     public static void registerOresItems(final RegistryEvent.Register<Item> e) {
-        for (UBOre toRegister : oresToRegister)
+        for (UBOre toRegister : REGISTERED_ORES.values())
             e.getRegistry().register(toRegister.getItemBlock());
     }
 
@@ -68,7 +72,7 @@ public class UBOreRegistrar {
         UBPackGenerator generator = new UBPackGenerator();
         generator.createFolders();
         generator.createMcMeta();
-        for (UBOre toRegister : oresToRegister) {
+        for (UBOre toRegister : REGISTERED_ORES.values()) {
             generator.createModelForOre(toRegister.getRegistryName().toString(),
                     "undergroundbiomes:block/"
                             + UBOreConfigManager.stoneVariantCache.get(toRegister.baseOre.getRegistryName().toString())
@@ -77,10 +81,46 @@ public class UBOreRegistrar {
             generator.createBlockstateForOre(toRegister.getRegistryName().toString());
             generator.createItemModelForOre(toRegister.getRegistryName().toString());
             String localizedName = Character.toUpperCase(toRegister.sub_stone_name.charAt(0))
-                    + toRegister.sub_stone_name.substring(1) + " "
+                    + toRegister.sub_stone_name.substring(1).replace("_", " ") + " "
                     + UBOreConfigManager.nameCache.get(toRegister.baseOre.getRegistryName().toString());
             generator.createLangEntryForItem(toRegister.getRegistryName().toString(), localizedName);
         }
         generator.createLangFile();
+    }
+
+    public static IBlockState getOreForStoneIfExists(Block inStone, IBlockState original) {
+        if (inStone instanceof IgneousStone) {
+            IgneousStone igneousStone = (IgneousStone) inStone;
+            if (REGISTERED_ORES.containsKey(
+                    original.getBlock().getRegistryName().toString() + "/" + igneousStone.igneous_variant.getName())) {
+
+                return REGISTERED_ORES
+                        .get(original.getBlock().getRegistryName().toString() + "/" + igneousStone.igneous_variant.getName())
+                        .getDefaultState();
+            } else
+                return original;
+        } else if (inStone instanceof MetamorphicStone) {
+            MetamorphicStone metamorphicStone = (MetamorphicStone) inStone;
+            if (REGISTERED_ORES.containsKey(
+                    original.getBlock().getRegistryName().toString() + "/" + metamorphicStone.metamorphic_variant.getName())) {
+
+                return REGISTERED_ORES.get(
+                        original.getBlock().getRegistryName().toString() + "/" + metamorphicStone.metamorphic_variant.getName())
+                        .getDefaultState();
+            } else
+                return original;
+        } else if (inStone instanceof SedimentaryStone) {
+            SedimentaryStone sedimentaryStone = (SedimentaryStone) inStone;
+            if (REGISTERED_ORES.containsKey(
+                    original.getBlock().getRegistryName().toString() + "/" + sedimentaryStone.sedimentary_variant.getName())) {
+
+                return REGISTERED_ORES.get(
+                        original.getBlock().getRegistryName().toString() + "/" + sedimentaryStone.sedimentary_variant.getName())
+                        .getDefaultState();
+            } else
+                return original;
+        } else
+            return original;
+
     }
 }
