@@ -9,6 +9,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.ToolType;
 
 public class UBGravel extends BlockGravel implements UBBlock {
@@ -25,8 +30,7 @@ public class UBGravel extends BlockGravel implements UBBlock {
     @Override
     public ItemBlock getItemBlock() {
         ItemBlock itemBlock = new ItemBlock(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
-        itemBlock.setRegistryName(
-                this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
+        itemBlock.setRegistryName(this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
         return itemBlock;
     }
 
@@ -38,5 +42,15 @@ public class UBGravel extends BlockGravel implements UBBlock {
     @Override
     public ToolType getHarvestTool(IBlockState state) {
         return ToolType.SHOVEL;
+    }
+
+    @Override
+    public boolean canSustainPlant(IBlockState state, IBlockReader world, BlockPos pos, EnumFacing facing,
+            IPlantable plantable) {
+        EnumPlantType plantType = plantable.getPlantType(world, pos.offset(facing));
+        if (plantType == EnumPlantType.Beach || plantType == EnumPlantType.Water) {
+            return true;
+        } else
+            return false;
     }
 }
