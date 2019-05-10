@@ -289,6 +289,34 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_DOLOMITE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_GREYWACKE);
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_CHERT);
+
+            // InfestedStone
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_RED_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_BLACK_GRANITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_RHYOLITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_ANDESITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_GABBRO);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_BASALT);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_KOMATIITE);
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_DACITE);
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_GNEISS);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_ECLOGITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_MARBLE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_QUARTZITE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_BLUESCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_GREENSCHIST);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_SOAPSTONE);
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_MIGMATITE);
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_LIMESTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_CHALK);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_SHALE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_SILTSTONE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_LIGNITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_DOLOMITE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_GREYWACKE);
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_CHERT);
         }
 
         @SubscribeEvent
@@ -492,6 +520,34 @@ public class UndergroundBiomes {
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_DOLOMITE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_GREYWACKE.getItemBlock());
             e.getRegistry().register(UBBlocks.SEDIMENTARY_SAND_CHERT.getItemBlock());
+
+            // InfestedStone
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_RED_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_BLACK_GRANITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_RHYOLITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_ANDESITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_GABBRO.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_BASALT.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_KOMATIITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.IGNEOUS_INFESTED_STONE_DACITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_GNEISS.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_ECLOGITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_MARBLE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_QUARTZITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_BLUESCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_GREENSCHIST.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_SOAPSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.METAMORPHIC_INFESTED_STONE_MIGMATITE.getItemBlock());
+
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_LIMESTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_CHALK.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_SHALE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_SILTSTONE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_LIGNITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_DOLOMITE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_GREYWACKE.getItemBlock());
+            e.getRegistry().register(UBBlocks.SEDIMENTARY_INFESTED_STONE_CHERT.getItemBlock());
 
             // Fossils
             e.getRegistry().register(UBItems.FOSSIL_PIECE_AMMONITE.getItem());

@@ -188,6 +188,33 @@
     "block.undergroundbiomes.sedimentary_sand_greywacke": "Greywacke Sand",
     "block.undergroundbiomes.sedimentary_sand_chert": "Chert Sand",
 
+    "block.undergroundbiomes.igneous_infested_stone_red_granite": "Red Granite Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_black_granite": "Black Granite Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_rhyolite": "Rhyolite Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_andesite": "Andesite Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_gabbro": "Gabbro Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_basalt": "Basalt Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_komatiite": "Komatiite Infested Stone",
+    "block.undergroundbiomes.igneous_infested_stone_dacite": "Dacite Infested Stone",
+
+    "block.undergroundbiomes.metamorphic_infested_stone_gneiss": "Gneiss Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_eclogite": "Eclogite Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_marble": "Marble Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_quartzite": "Quartzite Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_blueschist": "Blueschist Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_greenschist": "Greenschist Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_soapstone": "Soapstone Infested Stone",
+    "block.undergroundbiomes.metamorphic_infested_stone_migmatite": "Migmatite Infested Stone",
+
+    "block.undergroundbiomes.sedimentary_infested_stone_limestone": "Limestone Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_chalk": "Chalk Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_shale": "Shale Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_siltstone": "Siltstone Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_lignite": "Lignite Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_dolomite": "Dolomite Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_greywacke": "Greywacke Infested Stone",
+    "block.undergroundbiomes.sedimentary_infested_stone_chert": "Chert Infested Stone",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
     "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores",
 

@@ -30,6 +30,7 @@ public class UBConfig {
         public final ForgeConfigSpec.BooleanValue replaceGravel;
         public final ForgeConfigSpec.BooleanValue replaceCobble;
         public final ForgeConfigSpec.BooleanValue replaceSand;
+        public final ForgeConfigSpec.BooleanValue replaceInfestedStone;
 
         public final ForgeConfigSpec.BooleanValue spawnVanillaStone;
         public final ForgeConfigSpec.BooleanValue harmoniousStrata;
@@ -42,6 +43,7 @@ public class UBConfig {
             replaceCobble = builder.comment("Do you want UBC to replace vanilla cobblestone ?").define("replaceCobble", true);
             replaceGravel = builder.comment("Do you want UBC to replace vanilla gravel ?").define("replaceGravel", true);
             replaceSand = builder.comment("Do you want UBC to replace vanilla sand ?").define("replaceSand", true);
+            replaceInfestedStone = builder.comment("Do you want UBC to replace vanilla infested stone ?").define("replaceInfestedStone", true);
             spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", false);
             harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
             biomeSize = builder.comment("Sets the biome size. Exponential !").define("biomeSize", 4);

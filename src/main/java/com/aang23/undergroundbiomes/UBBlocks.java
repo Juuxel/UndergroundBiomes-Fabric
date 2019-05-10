@@ -24,6 +24,12 @@ import com.aang23.undergroundbiomes.blocks.gravel.SedimentaryGravel;
 import com.aang23.undergroundbiomes.blocks.gravel.igneous.*;
 import com.aang23.undergroundbiomes.blocks.gravel.metamorphic.*;
 import com.aang23.undergroundbiomes.blocks.gravel.sedimentary.*;
+import com.aang23.undergroundbiomes.blocks.infested_stone.IgneousInfestedStone;
+import com.aang23.undergroundbiomes.blocks.infested_stone.MetamorphicInfestedStone;
+import com.aang23.undergroundbiomes.blocks.infested_stone.SedimentaryInfestedStone;
+import com.aang23.undergroundbiomes.blocks.infested_stone.igneous.*;
+import com.aang23.undergroundbiomes.blocks.infested_stone.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.infested_stone.sedimentary.*;
 import com.aang23.undergroundbiomes.blocks.sand.IgneousSand;
 import com.aang23.undergroundbiomes.blocks.sand.MetamorphicSand;
 import com.aang23.undergroundbiomes.blocks.sand.SedimentarySand;
@@ -255,4 +261,34 @@ public class UBBlocks {
     public static SedimentarySand SEDIMENTARY_SAND_DOLOMITE = new DolomiteSand();
     public static SedimentarySand SEDIMENTARY_SAND_GREYWACKE = new GreywackeSand();
     public static SedimentarySand SEDIMENTARY_SAND_CHERT = new ChertSand();
+
+    // Igneous InfestedStones
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_RED_GRANITE = new RedGraniteInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_BLACK_GRANITE = new BlackGraniteInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_RHYOLITE = new RhyoliteInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_ANDESITE = new AndesiteInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_GABBRO = new GabbroInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_BASALT = new BasaltInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_KOMATIITE = new KomatiiteInfestedStone();
+    public static IgneousInfestedStone IGNEOUS_INFESTED_STONE_DACITE = new DaciteInfestedStone();
+
+    // Metamorphic InfestedStones
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_GNEISS = new GneissInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_ECLOGITE = new EclogiteInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_MARBLE = new MarbleInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_QUARTZITE = new QuartziteInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_BLUESCHIST = new BlueschistInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_GREENSCHIST = new GreenschistInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_SOAPSTONE = new SoapstoneInfestedStone();
+    public static MetamorphicInfestedStone METAMORPHIC_INFESTED_STONE_MIGMATITE = new MigmatiteInfestedStone();
+
+    // Sedimentary InfestedStones
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_LIMESTONE = new LimestoneInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_CHALK = new ChalkInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_SHALE = new ShaleInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_SILTSTONE = new SiltstoneInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_LIGNITE = new LigniteInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_DOLOMITE = new DolomiteInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_GREYWACKE = new GreywackeInfestedStone();
+    public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_CHERT = new ChertInfestedStone();
 }

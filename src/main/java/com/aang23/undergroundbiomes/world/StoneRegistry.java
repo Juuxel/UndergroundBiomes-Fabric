@@ -24,6 +24,8 @@ public class StoneRegistry {
                 return getCobbleForStone(stone);
             case SAND:
                 return getSandForStone(stone);
+            case INFESTED_STONE:
+                return getInfestedStoneForStone(stone);
             default:
                 return null;
             }
@@ -100,6 +102,77 @@ public class StoneRegistry {
             }
         } else
             return Blocks.GRAVEL;
+    }
+
+    public static Block getInfestedStoneForStone(UBStone stone) {
+        if (stone.getStoneType() == UBStoneType.IGNEOUS) {
+            IgneousStone currentStone = (IgneousStone) stone;
+            switch (currentStone.igneous_variant) {
+            case RED_GRANITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_RED_GRANITE;
+            case BLACK_GRANITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_BLACK_GRANITE;
+            case RHYOLITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_RHYOLITE;
+            case ANDESITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_ANDESITE;
+            case GABBRO:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_GABBRO;
+            case BASALT:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_BASALT;
+            case KOMATIITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_KOMATIITE;
+            case DACITE:
+                return UBBlocks.IGNEOUS_INFESTED_STONE_DACITE;
+            default:
+                return Blocks.INFESTED_STONE;
+            }
+        } else if (stone.getStoneType() == UBStoneType.METAMORPHIC) {
+            MetamorphicStone currentStone = (MetamorphicStone) stone;
+            switch (currentStone.metamorphic_variant) {
+            case GNEISS:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_GNEISS;
+            case ECLOGITE:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_ECLOGITE;
+            case MARBLE:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_MARBLE;
+            case QUARTZITE:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_QUARTZITE;
+            case BLUESCHIST:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_BLUESCHIST;
+            case GREENSCHIST:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_GREENSCHIST;
+            case SOAPSTONE:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_SOAPSTONE;
+            case MIGMATITE:
+                return UBBlocks.METAMORPHIC_INFESTED_STONE_MIGMATITE;
+            default:
+                return Blocks.INFESTED_STONE;
+            }
+        } else if (stone.getStoneType() == UBStoneType.SEDIMENTARY) {
+            SedimentaryStone currentStone = (SedimentaryStone) stone;
+            switch (currentStone.sedimentary_variant) {
+            case LIMESTONE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_LIMESTONE;
+            case CHALK:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_CHALK;
+            case SHALE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_SHALE;
+            case SILTSTONE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_SILTSTONE;
+            case LIGNITE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_LIGNITE;
+            case DOLOMITE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_DOLOMITE;
+            case GREYWACKE:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_GREYWACKE;
+            case CHERT:
+                return UBBlocks.SEDIMENTARY_INFESTED_STONE_CHERT;
+            default:
+                return Blocks.INFESTED_STONE;
+            }
+        } else
+            return Blocks.INFESTED_STONE;
     }
 
     public static Block getCobbleForStone(UBStone stone) {
