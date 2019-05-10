@@ -24,6 +24,12 @@ import com.aang23.undergroundbiomes.blocks.gravel.SedimentaryGravel;
 import com.aang23.undergroundbiomes.blocks.gravel.igneous.*;
 import com.aang23.undergroundbiomes.blocks.gravel.metamorphic.*;
 import com.aang23.undergroundbiomes.blocks.gravel.sedimentary.*;
+import com.aang23.undergroundbiomes.blocks.sand.IgneousSand;
+import com.aang23.undergroundbiomes.blocks.sand.MetamorphicSand;
+import com.aang23.undergroundbiomes.blocks.sand.SedimentarySand;
+import com.aang23.undergroundbiomes.blocks.sand.igneous.*;
+import com.aang23.undergroundbiomes.blocks.sand.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.sand.sedimentary.*;
 import com.aang23.undergroundbiomes.blocks.stone_stairs.IgneousStoneStairs;
 import com.aang23.undergroundbiomes.blocks.stone_stairs.MetamorphicStoneStairs;
 import com.aang23.undergroundbiomes.blocks.stone_stairs.SedimentaryStoneStairs;
@@ -219,4 +225,34 @@ public class UBBlocks {
     public static SedimentaryBrick SEDIMENTARY_BRICK_DOLOMITE = new DolomiteBrick();
     public static SedimentaryBrick SEDIMENTARY_BRICK_GREYWACKE = new GreywackeBrick();
     public static SedimentaryBrick SEDIMENTARY_BRICK_CHERT = new ChertBrick();
+
+    // Igneous Sands
+    public static IgneousSand IGNEOUS_SAND_RED_GRANITE = new RedGraniteSand();
+    public static IgneousSand IGNEOUS_SAND_BLACK_GRANITE = new BlackGraniteSand();
+    public static IgneousSand IGNEOUS_SAND_RHYOLITE = new RhyoliteSand();
+    public static IgneousSand IGNEOUS_SAND_ANDESITE = new AndesiteSand();
+    public static IgneousSand IGNEOUS_SAND_GABBRO = new GabbroSand();
+    public static IgneousSand IGNEOUS_SAND_BASALT = new BasaltSand();
+    public static IgneousSand IGNEOUS_SAND_KOMATIITE = new KomatiiteSand();
+    public static IgneousSand IGNEOUS_SAND_DACITE = new DaciteSand();
+
+    // Metamorphic Sands
+    public static MetamorphicSand METAMORPHIC_SAND_GNEISS = new GneissSand();
+    public static MetamorphicSand METAMORPHIC_SAND_ECLOGITE = new EclogiteSand();
+    public static MetamorphicSand METAMORPHIC_SAND_MARBLE = new MarbleSand();
+    public static MetamorphicSand METAMORPHIC_SAND_QUARTZITE = new QuartziteSand();
+    public static MetamorphicSand METAMORPHIC_SAND_BLUESCHIST = new BlueschistSand();
+    public static MetamorphicSand METAMORPHIC_SAND_GREENSCHIST = new GreenschistSand();
+    public static MetamorphicSand METAMORPHIC_SAND_SOAPSTONE = new SoapstoneSand();
+    public static MetamorphicSand METAMORPHIC_SAND_MIGMATITE = new MigmatiteSand();
+
+    // Sedimentary Sands
+    public static SedimentarySand SEDIMENTARY_SAND_LIMESTONE = new LimestoneSand();
+    public static SedimentarySand SEDIMENTARY_SAND_CHALK = new ChalkSand();
+    public static SedimentarySand SEDIMENTARY_SAND_SHALE = new ShaleSand();
+    public static SedimentarySand SEDIMENTARY_SAND_SILTSTONE = new SiltstoneSand();
+    public static SedimentarySand SEDIMENTARY_SAND_LIGNITE = new LigniteSand();
+    public static SedimentarySand SEDIMENTARY_SAND_DOLOMITE = new DolomiteSand();
+    public static SedimentarySand SEDIMENTARY_SAND_GREYWACKE = new GreywackeSand();
+    public static SedimentarySand SEDIMENTARY_SAND_CHERT = new ChertSand();
 }

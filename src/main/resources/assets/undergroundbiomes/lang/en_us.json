@@ -161,6 +161,33 @@
     "block.undergroundbiomes.sedimentary_brick_greywacke": "Greywacke Bricks",
     "block.undergroundbiomes.sedimentary_brick_chert": "Chert Bricks",
 
+    "block.undergroundbiomes.igneous_sand_red_granite": "Red Granite Sand",
+    "block.undergroundbiomes.igneous_sand_black_granite": "Black Granite Sand",
+    "block.undergroundbiomes.igneous_sand_rhyolite": "Rhyolite Sand",
+    "block.undergroundbiomes.igneous_sand_andesite": "Andesite Sand",
+    "block.undergroundbiomes.igneous_sand_gabbro": "Gabbro Sand",
+    "block.undergroundbiomes.igneous_sand_basalt": "Basalt Sand",
+    "block.undergroundbiomes.igneous_sand_komatiite": "Komatiite Sand",
+    "block.undergroundbiomes.igneous_sand_dacite": "Dacite Sand",
+
+    "block.undergroundbiomes.metamorphic_sand_gneiss": "Gneiss Sand",
+    "block.undergroundbiomes.metamorphic_sand_eclogite": "Eclogite Sand",
+    "block.undergroundbiomes.metamorphic_sand_marble": "Marble Sand",
+    "block.undergroundbiomes.metamorphic_sand_quartzite": "Quartzite Sand",
+    "block.undergroundbiomes.metamorphic_sand_blueschist": "Blueschist Sand",
+    "block.undergroundbiomes.metamorphic_sand_greenschist": "Greenschist Sand",
+    "block.undergroundbiomes.metamorphic_sand_soapstone": "Soapstone Sand",
+    "block.undergroundbiomes.metamorphic_sand_migmatite": "Migmatite Sand",
+
+    "block.undergroundbiomes.sedimentary_sand_limestone": "Limestone Sand",
+    "block.undergroundbiomes.sedimentary_sand_chalk": "Chalk Sand",
+    "block.undergroundbiomes.sedimentary_sand_shale": "Shale Sand",
+    "block.undergroundbiomes.sedimentary_sand_siltstone": "Siltstone Sand",
+    "block.undergroundbiomes.sedimentary_sand_lignite": "Lignite Sand",
+    "block.undergroundbiomes.sedimentary_sand_dolomite": "Dolomite Sand",
+    "block.undergroundbiomes.sedimentary_sand_greywacke": "Greywacke Sand",
+    "block.undergroundbiomes.sedimentary_sand_chert": "Chert Sand",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
     "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores",
 

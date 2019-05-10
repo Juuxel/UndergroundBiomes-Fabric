@@ -71,6 +71,12 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                     .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.GRAVEL)
                     .getDefaultState());
                 continue;
+              } else if (currentBlock == Blocks.SAND && UBConfig.WORLDGEN.replaceSand.get()) {
+                // Replace with UBified version
+                storage.set(x, y, z, StoneRegistry
+                    .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.SAND)
+                    .getDefaultState());
+                continue;
               } else if (currentBlock == Blocks.COBBLESTONE && UBConfig.WORLDGEN.replaceCobble.get()) {
                 // Replace with UBified version
                 IBlockState strataBlock = currentBiome.getStrataBlockAtLayer(yPos + y + variation);

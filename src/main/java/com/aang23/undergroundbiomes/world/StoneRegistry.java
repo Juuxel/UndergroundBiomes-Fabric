@@ -22,6 +22,8 @@ public class StoneRegistry {
                 return getGravelForStone(stone);
             case COBBLE:
                 return getCobbleForStone(stone);
+            case SAND:
+                return getSandForStone(stone);
             default:
                 return null;
             }
@@ -169,5 +171,76 @@ public class StoneRegistry {
             }
         } else
             return Blocks.COBBLESTONE;
+    }
+
+    public static Block getSandForStone(UBStone stone) {
+        if (stone.getStoneType() == UBStoneType.IGNEOUS) {
+            IgneousStone currentStone = (IgneousStone) stone;
+            switch (currentStone.igneous_variant) {
+            case RED_GRANITE:
+                return UBBlocks.IGNEOUS_SAND_RED_GRANITE;
+            case BLACK_GRANITE:
+                return UBBlocks.IGNEOUS_SAND_BLACK_GRANITE;
+            case RHYOLITE:
+                return UBBlocks.IGNEOUS_SAND_RHYOLITE;
+            case ANDESITE:
+                return UBBlocks.IGNEOUS_SAND_ANDESITE;
+            case GABBRO:
+                return UBBlocks.IGNEOUS_SAND_GABBRO;
+            case BASALT:
+                return UBBlocks.IGNEOUS_SAND_BASALT;
+            case KOMATIITE:
+                return UBBlocks.IGNEOUS_SAND_KOMATIITE;
+            case DACITE:
+                return UBBlocks.IGNEOUS_SAND_DACITE;
+            default:
+                return Blocks.SAND;
+            }
+        } else if (stone.getStoneType() == UBStoneType.METAMORPHIC) {
+            MetamorphicStone currentStone = (MetamorphicStone) stone;
+            switch (currentStone.metamorphic_variant) {
+            case GNEISS:
+                return UBBlocks.METAMORPHIC_SAND_GNEISS;
+            case ECLOGITE:
+                return UBBlocks.METAMORPHIC_SAND_ECLOGITE;
+            case MARBLE:
+                return UBBlocks.METAMORPHIC_SAND_MARBLE;
+            case QUARTZITE:
+                return UBBlocks.METAMORPHIC_SAND_QUARTZITE;
+            case BLUESCHIST:
+                return UBBlocks.METAMORPHIC_SAND_BLUESCHIST;
+            case GREENSCHIST:
+                return UBBlocks.METAMORPHIC_SAND_GREENSCHIST;
+            case SOAPSTONE:
+                return UBBlocks.METAMORPHIC_SAND_SOAPSTONE;
+            case MIGMATITE:
+                return UBBlocks.METAMORPHIC_SAND_MIGMATITE;
+            default:
+                return Blocks.SAND;
+            }
+        } else if (stone.getStoneType() == UBStoneType.SEDIMENTARY) {
+            SedimentaryStone currentStone = (SedimentaryStone) stone;
+            switch (currentStone.sedimentary_variant) {
+            case LIMESTONE:
+                return UBBlocks.SEDIMENTARY_SAND_LIMESTONE;
+            case CHALK:
+                return UBBlocks.SEDIMENTARY_SAND_CHALK;
+            case SHALE:
+                return UBBlocks.SEDIMENTARY_SAND_SHALE;
+            case SILTSTONE:
+                return UBBlocks.SEDIMENTARY_SAND_SILTSTONE;
+            case LIGNITE:
+                return UBBlocks.SEDIMENTARY_SAND_LIGNITE;
+            case DOLOMITE:
+                return UBBlocks.SEDIMENTARY_SAND_DOLOMITE;
+            case GREYWACKE:
+                return UBBlocks.SEDIMENTARY_SAND_GREYWACKE;
+            case CHERT:
+                return UBBlocks.SEDIMENTARY_SAND_CHERT;
+            default:
+                return Blocks.SAND;
+            }
+        } else
+            return Blocks.SAND;
     }
 }
