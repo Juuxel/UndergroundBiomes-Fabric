@@ -1,0 +1,8 @@
+{
+    "type": "smelting",
+    "ingredient": {
+        "tag": "undergroundbiomes:base/ubsand"
+    },
+    "result": "minecraft:glass",
+    "cookingtime": 200
+}

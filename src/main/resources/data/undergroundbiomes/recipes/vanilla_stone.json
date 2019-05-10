@@ -15,6 +15,7 @@
         }
     },
     "result": {
-        "item": "minecraft:stone"
+        "item": "minecraft:stone",
+        "count": 6
     }
 }

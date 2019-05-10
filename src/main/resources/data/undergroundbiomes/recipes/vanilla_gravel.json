@@ -15,6 +15,7 @@
         }
     },
     "result": {
-        "item": "minecraft:gravel"
+        "item": "minecraft:gravel",
+        "count": 6
     }
 }
