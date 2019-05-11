@@ -39,15 +39,15 @@ public class WorldGenManager {
       if (dimensionID == event.getWorld().getWorldInfo().getDimension()) {
         if (!worldDone) {
 
-          biomesSet = new UBBiomesSet(0);
+          worldConfig = new WorldConfig(event.getWorld());
+          worldConfig.loadConfig();
+
+          biomesSet = new UBBiomesSet(worldConfig);
           seed = (int) event.getWorld().getSeed();
           if (UBConfig.ADVANCED.differentSeedPerWorld.get())
             seed += dimensionID;
 
-          worldConfig = new WorldConfig(event.getWorld());
-          worldConfig.loadConfig();
-
-          this.stoneReplacer = new TraditionalStoneReplacer(seed, worldConfig.biomeSize(), biomesSet);
+          this.stoneReplacer = new TraditionalStoneReplacer(seed, worldConfig.biomeSize(), biomesSet, worldConfig);
 
           // TODO World specific config
 

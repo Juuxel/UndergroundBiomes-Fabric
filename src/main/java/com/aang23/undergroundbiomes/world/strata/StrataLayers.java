@@ -5,7 +5,7 @@ import net.minecraft.init.Blocks;
 import java.util.ArrayList;
 
 import com.aang23.undergroundbiomes.UBBlocks;
-import com.aang23.undergroundbiomes.config.UBConfig;
+import com.aang23.undergroundbiomes.config.WorldConfig;
 
 /**
  * @author CurtisA, LouisDB
@@ -13,10 +13,12 @@ import com.aang23.undergroundbiomes.config.UBConfig;
 final class StrataLayers {
 
   StrataLayer[][] layers;
+  private final WorldConfig config;
 
-  public StrataLayers(Object config) {
+  public StrataLayers(WorldConfig config) {
+    this.config = config;
     layers = new StrataLayer[30][];
-    if (UBConfig.WORLDGEN.harmoniousStrata.get()) //TODO per-world !
+    if (config.harmoniousStrata()) 
       createHarmoniousLayers();
     else
     createLayers();
@@ -65,7 +67,7 @@ final class StrataLayers {
     // removes disallowed layers
     ArrayList<StrataLayer> kept = new ArrayList<StrataLayer>();
     for (int i = 0; i < toClean.length; i++) {
-      if (true) { // UBConfig.SPECIFIC.generationAllowed(toClean[i].filler)
+      if (true) { // UBConfig.SPECIFIC.generationAllowed(toClean[i].filler) TODO
         kept.add(toClean[i]);
       }
     }

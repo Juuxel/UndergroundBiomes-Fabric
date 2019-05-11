@@ -44,6 +44,8 @@ public class WorldConfig {
             config.put("worldId", dimensionId);
             config.put("harmoniousStrata", UBConfig.WORLDGEN.harmoniousStrata.get());
             config.put("biomeSize", (int) UBConfig.WORLDGEN.biomeSize.get());
+            config.put("generationHeight", (int) UBConfig.WORLDGEN.generationHeight.get());
+            config.put("spawnVanillaStone", UBConfig.WORLDGEN.spawnVanillaStone.get());
 
             PrintWriter pw = null;
             try {
@@ -68,5 +70,17 @@ public class WorldConfig {
         // Well not that great, but if it fails, it will only be caused by the user,
         // so...
         return ((Number) config.get("biomeSize")).intValue();
+    }
+
+    public int generationHeight() {
+        // Well not that great, but if it fails, it will only be caused by the user,
+        // so...
+        return ((Number) config.get("generationHeight")).intValue();
+    }
+
+    public boolean regularStone() {
+        // Well not that great, but if it fails, it will only be caused by the user,
+        // so...
+        return (boolean) config.get("spawnVanillaStone");
     }
 }

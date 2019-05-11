@@ -2,23 +2,24 @@ package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 
 import com.aang23.undergroundbiomes.UBBlocks;
-import com.aang23.undergroundbiomes.config.UBConfig;
+import com.aang23.undergroundbiomes.config.WorldConfig;
 
 /**
  * @author Zeno410
  */
 public class StandardUndergroundBiomeSet extends UndergroundBiomeSet {
 
-  //private final UBSettings settings;
+  private final WorldConfig settings;
   private UBBiome[] allowedBiomes;
 
-  public StandardUndergroundBiomeSet(Object settings) {
+  public StandardUndergroundBiomeSet(WorldConfig settings) {
     super(new StrataLayers(settings).layers);
-    //this.settings = settings;
+    this.settings = settings;
     choseBiomes();
   }
 
@@ -104,7 +105,7 @@ public class StandardUndergroundBiomeSet extends UndergroundBiomeSet {
     .addStrataLayers(strataLayers[3]);
 
   private void choseBiomes() {
-    if (UBConfig.WORLDGEN.spawnVanillaStone.get()/*settings.regularStoneBiomes()*/) {
+    if (settings.regularStone()) {
       allowedBiomes = new UBBiome[]{igneous1, igneous2,
         igneous3, igneous4,
         igneous5, igneous6, igneous7,
@@ -141,7 +142,7 @@ public class StandardUndergroundBiomeSet extends UndergroundBiomeSet {
     ArrayList<UBBiome> accepted = new ArrayList<UBBiome>();
     for (int i = 0; i < possible.length; i++) {
       IBlockState block = possible[i].filler;
-      if (true/*settings.generationAllowed(block)*/) accepted.add(possible[i]);
+      if (true/*settings.generationAllowed(block)*/) accepted.add(possible[i]); //TODO
     }
     UBBiome[] result = new UBBiome[accepted.size()];
     return accepted.toArray(result);

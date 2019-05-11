@@ -35,6 +35,7 @@ public class UBConfig {
         public final ForgeConfigSpec.BooleanValue spawnVanillaStone;
         public final ForgeConfigSpec.BooleanValue harmoniousStrata;
         public final ForgeConfigSpec.ConfigValue<Integer> biomeSize;
+        public final ForgeConfigSpec.ConfigValue<Integer> generationHeight;
 
         WorldGen(ForgeConfigSpec.Builder builder) {
             builder.push("WorldGen");
@@ -47,6 +48,7 @@ public class UBConfig {
             spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", false);
             harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
             biomeSize = builder.comment("Sets the biome size. Exponential !").define("biomeSize", 4);
+            generationHeight = builder.comment("How hight UBC's stones should stop generation at ?").define("generationHeight", 256);
 
             builder.pop();
         }

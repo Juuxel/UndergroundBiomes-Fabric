@@ -8,6 +8,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.config.UBConfig;
+import com.aang23.undergroundbiomes.config.WorldConfig;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
@@ -18,9 +19,12 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
   final UBBiome[] biomeList;
   final NoiseGenerator noiseGenerator;
 
-  public UBStoneReplacer(UBBiome[] biomeList, NoiseGenerator noiseGenerator) {
+  final WorldConfig config;
+
+  public UBStoneReplacer(UBBiome[] biomeList, NoiseGenerator noiseGenerator, WorldConfig config) {
     this.biomeList = biomeList;
     this.noiseGenerator = noiseGenerator;
+    this.config = config;
     if (biomeList == null)
       throw new RuntimeException();
     if (noiseGenerator == null)
@@ -35,9 +39,10 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
     for (ChunkSection storage : chunk.getSections()) {
       if (storage != null && !storage.isEmpty()) {
         int yPos = storage.getYLocation();
-        /*
-         * if (yPos >= UBConfig.SPECIFIC.generationHeight()) return;
-         */
+
+        if (yPos >= config.generationHeight())
+          return;
+
         int[] biomeValues = getBiomeValues(chunk);
 
         for (int x = 0; x < 16; ++x) {
@@ -115,7 +120,7 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
     return new UBStrataColumn() {
 
       public IBlockState stone(int y) {
-        if (false /* y >= UBConfig.SPECIFIC.generationHeight() */)
+        if (y >= config.generationHeight())
           return Blocks.STONE.getDefaultState();
         for (int i = 0; i < strata.length; i++) {
           if (strata[i].heightInLayer(y + variation) == true) {
@@ -125,38 +130,8 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
         return fillerBlockCodes;
       }
 
-      /*
-       * public IBlockState cobblestone(int height) { if (false height >=
-       * UBConfig.SPECIFIC.generationHeight()) return
-       * Blocks.COBBLESTONE.getDefaultState(); IBlockState stone = stone(height); if
-       * (stone.getBlock() == API.IGNEOUS_STONE.getBlock()) { return
-       * API.IGNEOUS_COBBLE.getBlock().getStateFromMeta(stone.getBlock().
-       * getMetaFromState(stone)); } if (stone.getBlock() ==
-       * API.METAMORPHIC_STONE.getBlock()) { return
-       * API.METAMORPHIC_COBBLE.getBlock().getStateFromMeta(stone.getBlock().
-       * getMetaFromState(stone)); } return stone; }
-       * 
-       * public IBlockState cobblestone() { IBlockState stone = stone(); if
-       * (stone.getBlock() == API.IGNEOUS_STONE.getBlock()) { return
-       * API.IGNEOUS_COBBLE.getBlock().getStateFromMeta(stone.getBlock().
-       * getMetaFromState(stone)); } if (stone.getBlock() ==
-       * API.METAMORPHIC_STONE.getBlock()) { return
-       * API.METAMORPHIC_COBBLE.getBlock().getStateFromMeta(stone.getBlock().
-       * getMetaFromState(stone)); } return stone; }
-       */
-
       public IBlockState stone() {
         return fillerBlockCodes;
-      }
-
-      @Override
-      public IBlockState cobblestone(int height) {
-        return null;
-      }
-
-      @Override
-      public IBlockState cobblestone() {
-        return null;
       }
     };
   }

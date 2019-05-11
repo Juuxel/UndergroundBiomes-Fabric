@@ -4,6 +4,7 @@
 package com.aang23.undergroundbiomes.world.strata;
 
 
+import com.aang23.undergroundbiomes.config.WorldConfig;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayer;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerSmooth;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerVoronoiZoom;
@@ -19,8 +20,8 @@ public class TraditionalStoneReplacer extends UBStoneReplacer {
 
   private GenLayer undergroundBiomeIndexLayer;
 
-  public TraditionalStoneReplacer(long seed, int size, UndergroundBiomeSet biomeSet) {
-    super(biomeSet.allowedBiomes(), new SimplexNoiseGenerator(seed));
+  public TraditionalStoneReplacer(long seed, int size, UndergroundBiomeSet biomeSet, WorldConfig config) {
+    super(biomeSet.allowedBiomes(), new SimplexNoiseGenerator(seed), config);
     if (biomeSet.allowedBiomes()[20].ID < 1) {
       throw new RuntimeException(biomeSet.toString() + biomeSet.allowedBiomes()[20].filler.getBlock().getRegistryName());
     }

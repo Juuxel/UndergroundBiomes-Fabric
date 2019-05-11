@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aang23.undergroundbiomes.UBBlocks;
-import com.aang23.undergroundbiomes.config.UBConfig;
+import com.aang23.undergroundbiomes.config.WorldConfig;
 
 /**
  * All underground biomes
@@ -16,14 +16,14 @@ import com.aang23.undergroundbiomes.config.UBConfig;
  */
 public final class UBBiomesSet extends UndergroundBiomeSet {
 
-  //private final UBSettings settings;
+  private final WorldConfig settings;
   private final UBBiome[] biomes;
   private final List<UBBiome> biomesBuilder = new ArrayList<>();
   private int ID = 0;
   private UBBiome[] allowedBiomes;
 
-  public UBBiomesSet(Object settings) {
-    super(new StrataLayers(0).layers);
+  public UBBiomesSet(WorldConfig settings) {
+    super(new StrataLayers(settings).layers);
 
     add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_RED_GRANITE), strataLayers[0]);
     add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_BLACK_GRANITE), strataLayers[1]);
@@ -61,7 +61,7 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
     add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_SOAPSTONE), strataLayers[0]);
     add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MIGMATITE), strataLayers[1]);
 
-    if (UBConfig.WORLDGEN.spawnVanillaStone.get() /*settings.regularStoneBiomes() && UBConfig.SPECIFIC.generationAllowed(Blocks.STONE.getDefaultState())*/) {
+    if (settings.regularStone()) {
       add(new UBBiome(ID, Blocks.STONE), strataLayers[0]);
       add(new UBBiome(ID, Blocks.STONE), strataLayers[1]);
       add(new UBBiome(ID, Blocks.STONE), strataLayers[2]);
@@ -70,13 +70,14 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
 
     this.biomes = new UBBiome[biomesBuilder.size()];
     biomesBuilder.toArray(this.biomes);
-    if (biomes[20].ID == 0) throw new RuntimeException();
-    //this.settings = settings;
+    if (biomes[20].ID == 0)
+      throw new RuntimeException();
+    this.settings = settings;
     allowedBiomes = generatable(biomes);
   }
 
   private void add(UBBiome biome, StrataLayer[] layers) {
-    if (true) { // UBConfig.SPECIFIC.generationAllowed(biome.filler)
+    if (true) { // UBConfig.SPECIFIC.generationAllowed(biome.filler) TODO
       biome.addStrataLayers(layers);
       biomesBuilder.add(biome);
       ID++;
@@ -88,7 +89,8 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
     ArrayList<UBBiome> accepted = new ArrayList<UBBiome>();
     for (int i = 0; i < possible.length; i++) {
       IBlockState block = possible[i].filler;
-      if (true) accepted.add(possible[i]); // settings.generationAllowed(block)
+      if (true)
+        accepted.add(possible[i]); // settings.generationAllowed(block)
     }
     UBBiome[] result = new UBBiome[accepted.size()];
     return accepted.toArray(result);
