@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_pressed",
+    "textures": {
+        "texture": "undergroundbiomes:block/stone/black_granite"
+    }
+}

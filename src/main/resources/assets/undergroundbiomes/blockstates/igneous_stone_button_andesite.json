@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=up,powered=false":    { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true },
+        "facing=down,powered=false":  { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true, "x": 180 },
+        "facing=east,powered=false":  { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true, "x": 90, "y": 90 },
+        "facing=west,powered=false":  { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true, "x": 90, "y": 270 },
+        "facing=south,powered=false": { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true, "x": 90, "y": 180 },
+        "facing=north,powered=false": { "model": "undergroundbiomes:block/stone_button/andesite", "uvlock": true, "x": 90 },
+        "facing=up,powered=true":     { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true },
+        "facing=down,powered=true":   { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true, "x": 180 },
+        "facing=east,powered=true":   { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true, "x": 90, "y": 90 },
+        "facing=west,powered=true":   { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true, "x": 90, "y": 270 },
+        "facing=south,powered=true":  { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true, "x": 90, "y": 180 },
+        "facing=north,powered=true":  { "model": "undergroundbiomes:block/stone_button/andesite_pressed", "uvlock": true, "x": 90 }
+    }
+}

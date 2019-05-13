@@ -9,18 +9,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.state.StateContainer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -97,7 +94,7 @@ public class UBOre extends Block implements UBBlock {
 
     @Override
     public int getLightValue(IBlockState state) {
-        return 0; //TODO fix
+        return 0; // TODO fix
     }
 
     @Override
@@ -133,7 +130,7 @@ public class UBOre extends Block implements UBBlock {
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        //baseOre.onEntityWalk(worldIn, pos, entityIn); //TODO fix
+        // baseOre.onEntityWalk(worldIn, pos, entityIn); //TODO fix
     }
 
     @Override

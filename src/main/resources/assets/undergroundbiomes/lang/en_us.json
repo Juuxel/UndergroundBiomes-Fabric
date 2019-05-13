@@ -215,6 +215,33 @@
     "block.undergroundbiomes.sedimentary_infested_stone_greywacke": "Greywacke Infested Stone",
     "block.undergroundbiomes.sedimentary_infested_stone_chert": "Chert Infested Stone",
 
+    "block.undergroundbiomes.igneous_stone_button_red_granite": "Red Granite Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_black_granite": "Black Granite Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_rhyolite": "Rhyolite Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_andesite": "Andesite Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_gabbro": "Gabbro Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_basalt": "Basalt Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_komatiite": "Komatiite Stone Button",
+    "block.undergroundbiomes.igneous_stone_button_dacite": "Dacite Stone Button",
+
+    "block.undergroundbiomes.metamorphic_stone_button_gneiss": "Gneiss Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_eclogite": "Eclogite Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_marble": "Marble Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_quartzite": "Quartzite Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_blueschist": "Blueschist Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_greenschist": "Greenschist Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_soapstone": "Soapstone Stone Button",
+    "block.undergroundbiomes.metamorphic_stone_button_migmatite": "Migmatite Stone Button",
+
+    "block.undergroundbiomes.sedimentary_stone_button_limestone": "Limestone Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_chalk": "Chalk Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_shale": "Shale Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_siltstone": "Siltstone Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_lignite": "Lignite Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_dolomite": "Dolomite Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_greywacke": "Greywacke Stone Button",
+    "block.undergroundbiomes.sedimentary_stone_button_chert": "Chert Stone Button",
+
     "itemGroup.tabUndergroundBiomesBlocks": "Underground Biomes",
     "itemGroup.tabUndergroundBiomesOres": "Underground Biomes Ores",
 

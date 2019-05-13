@@ -48,6 +48,12 @@ import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.blocks.stone.igneous.*;
 import com.aang23.undergroundbiomes.blocks.stone.metamorphic.*;
 import com.aang23.undergroundbiomes.blocks.stone.sedimentary.*;
+import com.aang23.undergroundbiomes.blocks.stone_button.IgneousStoneButton;
+import com.aang23.undergroundbiomes.blocks.stone_button.MetamorphicStoneButton;
+import com.aang23.undergroundbiomes.blocks.stone_button.SedimentaryStoneButton;
+import com.aang23.undergroundbiomes.blocks.stone_button.igneous.*;
+import com.aang23.undergroundbiomes.blocks.stone_button.metamorphic.*;
+import com.aang23.undergroundbiomes.blocks.stone_button.sedimentary.*;
 
 public class UBBlocks {
     // Igneous Stones
@@ -291,4 +297,34 @@ public class UBBlocks {
     public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_DOLOMITE = new DolomiteInfestedStone();
     public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_GREYWACKE = new GreywackeInfestedStone();
     public static SedimentaryInfestedStone SEDIMENTARY_INFESTED_STONE_CHERT = new ChertInfestedStone();
+
+    // Igneous StoneButtons
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_RED_GRANITE = new RedGraniteStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_BLACK_GRANITE = new BlackGraniteStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_RHYOLITE = new RhyoliteStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_ANDESITE = new AndesiteStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_GABBRO = new GabbroStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_BASALT = new BasaltStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_KOMATIITE = new KomatiiteStoneButton();
+    public static IgneousStoneButton IGNEOUS_STONE_BUTTON_DACITE = new DaciteStoneButton();
+
+    // Metamorphic StoneButtons
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_GNEISS = new GneissStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_ECLOGITE = new EclogiteStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_MARBLE = new MarbleStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_QUARTZITE = new QuartziteStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_BLUESCHIST = new BlueschistStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_GREENSCHIST = new GreenschistStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_SOAPSTONE = new SoapstoneStoneButton();
+    public static MetamorphicStoneButton METAMORPHIC_STONE_BUTTON_MIGMATITE = new MigmatiteStoneButton();
+
+    // Sedimentary StoneButtons
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_LIMESTONE = new LimestoneStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_CHALK = new ChalkStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_SHALE = new ShaleStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_SILTSTONE = new SiltstoneStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_LIGNITE = new LigniteStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_DOLOMITE = new DolomiteStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_GREYWACKE = new GreywackeStoneButton();
+    public static SedimentaryStoneButton SEDIMENTARY_STONE_BUTTON_CHERT = new ChertStoneButton();
 }

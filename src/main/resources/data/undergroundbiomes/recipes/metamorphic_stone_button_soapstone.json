@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:metamorphic_stone_soapstone"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:metamorphic_stone_button_soapstone",
+        "count": 1
+    }
+}
