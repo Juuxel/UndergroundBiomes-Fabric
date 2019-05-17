@@ -11,9 +11,15 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
+apply plugin: 'maven'
 
 version = '1.0'
+
+def env = System.getenv()
+if (env.BUILD_NUMBER) {
+    version = version + "-" + "${env.BUILD_NUMBER}"
+}
+
 group = 'com.aang23.undergroundbiomes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'UndergroundBiomes-1.13.2'
 
@@ -136,15 +142,15 @@ def reobfArtifact = artifacts.add('default', reobfFile) {
     builtBy 'reobfJar'
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact reobfArtifact
-        }
-    }
+uploadArchives {
     repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
-        }
+       mavenDeployer {
+             repository(url: "http://www.altillimity.com/nexus/content/repositories/releases") {
+             authentication(userName: mavenUser, password: mavenPassword)
+	}
+             pom.version = "$version-1.13.2"
+             pom.artifactId = "undergroundbiomes"
+             pom.groupId = "com.aang23"
+       }
     }
 }
