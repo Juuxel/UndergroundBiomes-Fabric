@@ -150,7 +150,7 @@ uploadArchives {
 	}
              pom.version = "$version-1.13.2"
              pom.artifactId = "undergroundbiomes"
-             pom.groupId = "com.aang23"
+             pom.groupId = "com.aang23.undergroundbiomes"
        }
     }
 }
