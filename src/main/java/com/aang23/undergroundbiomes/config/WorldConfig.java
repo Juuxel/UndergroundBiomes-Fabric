@@ -6,7 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import com.cedarsoftware.util.io.JsonWriter;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.ServerWorld;
+import net.minecraftforge.fml.LogicalSide;
+import net.minecraftforge.fml.common.thread.EffectiveSide;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -20,12 +26,11 @@ public class WorldConfig {
     public JSONObject config;
 
     public WorldConfig(IWorld world) {
-        dimensionId = world.getDimension().getType().getId();
-        configWorld = world;
-        configPath = new File("undergroundbiomes_" + String.valueOf(dimensionId) + ".json"); //TODO make that file in the right place
-        config = new JSONObject();
-
-        System.out.println(configPath.toString());
+            dimensionId = world.getDimension().getType().getId();
+            configWorld = world;
+            configPath = new File(world.getDimension().getType().getDirectory(
+                    ((ServerWorld) world).getSaveHandler().getWorldDirectory()), "undergroundbiomes.json");
+            config = new JSONObject();
     }
 
     public void loadConfig() {

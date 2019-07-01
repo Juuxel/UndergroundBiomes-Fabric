@@ -1,5 +1,7 @@
 package com.aang23.undergroundbiomes.world;
 
+import java.io.File;
+
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.config.WorldConfig;
 import com.aang23.undergroundbiomes.world.strata.TraditionalStoneReplacer;
@@ -7,6 +9,8 @@ import com.aang23.undergroundbiomes.world.strata.UBBiomesSet;
 import com.aang23.undergroundbiomes.world.strata.UBStoneReplacer;
 import com.aang23.undergroundbiomes.world.strata.UndergroundBiomeSet;
 import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
+
+import net.minecraft.world.ServerWorld;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraftforge.event.world.ChunkEvent;
@@ -33,7 +37,7 @@ public class WorldGenManager {
     this.dimensionID = dimensionID;
   }
 
-  @SubscribeEvent
+  @SubscribeEvent(priority = EventPriority.HIGHEST)
   public void onWorldLoad(WorldEvent.Load event) {
     if (EffectiveSide.get() == LogicalSide.SERVER) {
       if (dimensionID == event.getWorld().getDimension().getType().getId()) {
@@ -60,7 +64,7 @@ public class WorldGenManager {
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public void onPopulateChunk(ChunkEvent.Load event) {
 
-    if (event.getWorld() == null)
+    if (!worldDone)
       return;
 
     if (EffectiveSide.get() == LogicalSide.SERVER) {
