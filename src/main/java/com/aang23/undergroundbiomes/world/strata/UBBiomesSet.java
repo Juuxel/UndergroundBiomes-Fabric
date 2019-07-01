@@ -1,13 +1,13 @@
 package com.aang23.undergroundbiomes.world.strata;
 
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.aang23.undergroundbiomes.UBBlocks;
 import com.aang23.undergroundbiomes.config.WorldConfig;
+
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 /**
  * All underground biomes
@@ -88,7 +88,7 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
   public UBBiome[] generatable(UBBiome[] possible) {
     ArrayList<UBBiome> accepted = new ArrayList<UBBiome>();
     for (int i = 0; i < possible.length; i++) {
-      IBlockState block = possible[i].filler;
+      BlockState block = possible[i].filler;
       if (true)
         accepted.add(possible[i]); // settings.generationAllowed(block)
     }

@@ -3,8 +3,8 @@ package com.aang23.undergroundbiomes.world.utils;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.config.UBConfig;
 
-import net.minecraft.nbt.INBTBase;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.nbt.INBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunk;
@@ -45,22 +45,22 @@ public class WorldChunkChecker {
     @SubscribeEvent
     public void attachChunkCaps(AttachCapabilitiesEvent<Chunk> e) {
         assert UB_FIED != null;
-        e.addCapability(ubc_res, new ICapabilitySerializable() {
+        e.addCapability(ubc_res, new ICapabilitySerializable<INBT>() {
             UBChunkCapability inst = UB_FIED.getDefaultInstance();
 
             @Override
-            public void deserializeNBT(INBTBase nbt) {
+            public void deserializeNBT(INBT nbt) {
                 UB_FIED.getStorage().readNBT(UB_FIED, inst, null, nbt);
             }
 
             @Override
-            public INBTBase serializeNBT() {
+            public INBT serializeNBT() {
                 return UB_FIED.getStorage().writeNBT(UB_FIED, inst, null);
             }
 
             @Nonnull
             @Override
-            public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
+            public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction facing) {
                 return capability == UB_FIED ? LazyOptional.of(() -> (T) inst) : LazyOptional.empty();
             }
         });

@@ -1,7 +1,7 @@
 package com.aang23.undergroundbiomes.world.strata;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 
 /**
  * @author CurtisA, LouisDB
@@ -9,7 +9,7 @@ import net.minecraft.block.state.IBlockState;
 public final class StrataLayer {
 
   public final Block block;
-  public final IBlockState filler;
+  public final BlockState filler;
   public final int minHeight, maxHeight;
 
   public StrataLayer(Block block, int minHeight, int maxHeight) {

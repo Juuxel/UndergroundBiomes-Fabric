@@ -4,19 +4,20 @@ import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.enums.UBBlock;
 import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
-import net.minecraft.block.BlockGravel;
+
+import net.minecraft.block.BlockState;
+import net.minecraft.block.GravelBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ToolType;
 
-public class UBGravel extends BlockGravel implements UBBlock {
+public class UBGravel extends GravelBlock implements UBBlock {
 
     public UBGravel() {
         super(Properties.create(Material.SAND));
@@ -28,8 +29,8 @@ public class UBGravel extends BlockGravel implements UBBlock {
     }
 
     @Override
-    public ItemBlock getItemBlock() {
-        ItemBlock itemBlock = new ItemBlock(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
+    public BlockItem getItemBlock() {
+        BlockItem itemBlock = new BlockItem(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
         itemBlock.setRegistryName(this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
         return itemBlock;
     }
@@ -40,15 +41,15 @@ public class UBGravel extends BlockGravel implements UBBlock {
     }
 
     @Override
-    public ToolType getHarvestTool(IBlockState state) {
+    public ToolType getHarvestTool(BlockState state) {
         return ToolType.SHOVEL;
     }
 
     @Override
-    public boolean canSustainPlant(IBlockState state, IBlockReader world, BlockPos pos, EnumFacing facing,
+    public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
             IPlantable plantable) {
-        EnumPlantType plantType = plantable.getPlantType(world, pos.offset(facing));
-        if (plantType == EnumPlantType.Beach || plantType == EnumPlantType.Water) {
+        PlantType plantType = plantable.getPlantType(world, pos.offset(facing));
+        if (plantType == PlantType.Beach || plantType == PlantType.Water) {
             return true;
         } else
             return false;

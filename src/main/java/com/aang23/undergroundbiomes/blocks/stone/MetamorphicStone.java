@@ -1,17 +1,18 @@
 package com.aang23.undergroundbiomes.blocks.stone;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootContext.Builder;
 
 public class MetamorphicStone extends UBStone {
     public MetamorphicVariant metamorphic_variant;
@@ -23,7 +24,7 @@ public class MetamorphicStone extends UBStone {
     }
 
     @Override
-    public float getBlockHardness(IBlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
         return metamorphic_variant.getHardness();
     }
 
@@ -38,12 +39,9 @@ public class MetamorphicStone extends UBStone {
     }
 
     @Override
-    public void getDrops(IBlockState state, NonNullList<ItemStack> drops, World world, BlockPos pos, int fortune) {
-        drops.add(new ItemStack(StoneRegistry.getCobbleForStone(this)));
-    }
-
-    @Override
-    public IItemProvider getItemDropped(IBlockState state, World worldIn, BlockPos pos, int fortune) {
-        return StoneRegistry.getCobbleForStone(this);
+    public List<ItemStack> getDrops(BlockState state, Builder builder) {
+        List<ItemStack> toReturn = new ArrayList<ItemStack>();
+        toReturn.add(new ItemStack(StoneRegistry.getCobbleForStone(this)));
+        return toReturn;
     }
 }

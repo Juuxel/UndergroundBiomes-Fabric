@@ -3,13 +3,13 @@
 
 package com.aang23.undergroundbiomes.world.strata;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 
 /**
  * @author Zeno410
  */
 public interface UBStrataColumn {
-  public IBlockState stone(int height);
+  public BlockState stone(int height);
 
-  public IBlockState stone();
+  public BlockState stone();
 }

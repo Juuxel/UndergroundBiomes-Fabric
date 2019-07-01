@@ -12,9 +12,9 @@ public class UBPackFinder implements IPackFinder {
     public <T extends ResourcePackInfo> void addPackInfosToMap(Map<String, T> nameToPackMap,
             ResourcePackInfo.IFactory<T> packInfoFactory) {
         String s = "mod:undergroundbiomesores";
-        T packInfo = ResourcePackInfo.func_195793_a(s, true,
+        T packInfo = ResourcePackInfo.createResourcePack(s, true,
                 () -> new UBResourcePack(UBOreRegistrar.packDir),
-                (IFactory<T>) packInfoFactory, ResourcePackInfo.Priority.BOTTOM);
+                (IFactory<T>) packInfoFactory, ResourcePackInfo.Priority.TOP);
         if (packInfo != null) {
             nameToPackMap.put(s, packInfo);
         }

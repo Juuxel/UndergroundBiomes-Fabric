@@ -9,11 +9,11 @@ import com.aang23.undergroundbiomes.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class StoneRegistry {
-    public static Block getVariantForStone(IBlockState initialState, UBStoneStyle style) {
+    public static Block getVariantForStone(BlockState initialState, UBStoneStyle style) {
         Block initialBlock = initialState.getBlock();
         if (initialBlock instanceof UBStone) {
             UBStone stone = (UBStone) initialBlock;

@@ -20,10 +20,9 @@ public class WorldConfig {
     public JSONObject config;
 
     public WorldConfig(IWorld world) {
-        dimensionId = world.getWorldInfo().getDimension();
+        dimensionId = world.getDimension().getType().getId();
         configWorld = world;
-        configPath = new File(
-                world.getSaveHandler().getWorldDirectory().getAbsolutePath().toString() + "/undergroundbiomes.json");
+        configPath = new File("undergroundbiomes_" + String.valueOf(dimensionId) + ".json"); //TODO make that file in the right place
         config = new JSONObject();
 
         System.out.println(configPath.toString());

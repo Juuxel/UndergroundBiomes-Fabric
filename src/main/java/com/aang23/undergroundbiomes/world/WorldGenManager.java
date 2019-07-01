@@ -36,7 +36,7 @@ public class WorldGenManager {
   @SubscribeEvent
   public void onWorldLoad(WorldEvent.Load event) {
     if (EffectiveSide.get() == LogicalSide.SERVER) {
-      if (dimensionID == event.getWorld().getWorldInfo().getDimension()) {
+      if (dimensionID == event.getWorld().getDimension().getType().getId()) {
         if (!worldDone) {
 
           worldConfig = new WorldConfig(event.getWorld());
@@ -59,8 +59,12 @@ public class WorldGenManager {
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public void onPopulateChunk(ChunkEvent.Load event) {
+
+    if (event.getWorld() == null)
+      return;
+
     if (EffectiveSide.get() == LogicalSide.SERVER) {
-      if (dimensionID == event.getWorld().getWorldInfo().getDimension()) {
+      if (dimensionID == event.getWorld().getDimension().getType().getId()) {
         if (!WorldChunkChecker.hasAlreadyBeenUBfied(event.getChunk())) {
           IChunk chunk = event.getChunk();
 

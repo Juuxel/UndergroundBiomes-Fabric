@@ -71,6 +71,7 @@ public class UndergroundBiomes {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         UBOreRegistrar.registerPack(event);
+        event.getMinecraftSupplier().get().getResourcePackList().reloadPacksFromFinders();
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -83,7 +84,7 @@ public class UndergroundBiomes {
 
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-
+        
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

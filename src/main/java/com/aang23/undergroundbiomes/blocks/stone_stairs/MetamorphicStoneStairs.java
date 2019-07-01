@@ -3,7 +3,8 @@ package com.aang23.undergroundbiomes.blocks.stone_stairs;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
-import net.minecraft.block.state.IBlockState;
+
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -17,7 +18,7 @@ public class MetamorphicStoneStairs extends UBStoneStairs {
     }
 
     @Override
-    public float getBlockHardness(IBlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
         return metamorphic_variant.getHardness();
     }
 

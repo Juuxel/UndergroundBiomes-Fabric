@@ -1,11 +1,11 @@
 package com.aang23.undergroundbiomes.world.strata;
 
-import net.minecraft.init.Blocks;
-
 import java.util.ArrayList;
 
 import com.aang23.undergroundbiomes.UBBlocks;
 import com.aang23.undergroundbiomes.config.WorldConfig;
+
+import net.minecraft.block.Blocks;
 
 /**
  * @author CurtisA, LouisDB

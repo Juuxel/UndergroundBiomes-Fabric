@@ -13,7 +13,7 @@ import com.aang23.undergroundbiomes.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.enums.UBStoneType;
 import com.aang23.undergroundbiomes.registrar.pack.UBPackFinder;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -88,7 +88,7 @@ public class UBOreRegistrar {
         generator.createLangFile();
     }
 
-    public static IBlockState getOreForStoneIfExists(Block inStone, IBlockState original) {
+    public static BlockState getOreForStoneIfExists(Block inStone, BlockState original) {
         if (inStone instanceof IgneousStone) {
             IgneousStone igneousStone = (IgneousStone) inStone;
             if (REGISTERED_ORES.containsKey(

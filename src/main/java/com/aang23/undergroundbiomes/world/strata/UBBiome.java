@@ -2,7 +2,7 @@ package com.aang23.undergroundbiomes.world.strata;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 
 /**
  * @author CurtisA, LouisDB
@@ -11,7 +11,7 @@ public final class UBBiome {
 
   public final int ID;
   public final Block block;
-  public final IBlockState filler;
+  public final BlockState filler;
 
   public StrataLayer[] strata;
 
@@ -27,7 +27,7 @@ public final class UBBiome {
     return this;
   }
 
-  public IBlockState getStrataBlockAtLayer(int y) {
+  public BlockState getStrataBlockAtLayer(int y) {
     for (StrataLayer layer : strata) {
       if (layer.heightInLayer(y))
         return layer.filler;

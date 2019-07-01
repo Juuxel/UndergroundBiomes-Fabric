@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.enums;
 
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 
 /**
  * Common interface for all UB blocks.
@@ -9,7 +9,7 @@ import net.minecraft.item.ItemBlock;
  */
 public interface UBBlock {
 
-  ItemBlock getItemBlock();
+  BlockItem getItemBlock();
 
   UBStoneType getStoneType();
 
