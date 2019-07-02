@@ -71,7 +71,7 @@ public class UndergroundBiomes {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         UBOreRegistrar.registerPack(event);
-        event.getMinecraftSupplier().get().getResourcePackList().reloadPacksFromFinders();
+        event.getMinecraftSupplier().get().reloadResources();
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
