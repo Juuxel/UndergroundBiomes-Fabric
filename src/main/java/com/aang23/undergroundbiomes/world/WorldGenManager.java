@@ -64,7 +64,7 @@ public class WorldGenManager {
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public void onPopulateChunk(ChunkEvent.Load event) {
 
-    if (!worldDone)
+    if (!worldDone || event.getWorld() == null || event.getChunk() == null)
       return;
 
     if (EffectiveSide.get() == LogicalSide.SERVER) {
