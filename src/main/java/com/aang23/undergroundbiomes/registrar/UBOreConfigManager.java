@@ -4,14 +4,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.commons.io.FileUtils;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -30,8 +33,6 @@ public class UBOreConfigManager {
     public static void setupConfigs() {
         if (!mainFolder.exists()) {
             mainFolder.mkdirs();
-            jsonsFolder.mkdirs();
-            overlayFolder.mkdirs();
             extractDefaults();
         }
         readJsons();
@@ -77,18 +78,15 @@ public class UBOreConfigManager {
 
     private static void extractDefaults() {
         try {
-            URL url = Thread.currentThread().getContextClassLoader().getResource("defaults");
-            if (url == null) {
-                // TODO Runtime exception
-            } else {
-                File dir = new File(url.toURI());
-                for (File nextFile : dir.listFiles()) {
-                    FileUtils.copyDirectory(nextFile, new File(mainFolder, nextFile.getName()));
-                }
-            }
+            File defaultsZip = new File("defaults.zip");
+            InputStream link = Thread.currentThread().getContextClassLoader().getResourceAsStream(defaultsZip.getName());
+            Files.copy(link, defaultsZip.getAbsoluteFile().toPath());
+            ZipFile zipFile = new ZipFile(defaultsZip);
+            zipFile.extractAll(mainFolder.getAbsolutePath());
+            defaultsZip.delete();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (ZipException e) {
             e.printStackTrace();
         }
     }
