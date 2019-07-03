@@ -14,16 +14,16 @@ import com.aang23.undergroundbiomes.enums.UBStoneType;
 import com.aang23.undergroundbiomes.registrar.pack.UBPackFinder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 public class UBOreRegistrar {
 
     public static File oreFolder;
 
-    public static File mcdir = Minecraft.getInstance().gameDir;
+    public static File mcdir = FMLPaths.GAMEDIR.get().toFile();
 
     public static File packDir = new File(mcdir, "ubpack");
 
