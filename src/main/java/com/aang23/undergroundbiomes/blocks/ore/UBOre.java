@@ -113,12 +113,6 @@ public class UBOre extends Block implements UBBlock {
     }
 
     @Override
-    public boolean onBlockActivated(BlockState p_220051_1_, World p_220051_2_, BlockPos p_220051_3_,
-            PlayerEntity p_220051_4_, Hand p_220051_5_, BlockRayTraceResult p_220051_6_) {
-        return baseOre.onBlockActivated(p_220051_1_, p_220051_2_, p_220051_3_, p_220051_4_, p_220051_5_, p_220051_6_);
-    }
-
-    @Override
     public int getExpDrop(BlockState state, IWorldReader world, BlockPos pos, int fortune, int silktouch) {
         return baseOre.getExpDrop(state, world, pos, fortune, silktouch);
     }
