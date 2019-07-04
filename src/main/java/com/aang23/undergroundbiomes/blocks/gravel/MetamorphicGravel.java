@@ -18,16 +18,6 @@ public class MetamorphicGravel extends UBGravel {
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
-        return metamorphic_variant.getHardness();
-    }
-
-    @Override
-    public float getExplosionResistance() {
-        return metamorphic_variant.getResistance();
-    }
-
-    @Override
     public UBStoneType getStoneType() {
         return UBStoneType.METAMORPHIC;
     }

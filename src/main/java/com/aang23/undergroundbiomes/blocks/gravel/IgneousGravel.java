@@ -18,16 +18,6 @@ public class IgneousGravel extends UBGravel {
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
-        return igneous_variant.getHardness();
-    }
-
-    @Override
-    public float getExplosionResistance() {
-        return igneous_variant.getResistance();
-    }
-
-    @Override
     public UBStoneType getStoneType() {
         return UBStoneType.IGNEOUS;
     }

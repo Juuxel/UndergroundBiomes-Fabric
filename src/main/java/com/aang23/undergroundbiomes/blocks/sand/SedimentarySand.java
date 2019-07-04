@@ -18,16 +18,6 @@ public class SedimentarySand extends UBSand {
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
-        return sedimentary_variant.getHardness();
-    }
-
-    @Override
-    public float getExplosionResistance() {
-        return sedimentary_variant.getResistance();
-    }
-
-    @Override
     public UBStoneType getStoneType() {
         return UBStoneType.SEDIMENTARY;
     }
