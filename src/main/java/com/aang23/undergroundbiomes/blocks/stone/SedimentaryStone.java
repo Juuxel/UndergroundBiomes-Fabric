@@ -47,45 +47,38 @@ public class SedimentaryStone extends UBStone {
     @Override
     public List<ItemStack> getDrops(BlockState blockstate, Builder builder) {
         List<ItemStack> drops = new ArrayList<ItemStack>();
-        //if (world.rand.nextInt(100) <= builder.) {
-            switch (sedimentary_variant) {
-            case CHALK:
-                drops.add(new ItemStack(UBItems.getRandomFossil()));
-                break;
-            case DOLOMITE:
-                super.getDrops(blockstate, builder);
-            case LIGNITE:
-                super.getDrops(blockstate, builder);
-            case LIMESTONE:
-                drops.add(new ItemStack(UBItems.getRandomFossil()));
-                break;
-            case SILTSTONE:
-                drops.add(new ItemStack(UBItems.getRandomFossil()));
-                break;
-            case SHALE:
-                drops.add(new ItemStack(Items.CLAY_BALL));
-                break;
-            case CHERT:
-                drops.add(new ItemStack(Items.FLINT));
-                break;
-            default:
-                break;
-            }
-        //} else
-        //    super.getDrops(blockstate, builder);
-        return drops;
-        //TODO REDO
-    }
 
-    /*    @Override
-    public IItemProvider getItemDropped(IBlockState state, World worldIn, BlockPos pos, int fortune) {
         if (sedimentary_variant == SedimentaryVariant.LIGNITE) {
-            return UBItems.LIGNITE_COAL;
+            drops.add(new ItemStack(UBItems.LIGNITE_COAL));
         } else {
-            if (UBConfig.ADVANCED.sedimentaryCobble.get())
-                return StoneRegistry.getCobbleForStone(this);
-            else
-                return super.getItemDropped(state, worldIn, pos, fortune);
+            if (Math.random() * 10 > 8) {
+                switch (sedimentary_variant) {
+                case CHALK:
+                    drops.add(new ItemStack(UBItems.getRandomFossil()));
+                    break;
+                case DOLOMITE:
+                    drops.add(new ItemStack(this.asItem()));
+                case LIGNITE:
+                    drops.add(new ItemStack(this.asItem()));
+                case LIMESTONE:
+                    drops.add(new ItemStack(UBItems.getRandomFossil()));
+                    break;
+                case SILTSTONE:
+                    drops.add(new ItemStack(UBItems.getRandomFossil()));
+                    break;
+                case SHALE:
+                    drops.add(new ItemStack(Items.CLAY_BALL));
+                    break;
+                case CHERT:
+                    drops.add(new ItemStack(Items.FLINT));
+                    break;
+                default:
+                    break;
+                }
+            } else
+                drops.add(new ItemStack(this.asItem()));
         }
-    }*/
+        //TODO Fortune compat?
+        return drops;
+    }
 }
