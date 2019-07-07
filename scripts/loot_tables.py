@@ -39,3 +39,41 @@ def generate_sand_loot():
             text_file = open(folder + block_name + ".json", "w")
             text_file.write(final_file)
             text_file.close()
+
+def generate_cobble_loot():
+    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+
+    data = 0
+    with open('resources_templates/loot_tables/basic.json', 'r') as file:
+        data = file.read()
+
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    for stype in ub_enums.ubc_types_and_variants:
+        for variant in ub_enums.ubc_types_and_variants[stype]:
+            block_name = stype + "_cobble_" + variant
+            final_file = data.replace("blocktodrop", "undergroundbiomes:" + block_name)
+            print(block_name)
+            text_file = open(folder + block_name + ".json", "w")
+            text_file.write(final_file)
+            text_file.close()
+
+def generate_brick_loot():
+    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+
+    data = 0
+    with open('resources_templates/loot_tables/basic.json', 'r') as file:
+        data = file.read()
+
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    for stype in ub_enums.ubc_types_and_variants:
+        for variant in ub_enums.ubc_types_and_variants[stype]:
+            block_name = stype + "_brick_" + variant
+            final_file = data.replace("blocktodrop", "undergroundbiomes:" + block_name)
+            print(block_name)
+            text_file = open(folder + block_name + ".json", "w")
+            text_file.write(final_file)
+            text_file.close()
