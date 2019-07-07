@@ -56,13 +56,6 @@ public class UBSand extends SandBlock implements UBBlock {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_220076_1_, Builder p_220076_2_) {
-        List<ItemStack> toReturn = new ArrayList<ItemStack>();
-        toReturn.add(new ItemStack(this.asItem()));
-        return toReturn;
-    }
-
-    @Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
             IPlantable plantable) {
         return Blocks.SAND.canSustainPlant(state, world, pos, facing, plantable);
