@@ -114,10 +114,6 @@ dependencies {
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
-    exec {
-        commandLine 'python3', 'scripts/generate.py'
-    }
-
     manifest {
         attributes([
             "Specification-Title": "undergroundbiomes",
@@ -136,6 +132,12 @@ jar {
         }
     }
 }
+
+task processResourceTemplates(type: Exec, group: "build", description: "Creates Resources from templates") {
+    commandLine 'python3', 'scripts/generate.py'
+}
+
+processResources.dependsOn processResourceTemplates
 
 // Example configuration to allow publishing using the maven-publish task
 // we define a custom artifact that is sourced from the reobfJar output task
