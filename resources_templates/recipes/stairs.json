@@ -7,11 +7,11 @@
     ],
     "key": {
         "#": {
-            "item": "undergroundbiomes:metamorphic_cobble_gneiss"
+            "item": "itemin"
         }
     },
     "result": {
-        "item": "undergroundbiomes:metamorphic_cobble_stairs_gneiss",
+        "item": "itemout",
         "count": 4
     }
 }
