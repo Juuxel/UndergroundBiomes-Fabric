@@ -12,4 +12,5 @@ loot_tables.generate_stone_button_loot()
 loot_tables.generate_cobble_button_loot()
 
 # Recipes
-recipes.generate_smelting_cobble()
+recipes.generate_smelting_cobble_recipes()
+recipes.generate_stone_brick_recipes()

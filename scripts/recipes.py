@@ -2,7 +2,7 @@ import ub_enums
 import os
 
 
-def generate_smelting_cobble():
+def generate_smelting_cobble_recipes():
     folder = "build/resources/main/data/undergroundbiomes/recipes/"
 
     data = 0
@@ -22,3 +22,24 @@ def generate_smelting_cobble():
                 text_file = open(folder + block_name_stone + ".json", "w")
                 text_file.write(final_file)
                 text_file.close()
+
+
+def generate_stone_brick_recipes():
+    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+
+    data = 0
+    with open('resources_templates/recipes/stone_brick.json', 'r') as file:
+        data = file.read()
+
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    for stype in ub_enums.ubc_types_and_variants:
+        for variant in ub_enums.ubc_types_and_variants[stype]:
+            block_name_brick = stype + "_brick_" + variant
+            block_name_stone = stype + "_stone_" + variant
+            final_file = data.replace("itemin", "undergroundbiomes:" + block_name_stone).replace("itemout", "undergroundbiomes:" + block_name_brick)
+            print(block_name_stone)
+            text_file = open(folder + block_name_brick + ".json", "w")
+            text_file.write(final_file)
+            text_file.close()

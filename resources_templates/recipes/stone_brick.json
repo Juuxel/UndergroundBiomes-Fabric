@@ -7,11 +7,11 @@
     ],
     "key": {
         "#": {
-            "item": "undergroundbiomes:igneous_stone_red_granite"
+            "item": "itemin"
         }
     },
     "result": {
-        "item": "undergroundbiomes:igneous_brick_red_granite",
+        "item": "itemout",
         "count": 4
     }
 }
