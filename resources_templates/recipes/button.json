@@ -5,11 +5,11 @@
     ],
     "key": {
         "#": {
-            "item": "undergroundbiomes:metamorphic_stone_eclogite"
+            "item": "itemin"
         }
     },
     "result": {
-        "item": "undergroundbiomes:metamorphic_stone_button_eclogite",
+        "item": "itemout",
         "count": 1
     }
 }

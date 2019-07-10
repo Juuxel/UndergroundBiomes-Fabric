@@ -84,3 +84,23 @@ def generate_cobble_stair_recipes():
                 text_file = open(folder + block_name_stairs + ".json", "w")
                 text_file.write(final_file)
                 text_file.close()
+
+def generate_stone_button_recipes():
+    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+
+    data = 0
+    with open('resources_templates/recipes/button.json', 'r') as file:
+        data = file.read()
+
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    for stype in ub_enums.ubc_types_and_variants:
+        for variant in ub_enums.ubc_types_and_variants[stype]:
+            block_name_button = stype + "_stone_button_" + variant
+            block_name_stone = stype + "_stone_" + variant
+            final_file = data.replace("itemin", "undergroundbiomes:" + block_name_stone).replace("itemout", "undergroundbiomes:" + block_name_button)
+            print(block_name_button)
+            text_file = open(folder + block_name_button + ".json", "w")
+            text_file.write(final_file)
+            text_file.close()
