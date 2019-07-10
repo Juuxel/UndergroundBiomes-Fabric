@@ -1,8 +1,8 @@
 package com.aang23.undergroundbiomes.blocks.infested_stone;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.enums.MetamorphicVariant;
-import com.aang23.undergroundbiomes.enums.UBStoneType;
+import com.aang23.undergroundbiomes.api.enums.MetamorphicVariant;
+import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 
 import net.minecraft.block.BlockState;

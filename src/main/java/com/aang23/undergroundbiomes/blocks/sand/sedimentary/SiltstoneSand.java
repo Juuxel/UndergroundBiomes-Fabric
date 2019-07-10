@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.sand.sedimentary;
 
-import static com.aang23.undergroundbiomes.enums.SedimentaryVariant.SILTSTONE;
+import static com.aang23.undergroundbiomes.api.enums.SedimentaryVariant.SILTSTONE;
 
 import com.aang23.undergroundbiomes.blocks.sand.SedimentarySand;;
 

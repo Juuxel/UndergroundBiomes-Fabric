@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.stone_button.metamorphic;
 
-import static com.aang23.undergroundbiomes.enums.MetamorphicVariant.MARBLE;
+import static com.aang23.undergroundbiomes.api.enums.MetamorphicVariant.MARBLE;
 
 import com.aang23.undergroundbiomes.blocks.stone_button.MetamorphicStoneButton;
 

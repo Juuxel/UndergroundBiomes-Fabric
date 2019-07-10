@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.stone_button.sedimentary;
 
-import static com.aang23.undergroundbiomes.enums.SedimentaryVariant.DOLOMITE;
+import static com.aang23.undergroundbiomes.api.enums.SedimentaryVariant.DOLOMITE;
 
 import com.aang23.undergroundbiomes.blocks.stone_button.SedimentaryStoneButton;
 

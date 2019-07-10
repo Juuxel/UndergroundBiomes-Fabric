@@ -1,4 +1,4 @@
-package com.aang23.undergroundbiomes.enums;
+package com.aang23.undergroundbiomes.api.enums;
 
 public enum FossilVariant {
     AMMONITE, SHELL, RIB, BONE, SKULL, BONE2, SHELL2, BONESHARD;

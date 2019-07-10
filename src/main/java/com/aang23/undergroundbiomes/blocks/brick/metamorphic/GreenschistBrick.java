@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.brick.metamorphic;
 
-import static com.aang23.undergroundbiomes.enums.MetamorphicVariant.GREENSCHIST;
+import static com.aang23.undergroundbiomes.api.enums.MetamorphicVariant.GREENSCHIST;
 
 import com.aang23.undergroundbiomes.blocks.brick.MetamorphicBrick;
 

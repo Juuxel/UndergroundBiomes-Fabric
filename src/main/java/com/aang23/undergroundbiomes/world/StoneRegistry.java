@@ -5,8 +5,8 @@ import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
 import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
 import com.aang23.undergroundbiomes.blocks.stone.SedimentaryStone;
 import com.aang23.undergroundbiomes.blocks.stone.UBStone;
-import com.aang23.undergroundbiomes.enums.UBStoneStyle;
-import com.aang23.undergroundbiomes.enums.UBStoneType;
+import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
+import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

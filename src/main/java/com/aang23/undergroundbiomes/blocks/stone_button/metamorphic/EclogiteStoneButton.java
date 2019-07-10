@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.stone_button.metamorphic;
 
-import static com.aang23.undergroundbiomes.enums.MetamorphicVariant.ECLOGITE;
+import static com.aang23.undergroundbiomes.api.enums.MetamorphicVariant.ECLOGITE;
 
 import com.aang23.undergroundbiomes.blocks.stone_button.MetamorphicStoneButton;
 

@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.sand.sedimentary;
 
-import static com.aang23.undergroundbiomes.enums.SedimentaryVariant.CHERT;
+import static com.aang23.undergroundbiomes.api.enums.SedimentaryVariant.CHERT;
 
 import com.aang23.undergroundbiomes.blocks.sand.SedimentarySand;
 

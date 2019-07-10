@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.enums.IgneousVariant;
-import com.aang23.undergroundbiomes.enums.UBStoneType;
+import com.aang23.undergroundbiomes.api.enums.IgneousVariant;
+import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 
 import net.minecraft.block.BlockState;

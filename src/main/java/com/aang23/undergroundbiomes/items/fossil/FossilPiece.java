@@ -1,7 +1,7 @@
 package com.aang23.undergroundbiomes.items.fossil;
 
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.aang23.undergroundbiomes.enums.FossilVariant;
+import com.aang23.undergroundbiomes.api.enums.FossilVariant;
 import net.minecraft.item.Item;
 
 public class FossilPiece extends Item {

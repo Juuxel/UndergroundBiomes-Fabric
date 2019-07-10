@@ -1,4 +1,4 @@
-package com.aang23.undergroundbiomes.enums;
+package com.aang23.undergroundbiomes.api.enums;
 
 import net.minecraft.item.BlockItem;
 

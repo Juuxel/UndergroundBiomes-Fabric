@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.blocks.stone_button.metamorphic;
 
-import static com.aang23.undergroundbiomes.enums.MetamorphicVariant.BLUESCHIST;
+import static com.aang23.undergroundbiomes.api.enums.MetamorphicVariant.BLUESCHIST;
 
 import com.aang23.undergroundbiomes.blocks.stone_button.MetamorphicStoneButton;
 
