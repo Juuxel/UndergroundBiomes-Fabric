@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aang23.undergroundbiomes.api.event.UBRegistrarRegisterOresEvent;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,6 +19,7 @@ import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class UBOreConfigManager {
@@ -73,6 +76,9 @@ public class UBOreConfigManager {
 
                 registerOre(toRegister, overlay, variant);
             }
+
+            // Other mods can register ores in this event
+            MinecraftForge.EVENT_BUS.post(new UBRegistrarRegisterOresEvent());
         }
     }
 
