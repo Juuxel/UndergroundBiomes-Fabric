@@ -5,17 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import com.cedarsoftware.util.io.JsonWriter;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.ServerWorld;
-import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.fml.common.thread.EffectiveSide;
+import com.cedarsoftware.util.io.JsonWriter;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import net.minecraft.world.IWorld;
+import net.minecraft.world.server.ServerWorld;
 
 public class WorldConfig {
     public int dimensionId;

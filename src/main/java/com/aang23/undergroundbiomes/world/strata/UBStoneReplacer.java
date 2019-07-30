@@ -52,7 +52,7 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
             int variation = (int) (noiseGenerator.noise((xPos + x) / 55.533, (zPos + z) / 55.533, 3, 1, 0.5) * 10 - 5);
 
             for (int y = 0; y < 16; ++y) {
-              BlockState currentBlockState = storage.get(x, y, z);
+              BlockState currentBlockState = storage.getBlockState(x, y, z);
               Block currentBlock = currentBlockState.getBlock();
               BlockPos currentBlockPos = new BlockPos(x, y, z);
               /*
@@ -68,23 +68,23 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                   || currentBlock == Blocks.DIORITE || currentBlock == Blocks.GRANITE)
                   && UBConfig.WORLDGEN.replaceStone.get()) {
                 // Replace with UBified version
-                storage.set(x, y, z, currentBiome.getStrataBlockAtLayer(yPos + y + variation), true);
+                storage.setBlockState(x, y, z, currentBiome.getStrataBlockAtLayer(yPos + y + variation), true);
                 continue;
               } else if (currentBlock == Blocks.GRAVEL && UBConfig.WORLDGEN.replaceGravel.get()) {
                 // Replace with UBified version
-                storage.set(x, y, z, StoneRegistry
+                storage.setBlockState(x, y, z, StoneRegistry
                     .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.GRAVEL)
                     .getDefaultState(), true);
                 continue;
               } else if (currentBlock == Blocks.INFESTED_STONE && UBConfig.WORLDGEN.replaceInfestedStone.get()) {
                 // Replace with UBified version
-                storage.set(x, y, z,
+                storage.setBlockState(x, y, z,
                     StoneRegistry.getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation),
                         UBStoneStyle.INFESTED_STONE).getDefaultState(), true);
                 continue;
               } else if (currentBlock == Blocks.SAND && UBConfig.WORLDGEN.replaceSand.get()) {
                 // Replace with UBified version
-                storage.set(x, y, z,
+                storage.setBlockState(x, y, z,
                     StoneRegistry
                         .getVariantForStone(currentBiome.getStrataBlockAtLayer(yPos + y + variation), UBStoneStyle.SAND)
                         .getDefaultState(), true);
@@ -94,14 +94,14 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
                 BlockState strataBlock = currentBiome.getStrataBlockAtLayer(yPos + y + variation);
 
                 if (!(strataBlock.getBlock() instanceof SedimentaryStone) || UBConfig.ADVANCED.sedimentaryCobble.get())
-                  storage.set(x, y, z,
+                  storage.setBlockState(x, y, z,
                       StoneRegistry.getVariantForStone(strataBlock, UBStoneStyle.COBBLE).getDefaultState(), true);
                 continue;
               } else {
                 // Replace with UBified version
                 BlockState strataBlock = currentBiome.getStrataBlockAtLayer(yPos + y + variation);
 
-                storage.set(x, y, z, UBOreRegistrar.getOreForStoneIfExists(strataBlock.getBlock(), currentBlockState), true);
+                storage.setBlockState(x, y, z, UBOreRegistrar.getOreForStoneIfExists(strataBlock.getBlock(), currentBlockState), true);
 
                 continue;
               }
