@@ -1,11 +1,13 @@
 package com.aang23.undergroundbiomes.api.enums;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringIdentifiable;
+
+import java.util.Locale;
 
 /**
  * @author CurtisA, LouisDB
  */
-public enum MetamorphicVariant implements IStringSerializable, Variant<MetamorphicVariant> {
+public enum MetamorphicVariant implements StringIdentifiable, Variant<MetamorphicVariant> {
     GNEISS(1.1F, 1.11F), ECLOGITE(1.0F, 1.0F), MARBLE(1.1F, 1.11F), QUARTZITE(1.3F, 1.26F), BLUESCHIST(0.7F, 0.54F),
     GREENSCHIST(0.7F, 0.54F), SOAPSTONE(0.4F, 0.2F), MIGMATITE(0.9F, 0.86F);
 
@@ -37,11 +39,11 @@ public enum MetamorphicVariant implements IStringSerializable, Variant<Metamorph
 
     @Override
     public String toString() {
-        return name().toLowerCase();
+        return name().toLowerCase(Locale.ROOT);
     }
 
     @Override
-    public String getName() {
+    public String asString() {
         return toString();
     }
 

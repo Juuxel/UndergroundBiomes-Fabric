@@ -1,5 +1,7 @@
 package com.aang23.undergroundbiomes.api.enums;
 
+import java.util.Locale;
+
 public enum FossilVariant {
     AMMONITE, SHELL, RIB, BONE, SKULL, BONE2, SHELL2, BONESHARD;
 
@@ -8,6 +10,6 @@ public enum FossilVariant {
 
     @Override
     public String toString() {
-        return name().toLowerCase();
+        return name().toLowerCase(Locale.ROOT);
     }
 }

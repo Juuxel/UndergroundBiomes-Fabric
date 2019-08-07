@@ -1,24 +1,20 @@
 package com.aang23.undergroundbiomes.blocks.stone_button;
 
+import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
 import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 
+import net.minecraft.block.Material;
 import net.minecraft.block.StoneButtonBlock;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.ToolType;
 
 public class UBStoneButton extends StoneButtonBlock implements UBBlock {
 
     public UBStoneButton() {
-        super(Properties.create(Material.ROCK));
+        super(Settings.of(Material.STONE));
     }
 
     @Override
@@ -28,8 +24,8 @@ public class UBStoneButton extends StoneButtonBlock implements UBBlock {
 
     @Override
     public BlockItem getItemBlock() {
-        BlockItem itemBlock = new BlockItem(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
-        itemBlock.setRegistryName(this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
+        BlockItem itemBlock = new BlockItem(this, new Item.Settings().group(UndergroundBiomes.CREATIVE_TAB));
+        Faborge.setRegistryName(itemBlock, this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
         return itemBlock;
     }
 

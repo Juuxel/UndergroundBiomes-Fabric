@@ -11,8 +11,8 @@ import com.aang23.undergroundbiomes.world.StoneRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.storage.loot.LootContext.Builder;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.loot.context.LootContext;
 
 public class MetamorphicStone extends UBStone {
     public MetamorphicVariant metamorphic_variant;
@@ -20,16 +20,16 @@ public class MetamorphicStone extends UBStone {
     public MetamorphicStone(MetamorphicVariant metamorphic_variant) {
         super();
         this.metamorphic_variant = metamorphic_variant;
-        setRegistryName(UndergroundBiomes.modid + ":metamorphic_stone_" + metamorphic_variant.getName().toLowerCase());
+        setRegistryName(UndergroundBiomes.modid + ":metamorphic_stone_" + metamorphic_variant.asString());
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getHardness(BlockState blockState, BlockView worldIn, BlockPos pos) {
         return metamorphic_variant.getHardness();
     }
 
     @Override
-    public float getExplosionResistance() {
+    public float getBlastResistance() {
         return metamorphic_variant.getResistance();
     }
 
@@ -39,7 +39,7 @@ public class MetamorphicStone extends UBStone {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, Builder builder) {
+    public List<ItemStack> getDroppedStacks(BlockState state, LootContext.Builder builder) {
         List<ItemStack> toReturn = new ArrayList<ItemStack>();
         toReturn.add(new ItemStack(StoneRegistry.getCobbleForStone(this)));
         return toReturn;

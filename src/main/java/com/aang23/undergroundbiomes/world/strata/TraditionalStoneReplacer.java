@@ -4,13 +4,14 @@
 package com.aang23.undergroundbiomes.world.strata;
 
 
+import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.config.WorldConfig;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayer;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerSmooth;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerVoronoiZoom;
 import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerZoom;
 import com.aang23.undergroundbiomes.world.strata.noise.SimplexNoiseGenerator;
-import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.Chunk;
 
 /**
  * @author curtisadams
@@ -23,14 +24,14 @@ public class TraditionalStoneReplacer extends UBStoneReplacer {
   public TraditionalStoneReplacer(long seed, int size, UndergroundBiomeSet biomeSet, WorldConfig config) {
     super(biomeSet.allowedBiomes(), new SimplexNoiseGenerator(seed), config);
     if (biomeSet.allowedBiomes()[20].ID < 1) {
-      throw new RuntimeException(biomeSet.toString() + biomeSet.allowedBiomes()[20].filler.getBlock().getRegistryName());
+      throw new RuntimeException(biomeSet.toString() + Faborge.getRegistryName(biomeSet.allowedBiomes()[20].filler.getBlock()));
     }
     undergroundBiomeIndexLayer = biomeGenerators(seed, size, biomeSet);
   }
 
 
   @Override
-  public int[] getBiomeValues(IChunk chunk) {
+  public int[] getBiomeValues(Chunk chunk) {
 
     int[] var7 = this.undergroundBiomeIndexLayer.getInts(chunk.getPos().x * 16, chunk.getPos().z * 16, 16, 16);
     return var7;

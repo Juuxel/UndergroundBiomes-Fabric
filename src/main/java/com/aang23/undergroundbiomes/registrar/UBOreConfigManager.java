@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.api.event.UBRegistrarRegisterOresEvent;
 
 import org.json.simple.JSONObject;
@@ -18,9 +19,8 @@ import org.json.simple.parser.ParseException;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.minecraft.block.Block;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class UBOreConfigManager {
     // Folders
@@ -43,8 +43,8 @@ public class UBOreConfigManager {
 
     private static void registerOre(Block ore, String overlay, String variant) {
         UBOreRegistrar.registerOre(ore);
-        overlayCache.put(ore.getRegistryName().toString(), overlay);
-        stoneVariantCache.put(ore.getRegistryName().toString(), variant);
+        overlayCache.put(Faborge.getRegistryName(ore).toString(), overlay);
+        stoneVariantCache.put(Faborge.getRegistryName(ore).toString(), variant);
     }
 
     private static void readJsons() {
@@ -64,7 +64,7 @@ public class UBOreConfigManager {
 
             for (Object currentOreObj : currentConfig.keySet()) {
                 String currentOre = (String) currentOreObj;
-                Block toRegister = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(currentOre));
+                Block toRegister = Registry.BLOCK.get(new Identifier(currentOre));
                 Map oreConfig = new HashMap<>();
                 oreConfig = (Map) currentConfig.get(currentOre);
                 String overlay = (String) oreConfig.get("overlay");
@@ -78,7 +78,7 @@ public class UBOreConfigManager {
             }
 
             // Other mods can register ores in this event
-            MinecraftForge.EVENT_BUS.post(new UBRegistrarRegisterOresEvent());
+            //MinecraftForge.EVENT_BUS.post(new UBRegistrarRegisterOresEvent());
         }
     }
 

@@ -6,14 +6,15 @@ import com.aang23.undergroundbiomes.config.UBConfig;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ItemLignite extends Item {
+public class ItemLignite extends Item implements FaborgeItem {
     public ItemLignite() {
-        super(new Properties().group(UndergroundBiomes.CREATIVE_TAB).defaultMaxDamage(0).maxStackSize(64));
+        super(new Settings().group(UndergroundBiomes.CREATIVE_TAB).maxDamageIfAbsent(0).maxCount(64));
         setRegistryName(UndergroundBiomes.modid + ":lignite_coal");
     }
 
-    @Override
+    // TODO: Fuel times
+    /*@Override
     public int getBurnTime(ItemStack itemStack) {
         return UBConfig.ITEMS.ligniteSmeltTime.get();
-    }
+    }*/
 }

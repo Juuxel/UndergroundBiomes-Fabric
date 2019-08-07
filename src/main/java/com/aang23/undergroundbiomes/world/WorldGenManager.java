@@ -8,14 +8,14 @@ import com.aang23.undergroundbiomes.world.strata.UBStoneReplacer;
 import com.aang23.undergroundbiomes.world.strata.UndergroundBiomeSet;
 import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
 
-import net.minecraft.world.chunk.Chunk;
+/*import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.fml.common.thread.EffectiveSide;
+import net.minecraftforge.fml.common.thread.EffectiveSide;*/
 
 public class WorldGenManager {
 
@@ -34,7 +34,7 @@ public class WorldGenManager {
     this.dimensionID = dimensionID;
   }
 
-  @SubscribeEvent(priority = EventPriority.HIGHEST)
+  /*@SubscribeEvent(priority = EventPriority.HIGHEST)
   public void onWorldLoad(WorldEvent.Load event) {
     if (EffectiveSide.get() == LogicalSide.SERVER) {
       if (dimensionID == event.getWorld().getDimension().getType().getId()) {
@@ -45,7 +45,7 @@ public class WorldGenManager {
 
           biomesSet = new UBBiomesSet(worldConfig);
           seed = (int) event.getWorld().getSeed();
-          if (UBConfig.ADVANCED.differentSeedPerWorld.get())
+          if (UBConfig.advanced.differentSeedPerWorld.get())
             seed += dimensionID;
 
           this.stoneReplacer = new TraditionalStoneReplacer(seed, worldConfig.biomeSize(), biomesSet, worldConfig);
@@ -78,5 +78,5 @@ public class WorldGenManager {
         }
       }
     }
-  }
+  }*/
 }

@@ -6,7 +6,7 @@ import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.world.BlockView;
 
 public class SedimentaryCobble extends UBCobble {
     public SedimentaryVariant sedimentary_variant;
@@ -14,16 +14,16 @@ public class SedimentaryCobble extends UBCobble {
     public SedimentaryCobble(SedimentaryVariant sedimentary_variant) {
         super();
         this.sedimentary_variant = sedimentary_variant;
-        setRegistryName(UndergroundBiomes.modid + ":sedimentary_cobble_" + sedimentary_variant.getName().toLowerCase());
+        setRegistryName(UndergroundBiomes.modid + ":sedimentary_cobble_" + sedimentary_variant.asString());
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getHardness(BlockState blockState, BlockView worldIn, BlockPos pos) {
         return sedimentary_variant.getHardness();
     }
 
     @Override
-    public float getExplosionResistance() {
+    public float getBlastResistance() {
         return sedimentary_variant.getResistance();
     }
 

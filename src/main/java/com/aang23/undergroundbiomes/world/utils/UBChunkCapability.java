@@ -1,11 +1,5 @@
 package com.aang23.undergroundbiomes.world.utils;
 
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.StringNBT;
-import net.minecraft.util.Direction;
-import net.minecraft.util.text.NBTTextComponent;
-import net.minecraftforge.common.capabilities.Capability;
-
 public interface UBChunkCapability {
 
     String getUBMarker();
@@ -30,7 +24,7 @@ public interface UBChunkCapability {
         }
     }
 
-    class Storage implements Capability.IStorage<UBChunkCapability> {
+    /*class Storage implements Capability.IStorage<UBChunkCapability> {
         @Override
         public void readNBT(Capability<UBChunkCapability> capability, UBChunkCapability instance, Direction side,
                 INBT nbt) {
@@ -43,5 +37,5 @@ public interface UBChunkCapability {
         Direction side) {
             return new StringNBT(instance.getUBMarker() != null ? instance.getUBMarker() : "");
         }
-    }
+    }*/
 }

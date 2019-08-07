@@ -10,12 +10,9 @@ import com.aang23.undergroundbiomes.world.StoneRegistry;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IItemProvider;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-import net.minecraft.world.storage.loot.LootContext.Builder;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.loot.context.LootContext;
 
 public class IgneousStone extends UBStone {
     public IgneousVariant igneous_variant;
@@ -23,16 +20,16 @@ public class IgneousStone extends UBStone {
     public IgneousStone(IgneousVariant igneous_variant) {
         super();
         this.igneous_variant = igneous_variant;
-        setRegistryName(UndergroundBiomes.modid + ":igneous_stone_" + igneous_variant.getName().toLowerCase());
+        setRegistryName(UndergroundBiomes.modid + ":igneous_stone_" + igneous_variant.asString());
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getHardness(BlockState blockState, BlockView world, BlockPos pos) {
         return igneous_variant.getHardness();
     }
 
     @Override
-    public float getExplosionResistance() {
+    public float getBlastResistance() {
         return igneous_variant.getResistance();
     }
 
@@ -42,7 +39,7 @@ public class IgneousStone extends UBStone {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_220076_1_, Builder p_220076_2_) {
+    public List<ItemStack> getDroppedStacks(BlockState state, LootContext.Builder builder) {
         List<ItemStack> toReturn = new ArrayList<ItemStack>();
         toReturn.add(new ItemStack(StoneRegistry.getCobbleForStone(this)));
         return toReturn;

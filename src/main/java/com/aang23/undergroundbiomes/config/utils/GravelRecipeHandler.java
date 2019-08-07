@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.config.utils;
 
-import com.aang23.undergroundbiomes.config.UBConfig;
+/*import com.aang23.undergroundbiomes.config.UBConfig;
 import com.google.gson.JsonObject;
 import net.minecraft.util.JSONUtils;
 import net.minecraftforge.common.crafting.IConditionSerializer;
@@ -15,4 +15,6 @@ public class GravelRecipeHandler implements IConditionSerializer
         return () -> UBConfig.RECIPES.gravelToVanillaRecipe.get() == value;
     }
 
-}
+}*/
+
+public class GravelRecipeHandler {}

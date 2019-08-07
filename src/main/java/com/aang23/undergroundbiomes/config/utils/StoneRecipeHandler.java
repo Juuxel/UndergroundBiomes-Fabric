@@ -1,6 +1,6 @@
 package com.aang23.undergroundbiomes.config.utils;
 
-import com.aang23.undergroundbiomes.config.UBConfig;
+/*import com.aang23.undergroundbiomes.config.UBConfig;
 import com.google.gson.JsonObject;
 
 import net.minecraft.util.JSONUtils;
@@ -16,4 +16,6 @@ public class StoneRecipeHandler implements IConditionSerializer
         return () -> UBConfig.RECIPES.stoneToVanillaRecipe.get() == value;
     }
 
-}
+}*/
+
+public class StoneRecipeHandler {}

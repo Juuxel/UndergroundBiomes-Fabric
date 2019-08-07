@@ -1,11 +1,13 @@
 package com.aang23.undergroundbiomes.api.enums;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringIdentifiable;
+
+import java.util.Locale;
 
 /**
  * @author CurtisA, LouisDB
  */
-public enum SedimentaryVariant implements IStringSerializable, Variant<SedimentaryVariant> {
+public enum SedimentaryVariant implements StringIdentifiable, Variant<SedimentaryVariant> {
   LIMESTONE(0.5F, 0.29F), CHALK(0.5F, 0.29F), SHALE(0.5F, 0.29F), SILTSTONE(0.6F, 0.4F), LIGNITE(0.5F, 0.29F), DOLOMITE(0.5F, 0.29F), GREYWACKE(1.0F, 1.0F), CHERT(0.9F, 0.86F);
 
   public static final SedimentaryVariant[] SEDIMENTARY_VARIANTS = values();
@@ -33,11 +35,11 @@ public enum SedimentaryVariant implements IStringSerializable, Variant<Sedimenta
 
   @Override
   public String toString() {
-    return name().toLowerCase();
+    return name().toLowerCase(Locale.ROOT);
   }
 
   @Override
-  public String getName() {
+  public String asString() {
     return toString();
   }
 

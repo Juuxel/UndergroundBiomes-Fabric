@@ -8,15 +8,16 @@ import java.io.PrintWriter;
 
 import com.cedarsoftware.util.io.JsonWriter;
 
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.dimension.DimensionType;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.world.server.ServerWorld;
 
 public class WorldConfig {
-    public int dimensionId;
+    public String dimensionId;
 
     private IWorld configWorld;
     private File configPath;
@@ -24,10 +25,10 @@ public class WorldConfig {
     public JSONObject config;
 
     public WorldConfig(IWorld world) {
-            dimensionId = world.getDimension().getType().getId();
+            dimensionId = DimensionType.getId(world.getDimension().getType()).toString();
             configWorld = world;
-            configPath = new File(world.getDimension().getType().getDirectory(
-                    ((ServerWorld) world).getSaveHandler().getWorldDirectory()), "undergroundbiomes.json");
+            configPath = new File(world.getDimension().getType().getFile(
+                    ((ServerWorld) world).getSaveHandler().getWorldDir()), "undergroundbiomes.json");
             config = new JSONObject();
     }
 
@@ -44,10 +45,10 @@ public class WorldConfig {
             }
         } else {
             config.put("worldId", dimensionId);
-            config.put("harmoniousStrata", UBConfig.WORLDGEN.harmoniousStrata.get());
-            config.put("biomeSize", (int) UBConfig.WORLDGEN.biomeSize.get());
-            config.put("generationHeight", (int) UBConfig.WORLDGEN.generationHeight.get());
-            config.put("spawnVanillaStone", UBConfig.WORLDGEN.spawnVanillaStone.get());
+            config.put("harmoniousStrata", UBConfig.instance().worldgen.harmoniousStrata);
+            config.put("biomeSize", UBConfig.instance().worldgen.biomeSize);
+            config.put("generationHeight", UBConfig.instance().worldgen.generationHeight);
+            config.put("spawnVanillaStone", UBConfig.instance().worldgen.spawnVanillaStone);
 
             PrintWriter pw = null;
             try {

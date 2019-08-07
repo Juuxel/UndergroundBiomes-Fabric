@@ -6,7 +6,7 @@ import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.world.BlockView;
 
 public class MetamorphicStoneStairs extends UBStoneStairs {
     public MetamorphicVariant metamorphic_variant;
@@ -14,16 +14,16 @@ public class MetamorphicStoneStairs extends UBStoneStairs {
     public MetamorphicStoneStairs(MetamorphicVariant metamorphic_variant) {
         super();
         this.metamorphic_variant = metamorphic_variant;
-        setRegistryName(UndergroundBiomes.modid + ":metamorphic_stone_stairs_" + metamorphic_variant.getName().toLowerCase());
+        setRegistryName(UndergroundBiomes.modid + ":metamorphic_stone_stairs_" + metamorphic_variant.asString());
     }
 
     @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
+    public float getHardness(BlockState blockState, BlockView worldIn, BlockPos pos) {
         return metamorphic_variant.getHardness();
     }
 
     @Override
-    public float getExplosionResistance() {
+    public float getBlastResistance() {
         return metamorphic_variant.getResistance();
     }
 

@@ -3,6 +3,8 @@ package com.aang23.undergroundbiomes.registrar;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.blocks.ore.UBOre;
 import com.aang23.undergroundbiomes.blocks.stone.IgneousStone;
 import com.aang23.undergroundbiomes.blocks.stone.MetamorphicStone;
@@ -11,19 +13,16 @@ import com.aang23.undergroundbiomes.api.enums.IgneousVariant;
 import com.aang23.undergroundbiomes.api.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.api.enums.SedimentaryVariant;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
-import com.aang23.undergroundbiomes.registrar.pack.UBPackFinder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.minecraft.util.registry.Registry;
 
 public class UBOreRegistrar {
 
     public static File oreFolder;
 
-    public static File mcdir = FMLPaths.GAMEDIR.get().toFile();
+    public static File mcdir = FabricLoader.getInstance().getGameDirectory();
 
     public static File packDir = new File(mcdir, "ubpack");
 
@@ -32,36 +31,34 @@ public class UBOreRegistrar {
     public static void registerOre(Block toRegisterAsOre) {
         for (IgneousVariant currentVariant : IgneousVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.IGNEOUS,
-                    currentVariant.getName());
-            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
+                    currentVariant.asString());
+            REGISTERED_ORES.put(Faborge.getRegistryName(toRegisterAsOre).toString() + "/" + currentVariant.asString(), ore);
         }
 
         for (MetamorphicVariant currentVariant : MetamorphicVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.METAMORPHIC,
-                    currentVariant.getName());
-            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
+                    currentVariant.asString());
+            REGISTERED_ORES.put(Faborge.getRegistryName(toRegisterAsOre).toString() + "/" + currentVariant.asString(), ore);
         }
 
         for (SedimentaryVariant currentVariant : SedimentaryVariant.values()) {
             UBOre ore = new UBOre(toRegisterAsOre, toRegisterAsOre.getDefaultState(), UBStoneType.SEDIMENTARY,
-                    currentVariant.getName());
-            REGISTERED_ORES.put(toRegisterAsOre.getRegistryName().toString() + "/" + currentVariant.getName(), ore);
+                    currentVariant.asString());
+            REGISTERED_ORES.put(Faborge.getRegistryName(toRegisterAsOre).toString() + "/" + currentVariant.asString(), ore);
         }
     }
 
-    public static void registerOres(final RegistryEvent.Register<Block> e) {
-        for (UBOre toRegister : REGISTERED_ORES.values())
-            e.getRegistry().register(toRegister);
+    public static void registerOres() {
+        for (UBOre toRegister : REGISTERED_ORES.values()) {
+            Registry.register(Registry.BLOCK, Faborge.getRegistryName(toRegister), toRegister);
+            Registry.register(Registry.ITEM, Faborge.getRegistryName(toRegister), toRegister.getItemBlock());
+        }
     }
 
-    public static void registerOresItems(final RegistryEvent.Register<Item> e) {
-        for (UBOre toRegister : REGISTERED_ORES.values())
-            e.getRegistry().register(toRegister.getItemBlock());
-    }
-
-    public static void registerPack(final FMLClientSetupEvent event) {
+    public static void registerPack() {
         generatePack();
-        event.getMinecraftSupplier().get().getResourcePackList().addPackFinder(new UBPackFinder());
+        // TODO: Mixin to MCClient, I think? Check Cotton.
+        //event.getMinecraftSupplier().get().getResourcePackList().addPackFinder(new UBPackFinder());
     }
 
     public static void initialSetup() {
@@ -75,14 +72,14 @@ public class UBOreRegistrar {
         for (UBOre toRegister : REGISTERED_ORES.values()) {
             generator.createModelForOre(toRegister.getRegistryName().toString(),
                     "undergroundbiomes:block/"
-                            + UBOreConfigManager.stoneVariantCache.get(toRegister.baseOre.getRegistryName().toString())
+                            + UBOreConfigManager.stoneVariantCache.get(Faborge.getRegistryName(toRegister.baseOre).toString())
                             + "/" + toRegister.sub_stone_name,
-                    UBOreConfigManager.overlayCache.get(toRegister.baseOre.getRegistryName().toString()));
+                    UBOreConfigManager.overlayCache.get(Faborge.getRegistryName(toRegister.baseOre).toString()));
             generator.createBlockstateForOre(toRegister.getRegistryName().toString());
             generator.createItemModelForOre(toRegister.getRegistryName().toString());
             String localizedName = Character.toUpperCase(toRegister.sub_stone_name.charAt(0))
                     + toRegister.sub_stone_name.substring(1).replace("_", " ") + " "
-                    + UBOreConfigManager.nameCache.get(toRegister.baseOre.getRegistryName().toString());
+                    + UBOreConfigManager.nameCache.get(Faborge.getRegistryName(toRegister.baseOre).toString());
             generator.createLangEntryForItem(toRegister.getRegistryName().toString(), localizedName);
         }
         generator.createLangFile();
@@ -92,30 +89,30 @@ public class UBOreRegistrar {
         if (inStone instanceof IgneousStone) {
             IgneousStone igneousStone = (IgneousStone) inStone;
             if (REGISTERED_ORES.containsKey(
-                    original.getBlock().getRegistryName().toString() + "/" + igneousStone.igneous_variant.getName())) {
+                    Faborge.getRegistryName(original.getBlock()).toString() + "/" + igneousStone.igneous_variant.asString())) {
 
                 return REGISTERED_ORES
-                        .get(original.getBlock().getRegistryName().toString() + "/" + igneousStone.igneous_variant.getName())
+                        .get(Faborge.getRegistryName(original.getBlock()).toString() + "/" + igneousStone.igneous_variant.asString())
                         .getDefaultState();
             } else
                 return original;
         } else if (inStone instanceof MetamorphicStone) {
             MetamorphicStone metamorphicStone = (MetamorphicStone) inStone;
             if (REGISTERED_ORES.containsKey(
-                    original.getBlock().getRegistryName().toString() + "/" + metamorphicStone.metamorphic_variant.getName())) {
+                    Faborge.getRegistryName(original.getBlock()).toString() + "/" + metamorphicStone.metamorphic_variant.asString())) {
 
                 return REGISTERED_ORES.get(
-                        original.getBlock().getRegistryName().toString() + "/" + metamorphicStone.metamorphic_variant.getName())
+                        Faborge.getRegistryName(original.getBlock()).toString() + "/" + metamorphicStone.metamorphic_variant.asString())
                         .getDefaultState();
             } else
                 return original;
         } else if (inStone instanceof SedimentaryStone) {
             SedimentaryStone sedimentaryStone = (SedimentaryStone) inStone;
             if (REGISTERED_ORES.containsKey(
-                    original.getBlock().getRegistryName().toString() + "/" + sedimentaryStone.sedimentary_variant.getName())) {
+                    Faborge.getRegistryName(original.getBlock()).toString() + "/" + sedimentaryStone.sedimentary_variant.asString())) {
 
                 return REGISTERED_ORES.get(
-                        original.getBlock().getRegistryName().toString() + "/" + sedimentaryStone.sedimentary_variant.getName())
+                        Faborge.getRegistryName(original.getBlock()).toString() + "/" + sedimentaryStone.sedimentary_variant.asString())
                         .getDefaultState();
             } else
                 return original;

@@ -1,11 +1,13 @@
 package com.aang23.undergroundbiomes.api.enums;
 
-import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.StringIdentifiable;
+
+import java.util.Locale;
 
 /**
  * @author CurtisA, LouisDB
  */
-public enum IgneousVariant implements IStringSerializable, Variant<IgneousVariant> {
+public enum IgneousVariant implements StringIdentifiable, Variant<IgneousVariant> {
   RED_GRANITE(1.7F, 1.42F), BLACK_GRANITE(1.6F, 1.39F), RHYOLITE(1.3F, 1.26F), ANDESITE(1.4F, 1.31F), GABBRO(1.0F, 1.0F), BASALT(1.4F, 1.31F), KOMATIITE(1.5F, 1.35F), DACITE(1.2F, 1.2F);
 
   public static final IgneousVariant[] IGNEOUS_VARIANTS = values();
@@ -36,11 +38,11 @@ public enum IgneousVariant implements IStringSerializable, Variant<IgneousVarian
 
   @Override
   public String toString() {
-    return name().toLowerCase();
+    return name().toLowerCase(Locale.ROOT);
   }
 
   @Override
-  public String getName() {
+  public String asString() {
     return toString();
   }
 

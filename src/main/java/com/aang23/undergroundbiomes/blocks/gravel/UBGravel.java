@@ -1,31 +1,26 @@
 package com.aang23.undergroundbiomes.blocks.gravel;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
 import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 
-import net.minecraft.block.BlockState;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GravelBlock;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.ToolType;
-import net.minecraft.world.storage.loot.LootContext.Builder;
+import net.minecraft.sound.BlockSoundGroup;
 
 public class UBGravel extends GravelBlock implements UBBlock {
 
     public UBGravel() {
-        super(Properties.create(Material.SAND));
+        super(FabricBlockSettings.copy(Blocks.GRAVEL)
+                .sounds(BlockSoundGroup.GRAVEL)
+                .breakByTool(FabricToolTags.SHOVELS)
+                .build());
     }
 
     @Override
@@ -35,8 +30,8 @@ public class UBGravel extends GravelBlock implements UBBlock {
 
     @Override
     public BlockItem getItemBlock() {
-        BlockItem itemBlock = new BlockItem(this, new Item.Properties().group(UndergroundBiomes.CREATIVE_TAB));
-        itemBlock.setRegistryName(this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
+        BlockItem itemBlock = new BlockItem(this, new Item.Settings().group(UndergroundBiomes.CREATIVE_TAB));
+        Faborge.setRegistryName(itemBlock, this.getRegistryName().toString().replace(UndergroundBiomes.modid + ":", ""));
         return itemBlock;
     }
 
@@ -45,19 +40,22 @@ public class UBGravel extends GravelBlock implements UBBlock {
         return null;
     }
 
-    @Override
+    // TODO: I think this is done by FabricBlockSettings.breakByTool
+    /*@Override
     public ToolType getHarvestTool(BlockState state) {
         return Blocks.GRAVEL.getHarvestTool(state);
-    }
+    }*/
 
-    @Override
-    public float getBlockHardness(BlockState blockState, IBlockReader worldIn, BlockPos pos) {
-        return Blocks.GRAVEL.getBlockHardness(blockState, worldIn, pos);
-    }
+    // TODO: This might be useless? UBGravel extends GravelBlock
+    /*@Override
+    public float getHardness(BlockState blockState, BlockView worldIn, BlockPos pos) {
+        return Blocks.GRAVEL.getDefaultState().getHardness(worldIn, pos);
+    }*/
 
-    @Override
+    // TODO
+    /*@Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
             IPlantable plantable) {
         return Blocks.GRAVEL.canSustainPlant(state, world, pos, facing, plantable);
-    }
+    }*/
 }
