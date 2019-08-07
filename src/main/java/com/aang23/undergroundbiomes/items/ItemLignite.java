@@ -11,10 +11,4 @@ public class ItemLignite extends Item implements FaborgeItem {
         super(new Settings().group(UndergroundBiomes.CREATIVE_TAB).maxDamageIfAbsent(0).maxCount(64));
         setRegistryName(UndergroundBiomes.modid + ":lignite_coal");
     }
-
-    // TODO: Fuel times
-    /*@Override
-    public int getBurnTime(ItemStack itemStack) {
-        return UBConfig.ITEMS.ligniteSmeltTime.get();
-    }*/
 }

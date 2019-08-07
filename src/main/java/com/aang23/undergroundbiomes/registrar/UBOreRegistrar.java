@@ -57,8 +57,6 @@ public class UBOreRegistrar {
 
     public static void registerPack() {
         generatePack();
-        // TODO: Mixin to MCClient, I think? Check Cotton.
-        //event.getMinecraftSupplier().get().getResourcePackList().addPackFinder(new UBPackFinder());
     }
 
     public static void initialSetup() {

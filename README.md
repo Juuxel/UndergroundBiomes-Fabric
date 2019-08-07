@@ -1,6 +1,10 @@
-# UndergroundBiomes 
+# UndergroundBiomes-Fabric
 
-[![Build Status - 1.13.2](https://img.shields.io/jenkins/build/http/www.altillimity.com/jenkins/job/Underground%20Biomes%201.14.2.svg)](http://www.altillimity.com/jenkins/job/Underground%20Biomes%201.13.2/) [![Discord](https://img.shields.io/discord/479711261274406913.svg?logo=discord&label=)](https://discord.gg/kpJEnAf)
+A personal fork of Underground Biomes for Fabric.
 
-For Minecraft 1.12+
-CurseForge : https://minecraft.curseforge.com/projects/underground-biomes
+**Including:**
+- *Faborge!* Mimicking Forge's patches with mixins
+- *Jankson!* The other JSON parsing libraries were replaced with Jankson
+- *Broken button models!* (I didn't cause this) :eyes:
+
+**Downloads:** None. You can built it yourself if you need to.

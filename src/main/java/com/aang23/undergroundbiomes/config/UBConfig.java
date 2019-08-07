@@ -1,5 +1,6 @@
 package com.aang23.undergroundbiomes.config;
 
+import blue.endless.jankson.Comment;
 import blue.endless.jankson.Jankson;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -43,46 +44,22 @@ public class UBConfig {
     }
 
     public static class General {
-        public final String ubChunkKey = "ub";
+        //public final String ubChunkKey = "ub";
+        @Comment("The list of dimensions ids. Must be separated by a comma (,). Whitelist.")
         public final String dimensionList = "minecraft:overworld";
-
-//        General(ForgeConfigSpec.Builder builder) {
-//            builder.push("General");
-//
-//            ubChunkKey = builder.comment("The sring used to mark chunks as UB-fied. Change only if you want UBC to redo everything.").define("ubChunkKey", "ub");
-//            dimensionList = builder.comment("The list of dimensions ids. Must be separated by a comma (,). Whitelist.").define("dimensionList", "0");
-//
-//            builder.pop();
-//        }
     }
 
     public static class WorldGen {
-        public boolean replaceStone = true;
-        public boolean replaceGravel = true;
-        public boolean replaceCobble = true;
-        public boolean replaceSand = true;
-        public boolean replaceInfestedStone = true;
+        @Comment("Do you want UBC to replace vanilla stone ?") public boolean replaceStone = true;
+        @Comment("Do you want UBC to replace vanilla gravel ?") public boolean replaceGravel = true;
+        @Comment("Do you want UBC to replace vanilla cobblestone ?") public boolean replaceCobble = true;
+        @Comment("Do you want UBC to replace vanilla sand ?") public boolean replaceSand = true;
+        @Comment("Do you want UBC to replace vanilla infested stone ?") public boolean replaceInfestedStone = true;
 
-        public boolean spawnVanillaStone = false;
-        public boolean harmoniousStrata = false;
-        public int biomeSize = 4;
-        public int generationHeight = 256;
-
-//        WorldGen(ForgeConfigSpec.Builder builder) {
-//            builder.push("WorldGen");
-//
-//            replaceStone = builder.comment("Do you want UBC to replace vanilla stone ?").define("replaceStone", true);
-//            replaceCobble = builder.comment("Do you want UBC to replace vanilla cobblestone ?").define("replaceCobble", true);
-//            replaceGravel = builder.comment("Do you want UBC to replace vanilla gravel ?").define("replaceGravel", true);
-//            replaceSand = builder.comment("Do you want UBC to replace vanilla sand ?").define("replaceSand", true);
-//            replaceInfestedStone = builder.comment("Do you want UBC to replace vanilla infested stone ?").define("replaceInfestedStone", true);
-//            spawnVanillaStone = builder.comment("Enable if you want some biomes to contain vanilla stone.").define("spawnVanillaStone", false);
-//            harmoniousStrata = builder.comment("Smooth biome transitions.").define("harmoniousStrata", false);
-//            biomeSize = builder.comment("Sets the biome size. Exponential !").define("biomeSize", 4);
-//            generationHeight = builder.comment("How hight UBC's stones should stop generation at ?").define("generationHeight", 256);
-//
-//            builder.pop();
-//        }
+        @Comment("Enable if you want some biomes to contain vanilla stone.") public boolean spawnVanillaStone = false;
+        @Comment("Smooth biome transitions.") public boolean harmoniousStrata = false;
+        @Comment("Sets the biome size. Exponential !") public int biomeSize = 4;
+        @Comment("How hight UBC's stones should stop generation at ?") public int generationHeight = 256;
     }
 
     public static class Items {
