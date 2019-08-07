@@ -18,6 +18,9 @@
       "com.aang23.undergroundbiomes.UndergroundBiomesClient"
     ]
   },
+  "mixins": [
+    "mixins.undergroundbiomes.json"
+  ],
 
   "depends": {
     "fabricloader": ">=0.4.0",

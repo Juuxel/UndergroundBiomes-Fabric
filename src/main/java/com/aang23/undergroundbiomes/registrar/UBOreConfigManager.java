@@ -9,12 +9,11 @@ import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
+import blue.endless.jankson.Jankson;
+import blue.endless.jankson.JsonObject;
+import blue.endless.jankson.impl.SyntaxError;
 import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.api.event.UBRegistrarRegisterOresEvent;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -23,6 +22,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class UBOreConfigManager {
+    private static final Jankson JANKSON = Jankson.builder().build();
+
     // Folders
     public static File mainFolder = new File(UBOreRegistrar.mcdir, "config/undergroundbiomes");
     public static File jsonsFolder = new File(mainFolder, "ores");
@@ -49,32 +50,24 @@ public class UBOreConfigManager {
 
     private static void readJsons() {
         for (File currentJson : jsonsFolder.listFiles()) {
-            JSONObject currentConfig = null;
-            Object configobj = null;
             try {
-                configobj = new JSONParser().parse(new FileReader(currentJson));
-            } catch (FileNotFoundException e) {
+                JsonObject currentConfig = JANKSON.load(currentJson);
+
+                for (Object currentOreObj : currentConfig.keySet()) {
+                    String currentOre = (String) currentOreObj;
+                    Block toRegister = Registry.BLOCK.get(new Identifier(currentOre));
+                    JsonObject oreConfig = (JsonObject) currentConfig.get(currentOre);
+                    String overlay = oreConfig.get(String.class, "overlay");
+                    String variant = oreConfig.get(String.class, "variant");
+
+                    String name = oreConfig.get(String.class, "name"); // TODO improve
+
+                    nameCache.put(currentOre, name);
+
+                    registerOre(toRegister, overlay, variant);
+                }
+            } catch (IOException | SyntaxError e) {
                 e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            currentConfig = (JSONObject) configobj;
-
-            for (Object currentOreObj : currentConfig.keySet()) {
-                String currentOre = (String) currentOreObj;
-                Block toRegister = Registry.BLOCK.get(new Identifier(currentOre));
-                Map oreConfig = new HashMap<>();
-                oreConfig = (Map) currentConfig.get(currentOre);
-                String overlay = (String) oreConfig.get("overlay");
-                String variant = (String) oreConfig.get("variant");
-
-                String name = (String) oreConfig.get("name"); // TODO improve
-
-                nameCache.put(currentOre, name);
-
-                registerOre(toRegister, overlay, variant);
             }
 
             // Other mods can register ores in this event

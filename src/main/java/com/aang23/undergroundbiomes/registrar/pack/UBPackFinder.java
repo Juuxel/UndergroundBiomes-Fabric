@@ -1,6 +1,5 @@
 package com.aang23.undergroundbiomes.registrar.pack;
 
-import net.minecraft.resource.ResourcePack;
 import net.minecraft.resource.ResourcePackContainer;
 import net.minecraft.resource.ResourcePackCreator;
 import java.util.Map;

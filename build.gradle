@@ -11,6 +11,17 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+    maven {
+        name = "Cotton"
+        url = "http://server.bbkr.space:8081/artifactory/libs-release/"
+    }
+    maven {
+        name = "Cotton (snapshots)"
+        url = "http://server.bbkr.space:8081/artifactory/libs-snapshot/"
+    }
+}
+
 minecraft {
 }
 
@@ -23,10 +34,11 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+    modImplementation "io.github.cottonmc:Jankson:${project.jankson_version}"
+    include "io.github.cottonmc:Jankson:${project.jankson_version}"
+
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
-    shadow group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
-    shadow group: 'com.cedarsoftware', name: 'json-io', version: '4.5.0'
     shadow 'net.lingala.zip4j:zip4j:2.0.3'
 }
 
@@ -59,7 +71,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 jar {
-    from "LICENSE"
+    from "LICENSE.txt"
 }
 
 // configure the maven publication

@@ -1,89 +1,78 @@
 package com.aang23.undergroundbiomes.config;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-import com.cedarsoftware.util.io.JsonWriter;
-
+import blue.endless.jankson.Jankson;
+import blue.endless.jankson.JsonObject;
+import blue.endless.jankson.JsonPrimitive;
+import blue.endless.jankson.impl.SyntaxError;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.dimension.DimensionType;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import net.minecraft.world.IWorld;
 
 public class WorldConfig {
+    private static final Jankson JANKSON = Jankson.builder().build();
+
     public String dimensionId;
 
     private IWorld configWorld;
     private File configPath;
 
-    public JSONObject config;
+    public JsonObject config;
 
     public WorldConfig(IWorld world) {
             dimensionId = DimensionType.getId(world.getDimension().getType()).toString();
             configWorld = world;
             configPath = new File(world.getDimension().getType().getFile(
                     ((ServerWorld) world).getSaveHandler().getWorldDir()), "undergroundbiomes.json");
-            config = new JSONObject();
+            config = new JsonObject();
     }
 
     public void loadConfig() {
         if (configPath.exists()) {
             try {
-                config = (JSONObject) new JSONParser().parse(new FileReader(configPath));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ParseException e) {
+                config = JANKSON.load(configPath);
+            } catch (SyntaxError | IOException e) {
                 e.printStackTrace();
             }
         } else {
-            config.put("worldId", dimensionId);
-            config.put("harmoniousStrata", UBConfig.instance().worldgen.harmoniousStrata);
-            config.put("biomeSize", UBConfig.instance().worldgen.biomeSize);
-            config.put("generationHeight", UBConfig.instance().worldgen.generationHeight);
-            config.put("spawnVanillaStone", UBConfig.instance().worldgen.spawnVanillaStone);
+            config.put("worldId", new JsonPrimitive(dimensionId));
+            config.put("harmoniousStrata", new JsonPrimitive(UBConfig.instance().worldgen.harmoniousStrata));
+            config.put("biomeSize", new JsonPrimitive(UBConfig.instance().worldgen.biomeSize));
+            config.put("generationHeight", new JsonPrimitive(UBConfig.instance().worldgen.generationHeight));
+            config.put("spawnVanillaStone", new JsonPrimitive(UBConfig.instance().worldgen.spawnVanillaStone));
 
-            PrintWriter pw = null;
-            try {
-                pw = new PrintWriter(configPath);
-            } catch (FileNotFoundException e) {
+            try (FileWriter writer = new FileWriter(configPath)){
+                writer.write(JANKSON.toJson(config).toJson(true, true));
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-            pw.write(JsonWriter.formatJson(config.toJSONString()));
-
-            pw.flush();
-            pw.close();
         }
     }
 
     public boolean harmoniousStrata() {
         // Well not that great, but if it fails, it will only be caused by the user,
         // so...
-        return (boolean) config.get("harmoniousStrata");
+        return config.get(Boolean.class, "harmoniousStrata");
     }
 
     public int biomeSize() {
         // Well not that great, but if it fails, it will only be caused by the user,
         // so...
-        return ((Number) config.get("biomeSize")).intValue();
+        return config.get(Integer.class, "biomeSize");
     }
 
     public int generationHeight() {
         // Well not that great, but if it fails, it will only be caused by the user,
         // so...
-        return ((Number) config.get("generationHeight")).intValue();
+        return config.get(Integer.class, "generationHeight");
     }
 
     public boolean regularStone() {
         // Well not that great, but if it fails, it will only be caused by the user,
         // so...
-        return (boolean) config.get("spawnVanillaStone");
+        return config.get(Boolean.class, "spawnVanillaStone");
     }
 }

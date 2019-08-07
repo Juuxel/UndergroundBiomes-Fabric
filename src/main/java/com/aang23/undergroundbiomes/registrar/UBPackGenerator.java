@@ -1,19 +1,16 @@
 package com.aang23.undergroundbiomes.registrar;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
+
 import com.aang23.undergroundbiomes.UndergroundBiomes;
-import com.cedarsoftware.util.io.JsonWriter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.json.simple.JSONObject;
 
 public class UBPackGenerator {
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
 
     // Directories
     public File assetsDir = new File(UBOreRegistrar.packDir, "assets");
@@ -146,23 +143,20 @@ public class UBPackGenerator {
         pw.close();
     }
 
-    private JSONObject langfile = new JSONObject();
+    private JsonObject langfile = new JsonObject();
 
     public void createLangEntryForItem(String oreName, String oreTranslation) {
-        langfile.put("block." + UndergroundBiomes.modid + "." + oreName.replace(UndergroundBiomes.modid + ":", ""),
-                oreTranslation);
+        langfile.addProperty(
+                "block." + UndergroundBiomes.modid + "." + oreName.replace(UndergroundBiomes.modid + ":", ""),
+                oreTranslation
+        );
     }
 
     public void createLangFile() {
-        PrintWriter pw = null;
-        try {
-            pw = new PrintWriter(langFile);
-        } catch (FileNotFoundException e) {
+        try (FileWriter writer = new FileWriter(langFile)) {
+            GSON.toJson(langfile, writer);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        pw.write(JsonWriter.formatJson(langfile.toJSONString()));
-
-        pw.flush();
-        pw.close();
     }
 }

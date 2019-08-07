@@ -1,7 +1,6 @@
 package com.aang23.undergroundbiomes.config;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import blue.endless.jankson.Jankson;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.*;
@@ -15,21 +14,22 @@ public class UBConfig {
     public Advanced advanced = new Advanced();
 
     private static UBConfig load() {
-        File file = new File(FabricLoader.getInstance().getConfigDirectory(), "undergroundbiomes.json");
-        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+        File file = new File(FabricLoader.getInstance().getConfigDirectory(), "undergroundbiomes.json5");
+        Jankson jankson = Jankson.builder().build();
 
         if (!file.exists()) {
             UBConfig defaultConfig = new UBConfig();
             try (FileWriter writer = new FileWriter(file)) {
-                gson.toJson(defaultConfig, writer);
+                String json = jankson.toJson(defaultConfig).toJson(true, true);
+                writer.write(json);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        try (FileReader reader = new FileReader(file)){
-            return gson.fromJson(reader, UBConfig.class);
-        } catch (IOException e) {
+        try {
+            return jankson.fromJson(jankson.load(file), UBConfig.class);
+        } catch (Exception e) {
             throw new RuntimeException("Couldn't load UB config", e);
         }
     }
