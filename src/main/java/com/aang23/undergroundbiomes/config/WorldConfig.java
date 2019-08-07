@@ -45,7 +45,7 @@ public class WorldConfig {
             config.put("spawnVanillaStone", new JsonPrimitive(UBConfig.instance().worldgen.spawnVanillaStone));
 
             try (FileWriter writer = new FileWriter(configPath)){
-                writer.write(JANKSON.toJson(config).toJson(true, true));
+                writer.write(config.toJson(true, true));
             } catch (IOException e) {
                 e.printStackTrace();
             }

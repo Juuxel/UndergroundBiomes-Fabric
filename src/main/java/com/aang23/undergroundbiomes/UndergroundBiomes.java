@@ -15,9 +15,7 @@ import org.apache.logging.log4j.Logger;
 import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.WorldGenManager;
-import com.aang23.undergroundbiomes.world.utils.WorldChunkChecker;
 
-// The value here should match an entry in the META-INF/mods.toml file
 public class UndergroundBiomes implements ModInitializer {
     public static String modid = "undergroundbiomes";
     public static final ItemGroup CREATIVE_TAB = FabricItemGroupBuilder.build(new Identifier(modid, "blocks"), UBBlocks.IGNEOUS_STONE_BLACK_GRANITE.asItem()::getStackForRender);
@@ -26,19 +24,14 @@ public class UndergroundBiomes implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        /*
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(WorldChunkChecker::preInit);
-        MinecraftForge.EVENT_BUS.register(new WorldChunkChecker());
-         */
         UBOreRegistrar.initialSetup();
 
         // Register a WorldGenManager for each enabled dimension
         String dimsIds[] = UBConfig.instance().general.dimensionList.split(",");
         for (String dimId : dimsIds) {
-            //MinecraftForge.EVENT_BUS.register(new WorldGenManager(Integer.parseInt(dimId)));
+            new WorldGenManager(new Identifier(dimId));
             LOGGER.info("Enabled UndergroundBiomes for dim " + dimId);
         }
-        // MinecraftForge.EVENT_BUS.register(new WorldGenManager(0));
         registerBlocks();
         registerItems();
     }

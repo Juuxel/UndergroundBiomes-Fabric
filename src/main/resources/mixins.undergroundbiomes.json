@@ -4,9 +4,14 @@
   "package": "com.aang23.undergroundbiomes.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ToolManagerEntryImplAccessor",
+    "faborge.MinecraftServerMixin",
+    "faborge.ThreadedAnvilChunkStorageMixin"
   ],
   "client": [
-    "MinecraftClientMixin"
+    "MinecraftClientMixin",
+    "faborge.ClientChunkManagerMixin",
+    "faborge.ClientWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

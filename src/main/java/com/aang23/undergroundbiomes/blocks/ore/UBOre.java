@@ -5,11 +5,14 @@ import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
 import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
+import com.aang23.undergroundbiomes.mixin.ToolManagerEntryImplAccessor;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
+import net.fabricmc.fabric.impl.tools.ToolManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
@@ -28,7 +31,7 @@ public class UBOre extends Block implements UBBlock {
     public UBOre(Block baseOre, BlockState baseState, UBStoneType stone_type, String sub_stone_name) {
         super(FabricBlockSettings.of(baseOre.getMaterial(baseState))
                 .dropsLike(baseOre)
-                .breakByTool(FabricToolTags.PICKAXES /* TODO: Mining levels */)
+                .breakByTool(FabricToolTags.PICKAXES, getMiningLevel(baseOre))
                 .build());
         this.baseOre = baseOre;
         this.baseState = baseState;
@@ -36,6 +39,26 @@ public class UBOre extends Block implements UBBlock {
         this.sub_stone_name = sub_stone_name;
         setRegistryName(UndergroundBiomes.modid + ":" + stone_type + "_ore_"
                 + Faborge.getRegistryName(baseOre).toString().replace(":", "_") + "_" + sub_stone_name);
+    }
+
+    // See PickaxeItem and Fabric's ToolManager
+    private static int getMiningLevel(Block block) {
+        if (block == Blocks.OBSIDIAN)
+            return 3;
+        else if (block == Blocks.DIAMOND_BLOCK || block == Blocks.DIAMOND_ORE || block == Blocks.EMERALD_BLOCK || block == Blocks.EMERALD_ORE || block == Blocks.GOLD_BLOCK || block == Blocks.GOLD_ORE || block == Blocks.REDSTONE_ORE)
+            return 2;
+        else if (block == Blocks.IRON_BLOCK || block == Blocks.IRON_ORE || block == Blocks.LAPIS_BLOCK || block == Blocks.LAPIS_ORE)
+            return 1;
+        else {
+            ToolManagerEntryImplAccessor entry = (ToolManagerEntryImplAccessor) ToolManager.entry(block);
+            for (int i = 0; i < entry.getTags().length; i++) {
+                if (entry.getTags()[i] == FabricToolTags.PICKAXES) {
+                    return entry.getTagLevels()[i];
+                }
+            }
+
+            return 0;
+        }
     }
 
     @Override

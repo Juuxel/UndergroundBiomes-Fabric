@@ -44,7 +44,7 @@ public class UBConfig {
 
     public static class General {
         public final String ubChunkKey = "ub";
-        public final String dimensionList = "0";
+        public final String dimensionList = "minecraft:overworld";
 
 //        General(ForgeConfigSpec.Builder builder) {
 //            builder.push("General");
