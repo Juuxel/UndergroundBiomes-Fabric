@@ -1,7 +1,6 @@
 package com.aang23.undergroundbiomes;
 
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
-import com.aang23.undergroundbiomes.items.FaborgeItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;

@@ -2,13 +2,16 @@ plugins {
     id 'fabric-loom' version '0.2.5-SNAPSHOT'
     id 'maven-publish'
     id 'com.github.johnrengelman.shadow' version '5.1.0'
+    id 'moe.nikky.persistentCounter' version '0.0.8-SNAPSHOT'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+def build = counter.variable "buildNum", project.mod_version, {}
+
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = project.mod_version + "-$build"
 group = project.maven_group
 
 repositories {
@@ -39,7 +42,8 @@ dependencies {
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
-    shadow 'net.lingala.zip4j:zip4j:2.0.3'
+    implementation 'net.lingala.zip4j:zip4j:2.0.3'
+    include 'net.lingala.zip4j:zip4j:2.0.3'
 }
 
 processResources {

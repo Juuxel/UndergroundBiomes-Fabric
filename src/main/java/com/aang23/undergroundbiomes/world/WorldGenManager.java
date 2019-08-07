@@ -63,7 +63,7 @@ public class WorldGenManager {
             // stoneReplacer.redoOres(event.getWorld());
 
             chunk.setShouldSave(true);
-            WorldChunkChecker.setDone(event.getChunk());
+            WorldChunkChecker.setDone(event.getWorld(), event.getChunk());
           }
         }
       }
