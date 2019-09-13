@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "## ",
+        "## "
+        
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:sedimentary_stone_chert"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:sedimentary_brick_chert",
+        "count": 4
+    }
+}

@@ -3,7 +3,7 @@ import os
 
 
 def generate_smelting_cobble_recipes():
-    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+    folder = "src/main/resources/data/undergroundbiomes/recipes/"
 
     data = 0
     with open('resources_templates/recipes/smelting_cobble.json', 'r') as file:
@@ -25,7 +25,7 @@ def generate_smelting_cobble_recipes():
 
 
 def generate_stone_brick_recipes():
-    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+    folder = "src/main/resources/data/undergroundbiomes/recipes/"
 
     data = 0
     with open('resources_templates/recipes/stone_brick.json', 'r') as file:
@@ -45,7 +45,7 @@ def generate_stone_brick_recipes():
             text_file.close()
 
 def generate_stone_stair_recipes():
-    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+    folder = "src/main/resources/data/undergroundbiomes/recipes/"
 
     data = 0
     with open('resources_templates/recipes/stairs.json', 'r') as file:
@@ -65,7 +65,7 @@ def generate_stone_stair_recipes():
             text_file.close()
 
 def generate_cobble_stair_recipes():
-    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+    folder = "src/main/resources/data/undergroundbiomes/recipes/"
 
     data = 0
     with open('resources_templates/recipes/stairs.json', 'r') as file:
@@ -86,7 +86,7 @@ def generate_cobble_stair_recipes():
                 text_file.close()
 
 def generate_stone_button_recipes():
-    folder = "build/resources/main/data/undergroundbiomes/recipes/"
+    folder = "src/main/resources/data/undergroundbiomes/recipes/"
 
     data = 0
     with open('resources_templates/recipes/button.json', 'r') as file:

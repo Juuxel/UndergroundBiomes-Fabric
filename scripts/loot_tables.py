@@ -3,7 +3,7 @@ import os
 
 
 def generate_gravel_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/gravel.json', 'r') as file:
@@ -22,7 +22,7 @@ def generate_gravel_loot():
             text_file.close()
 
 def generate_sand_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -41,7 +41,7 @@ def generate_sand_loot():
             text_file.close()
 
 def generate_cobble_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -60,7 +60,7 @@ def generate_cobble_loot():
             text_file.close()
 
 def generate_brick_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -79,7 +79,7 @@ def generate_brick_loot():
             text_file.close()
 
 def generate_cobble_stairs_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -98,7 +98,7 @@ def generate_cobble_stairs_loot():
             text_file.close()
 
 def generate_stone_stairs_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -117,7 +117,7 @@ def generate_stone_stairs_loot():
             text_file.close()
 
 def generate_stone_button_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:
@@ -136,7 +136,7 @@ def generate_stone_button_loot():
             text_file.close()
 
 def generate_cobble_button_loot():
-    folder = "build/resources/main/data/undergroundbiomes/loot_tables/blocks/"
+    folder = "src/main/resources/data/undergroundbiomes/loot_tables/blocks/"
 
     data = 0
     with open('resources_templates/loot_tables/basic.json', 'r') as file:

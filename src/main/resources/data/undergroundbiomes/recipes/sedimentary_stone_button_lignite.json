@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:sedimentary_stone_lignite"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:sedimentary_stone_button_lignite",
+        "count": 1
+    }
+}

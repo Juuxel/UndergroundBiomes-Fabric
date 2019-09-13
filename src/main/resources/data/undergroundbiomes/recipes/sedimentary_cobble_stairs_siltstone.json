@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:sedimentary_cobble_siltstone"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:sedimentary_cobble_stairs_siltstone",
+        "count": 4
+    }
+}

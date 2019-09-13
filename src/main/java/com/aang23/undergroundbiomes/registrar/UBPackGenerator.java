@@ -13,7 +13,7 @@ public class UBPackGenerator {
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
 
     // Directories
-    public File assetsDir = new File(UBOreRegistrar.packDir, "assets");
+    public File assetsDir = new File(UBOreRegistrar.PACK_DIRECTORY, "assets");
     public File blockstatesDir = new File(assetsDir, "undergroundbiomes/blockstates");
     public File modelsDir = new File(assetsDir, "undergroundbiomes/models/block");
     public File itemModelsDir = new File(assetsDir, "undergroundbiomes/models/item");
@@ -21,20 +21,20 @@ public class UBPackGenerator {
     public File langDir = new File(assetsDir, "undergroundbiomes/lang");
 
     // Files
-    public File packMcMetaFile = new File(UBOreRegistrar.packDir, "pack.mcmeta");
+    public File packMcMetaFile = new File(UBOreRegistrar.PACK_DIRECTORY, "pack.mcmeta");
     public File langFile = new File(langDir, "en_us.json");
 
     public void createFolders() {
 
-        if (UBOreRegistrar.packDir.exists()) {
+        if (UBOreRegistrar.PACK_DIRECTORY.exists()) {
             try {
-                FileUtils.deleteDirectory(UBOreRegistrar.packDir);
+                FileUtils.deleteDirectory(UBOreRegistrar.PACK_DIRECTORY);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        UBOreRegistrar.packDir.mkdirs();
+        UBOreRegistrar.PACK_DIRECTORY.mkdirs();
         assetsDir.mkdirs();
         blockstatesDir.mkdirs();
         modelsDir.mkdirs();
@@ -43,7 +43,7 @@ public class UBPackGenerator {
         langDir.mkdirs();
 
         try {
-            FileUtils.copyDirectory(UBOreConfigManager.overlayFolder, overlaysDir);
+            FileUtils.copyDirectory(UBOreConfigManager.OVERLAY_FOLDER, overlaysDir);
         } catch (IOException e) {
             e.printStackTrace();
         }

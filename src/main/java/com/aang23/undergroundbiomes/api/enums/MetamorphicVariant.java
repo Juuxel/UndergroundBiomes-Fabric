@@ -38,6 +38,11 @@ public enum MetamorphicVariant implements StringIdentifiable, Variant<Metamorphi
     }
 
     @Override
+    public UBStoneType getStoneType() {
+        return UBStoneType.METAMORPHIC;
+    }
+
+    @Override
     public String toString() {
         return name().toLowerCase(Locale.ROOT);
     }

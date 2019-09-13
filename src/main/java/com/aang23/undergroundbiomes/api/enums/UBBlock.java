@@ -12,11 +12,15 @@ import net.minecraft.util.Identifier;
  */
 public interface UBBlock {
 
-  BlockItem getItemBlock();
-
   UBStoneType getStoneType();
 
   UBStoneStyle getStoneStyle();
+
+  Variant<?> getVariant();
+
+  default Block asBlock() {
+    return (Block) this;
+  }
 
   default Identifier getRegistryName() {
     return Faborge.getRegistryName((Block) this);

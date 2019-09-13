@@ -11,7 +11,7 @@ public class UBPackFinder implements ResourcePackCreator {
     public <T extends ResourcePackContainer> void registerContainer(Map<String, T> map, ResourcePackContainer.Factory<T> factory) {
         String s = "mod:undergroundbiomesores";
         T packInfo = ResourcePackContainer.of(s, true,
-                () -> new UBResourcePack(UBOreRegistrar.packDir),
+                () -> new UBResourcePack(UBOreRegistrar.PACK_DIRECTORY),
                 factory, ResourcePackContainer.InsertionPosition.TOP);
         if (packInfo != null) {
             map.put(s, packInfo);

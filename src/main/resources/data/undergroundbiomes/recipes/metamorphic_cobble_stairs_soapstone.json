@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:metamorphic_cobble_soapstone"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:metamorphic_cobble_stairs_soapstone",
+        "count": 4
+    }
+}

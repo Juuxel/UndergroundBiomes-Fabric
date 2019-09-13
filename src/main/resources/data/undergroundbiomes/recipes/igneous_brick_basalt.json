@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "## ",
+        "## "
+        
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:igneous_stone_basalt"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:igneous_brick_basalt",
+        "count": 4
+    }
+}

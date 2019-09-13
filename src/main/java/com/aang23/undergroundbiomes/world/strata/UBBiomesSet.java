@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aang23.undergroundbiomes.UBBlocks;
+import com.aang23.undergroundbiomes.api.enums.IgneousVariant;
+import com.aang23.undergroundbiomes.api.enums.MetamorphicVariant;
+import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.config.WorldConfig;
 
 import net.minecraft.block.BlockState;
@@ -25,41 +28,41 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
   public UBBiomesSet(WorldConfig settings) {
     super(new StrataLayers(settings).layers);
 
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_RED_GRANITE), strataLayers[0]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_BLACK_GRANITE), strataLayers[1]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_RHYOLITE), strataLayers[2]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_ANDESITE), strataLayers[3]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_GABBRO), strataLayers[4]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_BASALT), strataLayers[5]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_KOMATIITE), strataLayers[6]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_DACITE), strataLayers[7]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.RED_GRANITE, UBStoneStyle.STONE)), strataLayers[0]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.BLACK_GRANITE, UBStoneStyle.STONE)), strataLayers[1]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.RHYOLITE, UBStoneStyle.STONE)), strataLayers[2]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.ANDESITE, UBStoneStyle.STONE)), strataLayers[3]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.GABBRO, UBStoneStyle.STONE)), strataLayers[4]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.BASALT, UBStoneStyle.STONE)), strataLayers[5]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.KOMATIITE, UBStoneStyle.STONE)), strataLayers[6]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.DACITE, UBStoneStyle.STONE)), strataLayers[7]);
 
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_RED_GRANITE), strataLayers[8]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_BLACK_GRANITE), strataLayers[9]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_RHYOLITE), strataLayers[0]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_ANDESITE), strataLayers[1]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_GABBRO), strataLayers[2]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_BASALT), strataLayers[3]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_KOMATIITE), strataLayers[4]);
-    add(new UBBiome(ID, UBBlocks.IGNEOUS_STONE_DACITE), strataLayers[5]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.RED_GRANITE, UBStoneStyle.STONE)), strataLayers[8]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.BLACK_GRANITE, UBStoneStyle.STONE)), strataLayers[9]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.RHYOLITE, UBStoneStyle.STONE)), strataLayers[0]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.ANDESITE, UBStoneStyle.STONE)), strataLayers[1]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.GABBRO, UBStoneStyle.STONE)), strataLayers[2]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.BASALT, UBStoneStyle.STONE)), strataLayers[3]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.KOMATIITE, UBStoneStyle.STONE)), strataLayers[4]);
+    add(new UBBiome(ID, UBBlocks.getBlock(IgneousVariant.DACITE, UBStoneStyle.STONE)), strataLayers[5]);
 
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_GNEISS), strataLayers[6]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_ECLOGITE), strataLayers[7]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MARBLE), strataLayers[8]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_QUARTZITE), strataLayers[9]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_BLUESCHIST), strataLayers[0]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_GREENSCHIST), strataLayers[1]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_SOAPSTONE), strataLayers[2]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MIGMATITE), strataLayers[3]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.GNEISS, UBStoneStyle.STONE)), strataLayers[6]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[7]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[8]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[9]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[0]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[1]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[2]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[3]);
 
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_GNEISS), strataLayers[4]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_ECLOGITE), strataLayers[5]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MARBLE), strataLayers[6]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_QUARTZITE), strataLayers[7]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_BLUESCHIST), strataLayers[8]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_GREENSCHIST), strataLayers[9]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_SOAPSTONE), strataLayers[0]);
-    add(new UBBiome(ID, UBBlocks.METAMORPHIC_STONE_MIGMATITE), strataLayers[1]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.GNEISS, UBStoneStyle.STONE)), strataLayers[4]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.ECLOGITE, UBStoneStyle.STONE)), strataLayers[5]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.MARBLE, UBStoneStyle.STONE)), strataLayers[6]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.QUARTZITE, UBStoneStyle.STONE)), strataLayers[7]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.BLUESCHIST, UBStoneStyle.STONE)), strataLayers[8]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.GREENSCHIST, UBStoneStyle.STONE)), strataLayers[9]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.SOAPSTONE, UBStoneStyle.STONE)), strataLayers[0]);
+    add(new UBBiome(ID, UBBlocks.getBlock(MetamorphicVariant.MIGMATITE, UBStoneStyle.STONE)), strataLayers[1]);
 
     if (settings.regularStone()) {
       add(new UBBiome(ID, Blocks.STONE), strataLayers[0]);

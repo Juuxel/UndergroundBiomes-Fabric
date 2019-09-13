@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:igneous_stone_red_granite"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:igneous_stone_button_red_granite",
+        "count": 1
+    }
+}

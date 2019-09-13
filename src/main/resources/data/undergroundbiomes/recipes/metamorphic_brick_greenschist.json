@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "## ",
+        "## "
+        
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:metamorphic_stone_greenschist"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:metamorphic_brick_greenschist",
+        "count": 4
+    }
+}

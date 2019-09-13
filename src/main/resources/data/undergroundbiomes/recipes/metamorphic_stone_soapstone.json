@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "undergroundbiomes:metamorphic_cobble_soapstone"
+  },
+  "result": "undergroundbiomes:metamorphic_stone_soapstone",
+  "experience": 0.1,
+  "cookingtime": 200
+}

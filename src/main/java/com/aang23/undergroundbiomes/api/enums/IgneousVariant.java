@@ -37,6 +37,11 @@ public enum IgneousVariant implements StringIdentifiable, Variant<IgneousVariant
   }
 
   @Override
+  public UBStoneType getStoneType() {
+    return UBStoneType.IGNEOUS;
+  }
+
+  @Override
   public String toString() {
     return name().toLowerCase(Locale.ROOT);
   }

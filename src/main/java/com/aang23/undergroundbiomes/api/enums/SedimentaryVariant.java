@@ -34,6 +34,11 @@ public enum SedimentaryVariant implements StringIdentifiable, Variant<Sedimentar
   }
 
   @Override
+  public UBStoneType getStoneType() {
+    return UBStoneType.SEDIMENTARY;
+  }
+
+  @Override
   public String toString() {
     return name().toLowerCase(Locale.ROOT);
   }

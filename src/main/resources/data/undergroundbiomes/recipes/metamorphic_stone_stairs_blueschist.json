@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:metamorphic_stone_blueschist"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:metamorphic_stone_stairs_blueschist",
+        "count": 4
+    }
+}

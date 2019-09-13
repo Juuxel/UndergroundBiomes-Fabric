@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "undergroundbiomes:igneous_cobble_red_granite"
+        }
+    },
+    "result": {
+        "item": "undergroundbiomes:igneous_cobble_stairs_red_granite",
+        "count": 4
+    }
+}
