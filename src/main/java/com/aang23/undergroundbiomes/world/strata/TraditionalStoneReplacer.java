@@ -6,12 +6,14 @@ package com.aang23.undergroundbiomes.world.strata;
 
 import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.config.WorldConfig;
-import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayer;
-import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerSmooth;
-import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerVoronoiZoom;
-import com.aang23.undergroundbiomes.world.strata.genlayer.GenLayerZoom;
+import com.aang23.undergroundbiomes.world.strata.layer.UndergroundBiomesLayer;
 import com.aang23.undergroundbiomes.world.strata.noise.SimplexNoiseGenerator;
+import net.minecraft.world.biome.layer.ScaleLayer;
+import net.minecraft.world.biome.layer.SmoothenShorelineLayer;
+import net.minecraft.world.biome.layer.util.*;
 import net.minecraft.world.chunk.Chunk;
+
+import java.util.function.LongFunction;
 
 /**
  * @author curtisadams
@@ -19,49 +21,51 @@ import net.minecraft.world.chunk.Chunk;
 
 public class TraditionalStoneReplacer extends UBStoneReplacer {
 
-  private GenLayer undergroundBiomeIndexLayer;
+  private LayerSampler undergroundBiomeIndexLayer;
 
   public TraditionalStoneReplacer(long seed, int size, UndergroundBiomeSet biomeSet, WorldConfig config) {
     super(biomeSet.allowedBiomes(), new SimplexNoiseGenerator(seed), config);
-    if (biomeSet.allowedBiomes()[20].ID < 1) {
+    if (biomeSet.allowedBiomes()[20].id < 1) {
       throw new RuntimeException(biomeSet.toString() + Faborge.getRegistryName(biomeSet.allowedBiomes()[20].filler.getBlock()));
     }
-    undergroundBiomeIndexLayer = biomeGenerators(seed, size, biomeSet);
+    undergroundBiomeIndexLayer = biomeGenerators(size, biomeSet, salt -> new CachingLayerContext(25, seed, salt)).make();
   }
 
 
   @Override
   public int[] getBiomeValues(Chunk chunk) {
+    int[] result = new int[16 * 16];
 
-    int[] var7 = this.undergroundBiomeIndexLayer.getInts(chunk.getPos().x * 16, chunk.getPos().z * 16, 16, 16);
-    return var7;
+    int cx = chunk.getPos().x * 16;
+    int cz = chunk.getPos().z * 16;
+
+    for (int x = 0; x < 16; x++) {
+      for (int z = 0; z < 16; z++) {
+        result[x * 16 + z] = undergroundBiomeIndexLayer.sample(cx + x, cz + z);
+      }
+    }
+
+    return result;
   }
 
-  public static GenLayer biomeGenerators(long par0, int size, UndergroundBiomeSet biomeSet) {
+  public static <T extends LayerSampler, C extends LayerSampleContext<T>> LayerFactory<T> biomeGenerators(int size, UndergroundBiomeSet biomeSet, LongFunction<C> contextProvider) {
+    LayerFactory<T> layer = new UndergroundBiomesLayer(biomeSet).create(contextProvider.apply(200L));
+    layer = SmoothenShorelineLayer.INSTANCE.create(contextProvider.apply(1000L), layer);
 
-    GenLayerUndergroundBiomes var17 = new GenLayerUndergroundBiomes(200L, biomeSet);
+    for (int i = 0; i < size + 2; i++) {
+      layer = ScaleLayer.NORMAL.create(contextProvider.apply(1001L + i), layer);
+    }
 
-    GenLayerSmooth var15 = new GenLayerSmooth(1000L, var17);
-    GenLayer var6 = GenLayerZoom.magnify(1000L, var15, size);
-    var6 = GenLayerZoom.magnify(1000L, var6, 2);
-
-
-    GenLayerSmooth var19 = new GenLayerSmooth(1000L, var6);
-
-    GenLayerVoronoiZoom var8 = new GenLayerVoronoiZoom(10L, var19);
-    var8.initWorldGenSeed(par0);
-    //testGenerator(var8, size);
-    //testBiomeSize(var8);
-    GenLayer reliable = new GenLayerReliable(var8);
-    return reliable;
+    layer = SmoothenShorelineLayer.INSTANCE.create(contextProvider.apply(1000L), layer);
+    layer = ScaleLayer.NORMAL.create(contextProvider.apply(10L), layer);
+    return layer;
   }
 
   public UBBiome UBBiomeAt(int x, int z) {
-
-    int[] var7 = this.undergroundBiomeIndexLayer.getInts(x, z, 1, 1);
+    int value = this.undergroundBiomeIndexLayer.sample(x, z);
 
     // Get the underground biome for the position
-    UBBiome currentBiome = biomeList[var7[0]];
+    UBBiome currentBiome = biomeList[value];
     return currentBiome;
   }
 }

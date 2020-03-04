@@ -18,11 +18,11 @@ abstract public class UndergroundBiomeSet {
     UBBiome[] allowedBiomes = allowedBiomes();
     int size = 0;
     for (int i = 0; i < allowedBiomes.length; i++) {
-      size = Math.max(size, allowedBiomes[i].ID);
+      size = Math.max(size, allowedBiomes[i].id);
     }
     UBBiome[] result = new UBBiome[size + 1];
     for (int i = 0; i < allowedBiomes.length; i++) {
-      result[allowedBiomes[i].ID] = allowedBiomes[i];
+      result[allowedBiomes[i].id] = allowedBiomes[i];
     }
     return result;
   }

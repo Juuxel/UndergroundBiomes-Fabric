@@ -9,14 +9,14 @@ import net.minecraft.block.BlockState;
  */
 public final class UBBiome {
 
-  public final int ID;
+  public final int id;
   public final Block block;
   public final BlockState filler;
 
   public StrataLayer[] strata;
 
-  public UBBiome(int ID, Block block) {
-    this.ID = ID;
+  public UBBiome(int id, Block block) {
+    this.id = id;
     this.block = block;
     filler = block.getDefaultState();
     Preconditions.checkNotNull(filler);

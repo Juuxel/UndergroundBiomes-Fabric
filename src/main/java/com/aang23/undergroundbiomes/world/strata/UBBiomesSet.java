@@ -73,7 +73,7 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
 
     this.biomes = new UBBiome[biomesBuilder.size()];
     biomesBuilder.toArray(this.biomes);
-    if (biomes[20].ID == 0)
+    if (biomes[20].id == 0)
       throw new RuntimeException();
     this.settings = settings;
     allowedBiomes = generatable(biomes);
