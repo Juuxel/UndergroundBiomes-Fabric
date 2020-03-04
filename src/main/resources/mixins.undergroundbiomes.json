@@ -4,9 +4,7 @@
   "package": "com.aang23.undergroundbiomes.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ChunkSerializerMixin",
-    "MinecraftServerMixin",
-    "ThreadedAnvilChunkStorageMixin",
+    "DefaultBiomeFeaturesMixin",
     "ToolManagerEntryImplAccessor"
   ],
   "client": [

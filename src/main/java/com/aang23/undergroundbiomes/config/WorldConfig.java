@@ -17,14 +17,12 @@ public class WorldConfig {
 
     public String dimensionId;
 
-    private IWorld configWorld;
     private File configPath;
 
     public JsonObject config;
 
     public WorldConfig(IWorld world) {
             dimensionId = DimensionType.getId(world.getDimension().getType()).toString();
-            configWorld = world;
             configPath = new File(world.getDimension().getType().getSaveDirectory(
                     ((ServerWorld) world).getSaveHandler().getWorldDir()), "undergroundbiomes.json");
             config = new JsonObject();
