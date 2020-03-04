@@ -47,7 +47,7 @@ public class UBBlocks {
     }
 
     private static Block register(Map<UBStoneStyle, Block> blockMap, UBBlock block) {
-        Identifier id = new Identifier(UndergroundBiomes.modid, block.getStoneType() + "_" + block.getStoneStyle() + "_" + block.getVariant().asString());
+        Identifier id = UndergroundBiomes.id(block.getStoneType() + "_" + block.getStoneStyle() + "_" + block.getVariant().asString());
         Registry.register(Registry.BLOCK, id, block.asBlock());
         Registry.register(Registry.ITEM, id, new BlockItem(block.asBlock(), new Item.Settings().group(UndergroundBiomes.CREATIVE_TAB)));
         blockMap.put(block.getStoneStyle(), block.asBlock());

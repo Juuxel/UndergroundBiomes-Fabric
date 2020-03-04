@@ -1,8 +1,13 @@
 package com.aang23.undergroundbiomes;
 
+import com.aang23.undergroundbiomes.config.UBConfig;
 import com.aang23.undergroundbiomes.items.ItemLignite;
 import com.aang23.undergroundbiomes.items.fossil.FossilPiece;
 import com.aang23.undergroundbiomes.items.fossil.type.*;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class UBItems {
     public static FossilPiece FOSSIL_PIECE_AMMONITE = new Ammonite();
@@ -37,5 +42,25 @@ public class UBItems {
         default:
             return null;
         }
+    }
+
+    private static void registerItem(String name, Item item) {
+        Registry.register(Registry.ITEM, UndergroundBiomes.id(name), item);
+    }
+
+    static void init() {
+        // Fossils
+        registerItem("fossil_piece_ammonite", UBItems.FOSSIL_PIECE_AMMONITE);
+        registerItem("fossil_piece_shell", UBItems.FOSSIL_PIECE_SHELL);
+        registerItem("fossil_piece_rib", UBItems.FOSSIL_PIECE_RIB);
+        registerItem("fossil_piece_bone", UBItems.FOSSIL_PIECE_BONE);
+        registerItem("fossil_piece_skull", UBItems.FOSSIL_PIECE_SKULL);
+        registerItem("fossil_piece_bone2", UBItems.FOSSIL_PIECE_BONE2);
+        registerItem("fossil_piece_shell2", UBItems.FOSSIL_PIECE_SHELL2);
+        registerItem("fossil_piece_boneshard", UBItems.FOSSIL_PIECE_BONESHARD);
+
+        // Others
+        registerItem("lignite_coal", UBItems.LIGNITE_COAL);
+        FuelRegistry.INSTANCE.add(UBItems.LIGNITE_COAL, UBConfig.instance().items.ligniteSmeltTime);
     }
 }

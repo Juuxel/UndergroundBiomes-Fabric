@@ -29,6 +29,6 @@ public class Faborge {
 
     private static Identifier parseId(String str) {
         if (str.contains(":")) return new Identifier(str);
-        return new Identifier(UndergroundBiomes.modid, str);
+        return UndergroundBiomes.id(str);
     }
 }

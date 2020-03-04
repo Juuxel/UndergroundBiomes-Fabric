@@ -19,8 +19,8 @@ import com.aang23.undergroundbiomes.world.WorldGenManager;
 
 public class UndergroundBiomes implements ModInitializer {
     public static String modid = "undergroundbiomes";
-    public static final ItemGroup CREATIVE_TAB = FabricItemGroupBuilder.build(new Identifier(modid, "blocks"), () -> new ItemStack(UBBlocks.getBlock(IgneousVariant.BLACK_GRANITE, UBStoneStyle.STONE)));
-    public static final ItemGroup ORES_CREATIVE_TAB = FabricItemGroupBuilder.build(new Identifier(modid, "ores"), Blocks.IRON_ORE.asItem()::getStackForRender);
+    public static final ItemGroup CREATIVE_TAB = FabricItemGroupBuilder.build(id("blocks"), () -> new ItemStack(UBBlocks.getBlock(IgneousVariant.BLACK_GRANITE, UBStoneStyle.STONE)));
+    public static final ItemGroup ORES_CREATIVE_TAB = FabricItemGroupBuilder.build(id("ores"), Blocks.IRON_ORE.asItem()::getStackForRender);
     private static final Logger LOGGER = LogManager.getLogger(modid);
 
     public static Identifier id(String path) {
@@ -36,32 +36,9 @@ public class UndergroundBiomes implements ModInitializer {
             LOGGER.info("Enabled UndergroundBiomes for dim " + dimId);
         }
         UBOreRegistrar.initialSetup();
-        registerBlocks();
-        registerItems();
-    }
-
-    private static void registerItem(String name, Item item) {
-        Registry.register(Registry.ITEM, new Identifier(modid, name), item);
-    }
-
-    public static void registerBlocks() {
         UBOreRegistrar.registerOres();
         UBBlocks.init();
-    }
-
-    public static void registerItems() {
-        // Fossils
-        registerItem("fossil_piece_ammonite", UBItems.FOSSIL_PIECE_AMMONITE);
-        registerItem("fossil_piece_shell", UBItems.FOSSIL_PIECE_SHELL);
-        registerItem("fossil_piece_rib", UBItems.FOSSIL_PIECE_RIB);
-        registerItem("fossil_piece_bone", UBItems.FOSSIL_PIECE_BONE);
-        registerItem("fossil_piece_skull", UBItems.FOSSIL_PIECE_SKULL);
-        registerItem("fossil_piece_bone2", UBItems.FOSSIL_PIECE_BONE2);
-        registerItem("fossil_piece_shell2", UBItems.FOSSIL_PIECE_SHELL2);
-        registerItem("fossil_piece_boneshard", UBItems.FOSSIL_PIECE_BONESHARD);
-
-        // Others
-        registerItem("lignite_coal", UBItems.LIGNITE_COAL);
-        FuelRegistry.INSTANCE.add(UBItems.LIGNITE_COAL, UBConfig.instance().items.ligniteSmeltTime);
+        UBItems.init();
+        UBTags.init();
     }
 }
