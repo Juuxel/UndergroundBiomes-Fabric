@@ -23,6 +23,10 @@ public class UndergroundBiomes implements ModInitializer {
     public static final ItemGroup ORES_CREATIVE_TAB = FabricItemGroupBuilder.build(new Identifier(modid, "ores"), Blocks.IRON_ORE.asItem()::getStackForRender);
     private static final Logger LOGGER = LogManager.getLogger(modid);
 
+    public static Identifier id(String path) {
+        return new Identifier(modid, path);
+    }
+
     @Override
     public void onInitialize() {
         // Register a WorldGenManager for each enabled dimension

@@ -1,11 +1,13 @@
 package com.aang23.undergroundbiomes.world.strata;
 
+import com.aang23.undergroundbiomes.UBTags;
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FluidBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkSection;
@@ -55,18 +57,11 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
               BlockState currentBlockState = storage.getBlockState(x, y, z);
               Block currentBlock = currentBlockState.getBlock();
               BlockPos currentBlockPos = new BlockPos(x, y, z);
-              /*
-               * Skip air, water and lava
-               */
-              if (currentBlock == Blocks.AIR)
+
+              if (currentBlockState.isAir() || currentBlock instanceof FluidBlock) {
+                // Skip air and fluids
                 continue;
-              else if (currentBlock == Blocks.WATER)
-                continue;
-              else if (currentBlock == Blocks.LAVA)
-                continue;
-              else if ((currentBlock == Blocks.STONE || currentBlock == Blocks.ANDESITE
-                  || currentBlock == Blocks.DIORITE || currentBlock == Blocks.GRANITE)
-                  && UBConfig.instance().worldgen.replaceStone) {
+              } else if (currentBlockState.matches(UBTags.VANILLA_STONE) && UBConfig.instance().worldgen.replaceStone) {
                 // Replace with UBified version
                 storage.setBlockState(x, y, z, currentBiome.getStrataBlockAtLayer(yPos + y + variation), true);
                 continue;
