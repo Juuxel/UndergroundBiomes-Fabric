@@ -7,7 +7,7 @@ import java.io.IOException;
 import blue.endless.jankson.Jankson;
 import blue.endless.jankson.JsonObject;
 import blue.endless.jankson.JsonPrimitive;
-import blue.endless.jankson.impl.SyntaxError;
+import blue.endless.jankson.api.SyntaxError;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.IWorld;
@@ -25,7 +25,7 @@ public class WorldConfig {
     public WorldConfig(IWorld world) {
             dimensionId = DimensionType.getId(world.getDimension().getType()).toString();
             configWorld = world;
-            configPath = new File(world.getDimension().getType().getFile(
+            configPath = new File(world.getDimension().getType().getSaveDirectory(
                     ((ServerWorld) world).getSaveHandler().getWorldDir()), "undergroundbiomes.json");
             config = new JsonObject();
     }

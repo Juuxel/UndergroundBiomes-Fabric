@@ -5,7 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.structure.StructureManager;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.village.PointOfInterestStorage;
+import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.ChunkSerializer;
 import net.minecraft.world.chunk.ProtoChunk;
 import org.spongepowered.asm.mixin.Mixin;

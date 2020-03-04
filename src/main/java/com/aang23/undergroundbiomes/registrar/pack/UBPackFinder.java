@@ -1,20 +1,20 @@
 package com.aang23.undergroundbiomes.registrar.pack;
 
-import net.minecraft.resource.ResourcePackContainer;
-import net.minecraft.resource.ResourcePackCreator;
 import java.util.Map;
 
 import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
+import net.minecraft.resource.ResourcePackProfile;
+import net.minecraft.resource.ResourcePackProvider;
 
-public class UBPackFinder implements ResourcePackCreator {
+public class UBPackFinder implements ResourcePackProvider {
     @Override
-    public <T extends ResourcePackContainer> void registerContainer(Map<String, T> map, ResourcePackContainer.Factory<T> factory) {
+    public <T extends ResourcePackProfile> void register(Map<String, T> registry, ResourcePackProfile.Factory<T> factory) {
         String s = "mod:undergroundbiomesores";
-        T packInfo = ResourcePackContainer.of(s, true,
+        T packInfo = ResourcePackProfile.of(s, true,
                 () -> new UBResourcePack(UBOreRegistrar.PACK_DIRECTORY),
-                factory, ResourcePackContainer.InsertionPosition.TOP);
+                factory, ResourcePackProfile.InsertionPosition.TOP);
         if (packInfo != null) {
-            map.put(s, packInfo);
+            registry.put(s, packInfo);
         }
     }
 }

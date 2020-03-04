@@ -8,9 +8,11 @@ import com.aang23.undergroundbiomes.Faborge;
 import com.aang23.undergroundbiomes.UndergroundBiomes;
 import com.aang23.undergroundbiomes.api.enums.*;
 import com.aang23.undergroundbiomes.blocks.UBOre;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -43,6 +45,12 @@ public class UBOreRegistrar {
         for (UBOre toRegister : REGISTERED_ORES.values()) {
             Registry.register(Registry.BLOCK, Faborge.getRegistryName(toRegister), toRegister);
             Registry.register(Registry.ITEM, Faborge.getRegistryName(toRegister), new BlockItem(toRegister, new Item.Settings().group(UndergroundBiomes.ORES_CREATIVE_TAB)));
+        }
+    }
+
+    public static void setOreRenderLayers() {
+        for (UBOre ore : REGISTERED_ORES.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlock(ore, RenderLayer.getCutoutMipped());
         }
     }
 

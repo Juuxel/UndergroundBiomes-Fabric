@@ -10,7 +10,7 @@
     "ToolManagerEntryImplAccessor"
   ],
   "client": [
-    "MinecraftClientMixin"
+    "client.ClientBuiltinResourcePackProviderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -6,6 +6,7 @@ import net.fabricmc.api.ClientModInitializer;
 public class UndergroundBiomesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        UBOreRegistrar.setOreRenderLayers();
         UBOreRegistrar.registerPack();
     }
 }

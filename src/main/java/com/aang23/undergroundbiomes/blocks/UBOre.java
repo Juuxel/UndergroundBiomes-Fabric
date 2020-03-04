@@ -8,9 +8,8 @@ import com.aang23.undergroundbiomes.api.enums.Variant;
 import com.aang23.undergroundbiomes.mixin.ToolManagerEntryImplAccessor;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
-import net.fabricmc.fabric.impl.tools.ToolManager;
+import net.fabricmc.fabric.impl.mining.level.ToolManager;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
@@ -65,11 +64,6 @@ public class UBOre extends Block implements UBBlock {
     @Override
     public UBStoneType getStoneType() {
         return variant.getStoneType();
-    }
-
-    @Override
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     /*@Override
