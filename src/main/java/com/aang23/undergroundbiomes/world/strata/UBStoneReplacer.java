@@ -120,7 +120,7 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
         if (y >= config.generationHeight())
           return Blocks.STONE.getDefaultState();
         for (int i = 0; i < strata.length; i++) {
-          if (strata[i].heightInLayer(y + variation) == true) {
+          if (strata[i].isHeightWithinLayer(y + variation)) {
             return strata[i].filler;
           }
         }

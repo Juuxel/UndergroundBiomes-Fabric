@@ -29,7 +29,7 @@ public final class UBBiome {
 
   public BlockState getStrataBlockAtLayer(int y) {
     for (StrataLayer layer : strata) {
-      if (layer.heightInLayer(y))
+      if (layer.isHeightWithinLayer(y))
         return layer.filler;
     }
     return filler;

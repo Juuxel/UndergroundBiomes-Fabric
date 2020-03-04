@@ -19,7 +19,7 @@ public final class StrataLayer {
     this.maxHeight = maxHeight;
   }
 
-  public boolean heightInLayer(int y) {
+  public boolean isHeightWithinLayer(int y) {
     return (y >= minHeight && y <= maxHeight);
   }
 }
