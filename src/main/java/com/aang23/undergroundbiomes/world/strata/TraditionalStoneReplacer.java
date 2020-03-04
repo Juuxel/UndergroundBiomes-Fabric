@@ -25,8 +25,8 @@ public class TraditionalStoneReplacer extends UBStoneReplacer {
 
   public TraditionalStoneReplacer(long seed, int size, UndergroundBiomeSet biomeSet, WorldConfig config) {
     super(biomeSet.allowedBiomes(), new SimplexNoiseGenerator(seed), config);
-    if (biomeSet.allowedBiomes()[20].id < 1) {
-      throw new RuntimeException(biomeSet.toString() + Faborge.getRegistryName(biomeSet.allowedBiomes()[20].filler.getBlock()));
+    if (biomeSet.allowedBiomes().get(20).id < 1) {
+      throw new RuntimeException(biomeSet.toString() + Faborge.getRegistryName(biomeSet.allowedBiomes().get(20).filler.getBlock()));
     }
     undergroundBiomeIndexLayer = biomeGenerators(size, biomeSet, salt -> new CachingLayerContext(25, seed, salt)).make();
   }
@@ -65,7 +65,7 @@ public class TraditionalStoneReplacer extends UBStoneReplacer {
     int value = this.undergroundBiomeIndexLayer.sample(x, z);
 
     // Get the underground biome for the position
-    UBBiome currentBiome = biomeList[value];
+    UBBiome currentBiome = biomes.get(value);
     return currentBiome;
   }
 }

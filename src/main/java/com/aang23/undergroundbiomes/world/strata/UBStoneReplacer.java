@@ -2,6 +2,7 @@ package com.aang23.undergroundbiomes.world.strata;
 
 import com.aang23.undergroundbiomes.api.enums.UBBlock;
 import com.aang23.undergroundbiomes.api.enums.UBStoneType;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -15,21 +16,19 @@ import com.aang23.undergroundbiomes.registrar.UBOreRegistrar;
 import com.aang23.undergroundbiomes.world.StoneRegistry;
 import com.aang23.undergroundbiomes.world.strata.noise.NoiseGenerator;
 
+import java.util.Objects;
+
 public abstract class UBStoneReplacer implements UBStrataColumnProvider {
 
-  final UBBiome[] biomeList;
+  final ImmutableList<UBBiome> biomes;
   final NoiseGenerator noiseGenerator;
 
   final WorldConfig config;
 
-  public UBStoneReplacer(UBBiome[] biomeList, NoiseGenerator noiseGenerator, WorldConfig config) {
-    this.biomeList = biomeList;
-    this.noiseGenerator = noiseGenerator;
+  public UBStoneReplacer(ImmutableList<UBBiome> biomes, NoiseGenerator noiseGenerator, WorldConfig config) {
+    this.biomes = Objects.requireNonNull(biomes);
+    this.noiseGenerator = Objects.requireNonNull(noiseGenerator);
     this.config = config;
-    if (biomeList == null)
-      throw new RuntimeException();
-    if (noiseGenerator == null)
-      throw new RuntimeException();
   }
 
   public abstract int[] getBiomeValues(Chunk chunk);
@@ -49,7 +48,7 @@ public abstract class UBStoneReplacer implements UBStrataColumnProvider {
         for (int x = 0; x < 16; ++x) {
           for (int z = 0; z < 16; ++z) {
 
-            UBBiome currentBiome = biomeList[biomeValues[x * 16 + z]];
+            UBBiome currentBiome = biomes.get(biomeValues[x * 16 + z]);
             int variation = (int) (noiseGenerator.noise((xPos + x) / 55.533, (zPos + z) / 55.533, 3, 1, 0.5) * 10 - 5);
 
             for (int y = 0; y < 16; ++y) {

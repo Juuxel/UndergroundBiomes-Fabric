@@ -9,6 +9,7 @@ import com.aang23.undergroundbiomes.api.enums.MetamorphicVariant;
 import com.aang23.undergroundbiomes.api.enums.UBStoneStyle;
 import com.aang23.undergroundbiomes.config.WorldConfig;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 
@@ -23,7 +24,7 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
   private final UBBiome[] biomes;
   private final List<UBBiome> biomesBuilder = new ArrayList<>();
   private int ID = 0;
-  private UBBiome[] allowedBiomes;
+  private ImmutableList<UBBiome> allowedBiomes;
 
   public UBBiomesSet(WorldConfig settings) {
     super(new StrataLayers(settings).layers);
@@ -88,19 +89,19 @@ public final class UBBiomesSet extends UndergroundBiomeSet {
 
   }
 
-  public UBBiome[] generatable(UBBiome[] possible) {
-    ArrayList<UBBiome> accepted = new ArrayList<UBBiome>();
-    for (int i = 0; i < possible.length; i++) {
-      BlockState block = possible[i].filler;
-      if (true)
-        accepted.add(possible[i]); // settings.generationAllowed(block)
+  public ImmutableList<UBBiome> generatable(UBBiome[] possible) {
+    ImmutableList.Builder<UBBiome> accepted = ImmutableList.builder();
+    for (UBBiome ubBiome : possible) {
+      //BlockState block = possible[i].filler;
+      if (true /*settings.generationAllowed(block)*/)
+        accepted.add(ubBiome);
     }
-    UBBiome[] result = new UBBiome[accepted.size()];
-    return accepted.toArray(result);
+
+    return accepted.build();
   }
 
   @Override
-  public UBBiome[] allowedBiomes() {
+  public ImmutableList<UBBiome> allowedBiomes() {
     return allowedBiomes;
   }
 
